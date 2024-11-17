@@ -1,0 +1,31 @@
+NameSite: cookiecms
+
+securecode: c8ENvF5zD5ThuM9mTwofBqMLGSEutUrztAeca3LFLKr3v9RRXeUnO7j7nskWbL2y
+
+ServiceApiToken: 2aiajDNUhW95HlSHcRDJK0psCBBGazwGWbnZi99Vcirb82SIEeNvxqKmqAJlwxuQ
+
+database:
+  host: "localhost"
+  username: "root"
+  pass: "admin"
+  db: "cookiecms"
+  port: "34002"
+
+smtp:
+  host: "smtppro.zoho.eu"
+  SMTPAuth: true
+  Username: "noreply@coffeedev.dev"
+  Password: "r%nytuD2"
+  SMTPSecure: ""
+  Port: 587
+
+discord:
+  enabled: true
+  client_id: "1181148727826722816"
+  secret_id: "5YaScJyKq0pDQxO_B5YlhUwcBnlkr37P"
+  scopes: "identify"
+  redirect_url: "http://cookiecms.local/api/discord"
+  bot: ""
+  guild_id: 0
+  role: 0
+  webhooks: ""

@@ -1,0 +1,53 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+services:
+  mysql:
+    image: 'mysql:8.0'
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: cookiecms
+      MYSQL_USER: cookiecms
+      MYSQL_PASSWORD: cookiecms
+    ports:
+      - '34002:3306'
+    volumes:
+      - './src:/application'
+      - mysqld_socket:/run/mysqld  # Bind mount the socket directory
+    command: --bind-address=0.0.0.0
+
+  webserver:
+    image: 'nginx:alpine'
+    container_name: nginx
+    working_dir: /application
+    volumes:
+      - './src:/application'
+      - './.docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf'
+    ports:
+      - '34000:80'
+
+
+  php_fpm:
+    build: .docker/php-fpm
+    container_name: php_fpm
+    working_dir: /application
+    volumes:
+      - './src:/application'
+      - mysqld_socket:/run/mysqld  # Bind mount the socket directory
+      - './.docker/php-fpm/php-ini-overrides.ini:/usr/local/etc/php/conf.d/99-overrides.ini'
+      # Adjust paths to match where PHP expects configuration files
+
+
+  frontend:
+    image: 'node:latest'
+    container_name: frontend
+    working_dir: /application
+    volumes:
+      - './frontend:/application'
+    ports:
+      - '5173:5173'
+    command: npm run dev -- --host
+
+volumes:
+    mysqld_socket:

@@ -1,0 +1,2 @@
+/api/auth/login: auth/login.php
+/api/auth/register: auth/register.php
