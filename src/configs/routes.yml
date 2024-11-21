@@ -1,2 +1,10 @@
-/api/auth/login: auth/login.php
-/api/auth/register: auth/register.php
+/api/auth/login: auth/Login.php
+/api/auth/register: auth/Register.php
+/api/auth/confirm: auth/ConfirmMail.php
+/api/auth/logout: auth/Logout.php
+/api/auth/discord: service/DiscordMan.php
+/api/auth/logindiscord: auth/LoginDiscord.php
+/api/auth/registerdiscord: auth/RegisterDiscord.php
+
+/api/home: home/Home.php
+/api/createuser: home/CreateUser.php

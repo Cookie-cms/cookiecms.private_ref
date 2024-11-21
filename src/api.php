@@ -28,7 +28,7 @@ try {
         }
     }
 } catch (Exception $e) {
-    responseWithError("An error occurred", $e->getMessage());
+    responseWithError("An error occurred", ['error' => $e->getMessage()]);
 }
 
 ?>

@@ -1,4 +1,4 @@
 pma/
 composer.phar
 src/vendor/
-pub/engine/modules/configs/config.inc.yaml
+src/configs/config.py

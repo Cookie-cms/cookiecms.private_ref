@@ -93,7 +93,6 @@ CREATE TABLE `skins` (
 CREATE TABLE `users` (
   `id` varchar(256) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `ip` varchar(256) NOT NULL,
   `dsid` bigint DEFAULT NULL,
   `mail` varchar(255) DEFAULT NULL,
   `mail_verify` int DEFAULT '0',
@@ -114,8 +113,8 @@ CREATE TABLE job_schedule (
     target_id INT,                                -- Target ID (e.g., user_id or item_id)
     scheduled_date BIGINT,                          -- Date when the job is scheduled to run
     status ENUM('pending', 'completed', 'cancelled') DEFAULT 'pending', -- Job status
-    created_at INT DEFAULT UNIX_TIMESTAMP(),      -- Unix timestamp when the job was created
-    updated_at INT DEFAULT UNIX_TIMESTAMP() ON UPDATE UNIX_TIMESTAMP() -- Unix timestamp when the job was last updated
+    created_at INT DEFAULT NULL,      -- Unix timestamp when the job was created
+    updated_at INT DEFAULT NULL -- Unix timestamp when the job was last updated
 );
 
 
@@ -156,12 +155,14 @@ CREATE TABLE `verify_codes` (
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `your_table`
---
+CREATE TABLE `blacklisted_jwts` (
+  `id` INT NOT NULL AUTO_INCREMENT,       -- Unique identifier for each entry
+  `jwt` TEXT NOT NULL,                    -- The actual JWT token (or its hash for security)
+  `expiration` BIGINT NOT NULL,           -- Unix timestamp of the tokens expiration
+  PRIMARY KEY (`id`),                     -- Index for quick lookup by ID
+  INDEX (`expiration`)                    -- Index for efficiently cleaning up expired tokens
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Indexes for dumped tables
---
 
 --
 -- Indexes for table `api_tokens`

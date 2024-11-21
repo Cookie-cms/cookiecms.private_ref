@@ -29,7 +29,7 @@ $inputData = file_get_contents('php://input');
 $data = json_decode($inputData, true);
 
 // Log the request for debugging
-error_log(print_r($data, true));
+// error_log(print_r($data, true));
 
 // Check if email and password are provided
 if (isset($data['mail']) && isset($data['password'])) {
@@ -82,28 +82,24 @@ if (isset($data['mail']) && isset($data['password'])) {
         $stmt->bindParam(':password', $hashed_password);
         $stmt->execute();
 
-        $NameSite = $yaml_data['NameSite'];
-        $payload = [
-            'iss' => $NameSite, // Issuer of the token
-            'iat' => time(), // Issued at
-            'exp' => time() + 14400, // Expiry time (1 hour)
-            'id' => $id, // Store user ID in the token
-        ];
-        $jwt = JWT::encode($payload, JWT_SECRET_KEY, 'HS256'); // Add 'HS256' as the algorithm
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $randomCode = '';
         $length = 6;
         for ($i = 0; $i < $length; $i++) {
             $randomCode .= $characters[random_int(0, strlen($characters) - 1)];
         }
-        return $randomCode;
+        $time = 0;
+        $stmt = $conn->prepare("INSERT INTO verify_codes (userid, code, expire) VALUES (:userid, :code, :expire)");
+        $stmt->bindParam(':userid', $id);
+        $stmt->bindParam(':code', $randomCode);
+        $stmt->bindParam(':expire', $time);        
+
+        $stmt->execute();
         return json_encode([
             'error' => false,
-            'msg' => 'Registration successful. Please proceed to registration.',
-            'url' => '/register/step2',
-            'data' => [
-                    'jwt' => $jwt  // The JWT token for authenticated requests
-            ]
+            'msg' => 'Registration successful. Please proceed to login.',
+            'url' => '/login',
+            'data' => []
 
         ]);
     } catch (PDOException $e) {

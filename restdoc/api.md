@@ -106,7 +106,15 @@ Steps
 ---
 
 ### **Confirm Email**
-`GET /api/auth/confirm?token=<confirmation_token>`
+`POST /api/auth/confirm`
+
+**Request Body**:
+```
+{
+    "code": string    // Account password (min 8 characters)
+}
+```
+
 
 **Responses**:
 
@@ -221,12 +229,20 @@ Steps
         "Username": "Coffee",               // The username of the user
         "Uuid": "00000000-0000-0000-0000-000000000000",  // Unique identifier for the user
         "Selected_Cape": 0,                 // ID of the selected cape
+        "Selected_Skin": 0,                 // ID of the selected cape
+        "PermLvl": 0
         "Capes": [
             {
                 "Id": 0,
                 "Name": "youtube"
             }
         ],                                  // Array of capes available to the user
+        "Skin": [
+            {
+                "Id": 0,
+                "Name": "youtube"
+            }
+        ],     
         "Discord_integration": true,        // Whether the user has Discord integration enabled
         "Discord": {
             "Discord_Global_Name": "",     // The global Discord username

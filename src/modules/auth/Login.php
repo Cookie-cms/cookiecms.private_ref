@@ -22,7 +22,7 @@ $inputData = file_get_contents('php://input');
 $data = json_decode($inputData, true);
 
 // Log the incoming request body for debugging
-error_log(print_r($data, true)); // Logs the raw POST data
+// error_log(print_r($data, true)); // Logs the raw POST data
 
 // Check if the JSON contains 'username' and 'password'
 if (isset($data['username']) && isset($data['password'])) {
@@ -49,13 +49,34 @@ if (isset($data['username']) && isset($data['password'])) {
             $stmt = $conn->prepare("SELECT * FROM users WHERE BINARY mail = :email");
             $stmt->bindParam(':email', $username);
         } else {
-            // Otherwise, treat it as a username
+            // Otherwise, tфreat it as a username
             $stmt = $conn->prepare("SELECT * FROM users WHERE BINARY username = :username");
             $stmt->bindParam(':username', $username);
         }
 
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        // var_dump($user);
+
+        if (!$user){
+            echo json_encode([
+                'error' => true,
+                'msg' => 'Incorrect username or password'
+            ]);
+            return;
+        }
+        if ($user['mail_verify'] == 0) {
+            // Code to send a verification email
+            // sendVerificationEmail($user['email']);
+            echo json_encode([
+                'error' => true,
+                'msg' => 'Pls verify your Mail.',
+                'url' => null,
+                'data' => []
+            ]);
+            return;
+        }
+        
 
         // Check if user exists and the password is correct
         if ($user && password_verify($password, $user['password'])) {
@@ -63,9 +84,9 @@ if (isset($data['username']) && isset($data['password'])) {
             $NameSite = $yaml_data['NameSite'];
             $payload = [
                 'iss' => $NameSite, // Issuer of the token
+                'sub' => $user['id'], // Store user ID in the token
                 'iat' => time(), // Issued at
                 'exp' => time() + 3600, // Expiry time (1 hour)
-                'id' => $user['id'], // Store user ID in the token
             ];
 
             // Encode the JWT token, passing the algorithm
@@ -97,6 +118,7 @@ if (isset($data['username']) && isset($data['password'])) {
                 'error' => true,
                 'msg' => 'Incorrect username or password'
             ]);
+            return;
         }
     } catch(PDOException $e) {
         // Output error information
@@ -105,6 +127,8 @@ if (isset($data['username']) && isset($data['password'])) {
             'msg' => 'Database error: ' . $e->getMessage()
         ]);
         error_log("Database Error: " . $e->getMessage(), 0);
+        return;
+
     }
 
 } else {
@@ -113,4 +137,6 @@ if (isset($data['username']) && isset($data['password'])) {
         'error' => true,
         'msg' => 'Username or password not provided'
     ]);
+    return;
+
 }

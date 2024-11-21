@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', true);
 
+// Include necessary files and libraries
 require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/mysql.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
 $file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
@@ -9,13 +10,14 @@ $yaml_data = read_yaml($file_path);
 
 // Include JWT library
 use \Firebase\JWT\JWT;
+use \Firebase\JWT\Key; // Import Key class for specifying algorithm
 
 // Secret key for encoding the JWT (make sure this is kept secure)
-define('JWT_SECRET_KEY', 'your_secret_key');
+define('JWT_SECRET_KEY', $yaml_data['securecode']);
 
 // Function to check if the token is in the blacklist
 function is_token_blacklisted($conn, $jwt) {
-    $stmt = $conn->prepare("SELECT * FROM token_blacklist WHERE token = :token");
+    $stmt = $conn->prepare("SELECT * FROM blacklisted_jwts WHERE jwt = :token");
     $stmt->bindParam(':token', $jwt);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -23,9 +25,9 @@ function is_token_blacklisted($conn, $jwt) {
 
 // Function to add the token to the blacklist
 function blacklist_token($conn, $jwt) {
-    $stmt = $conn->prepare("INSERT INTO token_blacklist (token) VALUES (:token)");
+    $stmt = $conn->prepare("INSERT INTO blacklisted_jwts (jwt) VALUES (:token)");
     $stmt->bindParam(':token', $jwt);
-    $stmt->execute();
+    return $stmt->execute(); // Return success status
 }
 
 // Get the Authorization header from the request
@@ -42,8 +44,9 @@ if (isset($headers['Authorization'])) {
 
 try {
     // Decode and verify the JWT token
-    $decoded = JWT::decode($jwt, JWT_SECRET_KEY, ['HS256']);
-
+    // Use Key class for specifying algorithm
+    $decoded = JWT::decode($jwt, new Key(JWT_SECRET_KEY, 'HS256'));
+    
     // Check if the token is already blacklisted
     if (is_token_blacklisted($conn, $jwt)) {
         echo json_encode([
@@ -67,6 +70,7 @@ try {
         'error' => true,
         'msg' => 'Invalid or expired token: ' . $e->getMessage()
     ]);
+    
+    // Log the detailed error message for internal debugging (optional)
     error_log("JWT Error: " . $e->getMessage(), 0);
 }
-?>
