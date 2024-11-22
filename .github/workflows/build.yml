@@ -30,18 +30,18 @@ jobs:
         run: |
           curl -L -o static-php-cli https://github.com/crazywhalecc/static-php-cli/releases/download/2.3.6/spc-linux-x86_64.tar.gz
           ls -la  # Debug: Check if the binary is downloaded
-          chmod +x spc
+          chmod +x static-php-cli
 
       # Step 5: Verify the binary
       - name: Verify Static PHP CLI Binary
         run: |
           file static-php-cli  # Debug: Verify the file type
-          ./spc --version  # Debug: Check if it executes correctly
+          ./static-php-cli --version  # Debug: Check if it executes correctly
 
       # Step 6: Build the PHP binary
       - name: Build PHP Binary
         run: |
-          ./spc build --source-dir=./ --output=cookiecms
+          ./static-php-cli build --source-dir=./ --output=cookiecms
           chmod +x cookiecms
 
       # Step 7: Archive the binary
