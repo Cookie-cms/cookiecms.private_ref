@@ -42,7 +42,7 @@ jobs:
       # Step 6: Build the PHP binary
       - name: Build PHP Binary
         run: |
-          ./static-php-cli build --source-dir=./ --output=cookiecms
+          ./spc build --source-dir=./ --output=cookiecms
           chmod +x cookiecms
 
       # Step 7: Archive the binary
