@@ -253,6 +253,15 @@ Steps
 }
 ```
 
+- **401 Unauthorized**:
+```
+{
+    "error": true,
+    "msg": "Invalid JWT token",
+    "url": null,
+    "data": {}
+}
+```
 ---
 
 ### **Edit User Details**
