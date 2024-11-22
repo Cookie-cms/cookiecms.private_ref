@@ -20,6 +20,10 @@ jobs:
         with:
           php-version: '8.1'  # Adjust PHP version as needed
 
+      - name: Debug Directory Structure
+        run: ls -la /home/runner/work/cookiecms.private_ref/cookiecms.private_ref/
+
+
       # Step 3: Install Composer dependencies
       - name: Install Composer dependencies
         run: composer install --no-dev --optimize-autoloader
