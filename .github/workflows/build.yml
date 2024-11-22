@@ -28,10 +28,11 @@ jobs:
       # Step 4: Download Static PHP CLI
       - name: Download Static PHP CLI
         run: |
-          curl -L -o static-php-cli https://github.com/crazywhalecc/static-php-cli/releases/download/2.3.6/spc-linux-x86_64.tar.gz
+          curl -L -o spc.tar.gz https://github.com/crazywhalecc/static-php-cli/releases/download/2.3.6/spc-linux-x86_64.tar.gz
+          tar -xzvf spc.tar.gz
           ls -la  # Debug: Check if the binary is downloaded
-          chmod +x static-php-cli
-
+          chmod +x spc
+          
       # Step 5: Verify the binary
       - name: Verify Static PHP CLI Binary
         run: |
