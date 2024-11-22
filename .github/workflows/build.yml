@@ -20,40 +20,43 @@ jobs:
         with:
           php-version: '8.1'  # Adjust PHP version as needed
 
-      - name: Debug Directory Structure
-        run: ls -la /home/runner/work/cookiecms.private_ref/cookiecms.private_ref/
-
-
       # Step 3: Install Composer dependencies
       - name: Install Composer dependencies
         run: composer install --no-dev --optimize-autoloader
-        working-directory: ./src/  # Adjust this path if necessary
+        working-directory: ./path-to-your-project  # Adjust this path if necessary
 
       # Step 4: Download Static PHP CLI
       - name: Download Static PHP CLI
         run: |
           curl -L -o static-php-cli https://github.com/crazywhalecc/static-php-cli/releases/latest/download/static-php-cli-linux
+          ls -la  # Debug: Check if the binary is downloaded
           chmod +x static-php-cli
 
-      # Step 5: Build the PHP binary
+      # Step 5: Verify the binary
+      - name: Verify Static PHP CLI Binary
+        run: |
+          file static-php-cli  # Debug: Verify the file type
+          ./static-php-cli --version  # Debug: Check if it executes correctly
+
+      # Step 6: Build the PHP binary
       - name: Build PHP Binary
         run: |
           ./static-php-cli build --source-dir=./ --output=cookiecms
           chmod +x cookiecms
 
-      # Step 6: Archive the binary
+      # Step 7: Archive the binary
       - name: Archive PHP Binary
         run: tar -czf php-binary.tar.gz cookiecms
 
-      # Step 7: Create GitHub Release
+      # Step 8: Create GitHub Release
       - name: Create GitHub Release
         id: release
         run: |
           gh release create v${{ github.run_number }} php-binary.tar.gz --title "Release v${{ github.run_number }}" --notes "Build static PHP binary"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
-      # Step 8: Upload the binary to GitHub release
+      # Step 9: Upload the binary to GitHub release
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         with:
