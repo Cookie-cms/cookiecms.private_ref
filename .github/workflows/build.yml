@@ -15,32 +15,33 @@ jobs:
         uses: actions/checkout@v3
 
       # Step 2: Set up PHP and install dependencies
-      - name: Install PHP and dependencies
+      - name: Set up PHP and install dependencies
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1' # Adjust PHP version as needed
+          php-version: '8.1'  # Adjust PHP version as needed
 
+      # Step 3: Install Composer dependencies
       - name: Install Composer dependencies
         run: composer install --no-dev --optimize-autoloader
-        working-directory: ./path-to-your-project # Adjust this if composer.json is in a subdirectory
+        working-directory: ./path-to-your-project  # Adjust this path if necessary
 
-      # Step 3: Download Static PHP CLI
+      # Step 4: Download Static PHP CLI
       - name: Download Static PHP CLI
         run: |
           curl -L -o static-php-cli https://github.com/crazywhalecc/static-php-cli/releases/latest/download/static-php-cli-linux
           chmod +x static-php-cli
 
-      # Step 4: Build the PHP binary
+      # Step 5: Build the PHP binary
       - name: Build PHP Binary
         run: |
           ./static-php-cli build --source-dir=./ --output=cookiecms
           chmod +x cookiecms
 
-      # Step 5: Archive the binary
+      # Step 6: Archive the binary
       - name: Archive PHP Binary
         run: tar -czf php-binary.tar.gz cookiecms
 
-      # Step 6: Create a new release and upload the binary
+      # Step 7: Create GitHub Release
       - name: Create GitHub Release
         id: release
         run: |
@@ -48,7 +49,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 7: Upload the binary to GitHub release
+      # Step 8: Upload the binary to GitHub release
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         with:
