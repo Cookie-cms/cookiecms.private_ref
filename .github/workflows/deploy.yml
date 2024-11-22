@@ -13,8 +13,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Add SSH key
+      run: |
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H 45.136.71.90 >> ~/.ssh/known_hosts
+
     - name: Deploy to server
       run: |
-        ssh -v -i ~/github -o StrictHostKeyChecking=no root@45.136.71.90 "cd /var/www/cookiecms/ && git pull origin main"
+        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no root@45.136.71.90 "cd /var/www/cookiecms/ && git pull origin main"
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
