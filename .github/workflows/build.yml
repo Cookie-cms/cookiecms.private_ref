@@ -1,9 +1,9 @@
 name: Build Static PHP Binary
 
 on:
-    push:
-      branches:
-        - main
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -14,19 +14,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install PHP dependencies
-        run: composer install --no-dev --optimize-autoloader
-        working-directory: ./path-to-your-project # Adjust this if composer.json is in a subdirectory
-      
-
-      # Step 2: Install dependencies (Composer)
-      - name: Install PHP dependencies
+      # Step 2: Set up PHP and install dependencies
+      - name: Install PHP and dependencies
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1' # Adjust PHP version as needed
-      - run: composer install --no-dev --optimize-autoloader
 
-      # Step 3: Download static-php-cli
+      - name: Install Composer dependencies
+        run: composer install --no-dev --optimize-autoloader
+        working-directory: ./path-to-your-project # Adjust this if composer.json is in a subdirectory
+
+      # Step 3: Download Static PHP CLI
       - name: Download Static PHP CLI
         run: |
           curl -L -o static-php-cli https://github.com/crazywhalecc/static-php-cli/releases/latest/download/static-php-cli-linux
@@ -36,17 +34,25 @@ jobs:
       - name: Build PHP Binary
         run: |
           ./static-php-cli build --source-dir=./ --output=cookiecms
-          chmod +x php-binary
+          chmod +x cookiecms
 
       # Step 5: Archive the binary
       - name: Archive PHP Binary
-        run: tar -czf php-binary.tar.gz php-binary
+        run: tar -czf php-binary.tar.gz cookiecms
 
-      # Step 6: Upload the binary to GitHub release
+      # Step 6: Create a new release and upload the binary
+      - name: Create GitHub Release
+        id: release
+        run: |
+          gh release create v${{ github.run_number }} php-binary.tar.gz --title "Release v${{ github.run_number }}" --notes "Build static PHP binary"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 7: Upload the binary to GitHub release
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         with:
-          upload_url: ${{ github.event.release.upload_url }}
+          upload_url: ${{ steps.release.outputs.upload_url }}
           asset_path: ./php-binary.tar.gz
           asset_name: php-binary.tar.gz
           asset_content_type: application/gzip
