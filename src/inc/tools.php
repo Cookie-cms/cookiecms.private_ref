@@ -9,7 +9,7 @@ use \Firebase\JWT\Key;
 function isJwtExpiredOrBlacklisted($jwt, $pdo, $securecode) {
     // Проверка наличия JWT
     if (empty($jwt)) {
-        responseWithError('JWT токен отсутствует.');
+        // responseWithError('JWT токен отсутствует.');
     }
 
     // Проверка в черном списке
@@ -40,7 +40,7 @@ function isJwtExpiredOrBlacklisted($jwt, $pdo, $securecode) {
             'data' => $decoded
         ];
     } catch (Exception $e) {
-        responseWithError('Недействительный токен.', ['error' => $e->getMessage()]);
+        // responseWithError('Недействительный токен.', ['error' => $e->getMessage()]);
         return;
     }
 }
@@ -64,14 +64,14 @@ function generateUUIDv4() {
 }
 
 
-function response($statusCode, $message, $data = null) {
+function response($status = false, $statusCode = 200, $url = null, $message, $data = null) {
     // Set the correct header
-    header('Content-Type: application/json');
 
     // Prepare the response array
     $response = [
-        "error" => ($statusCode >= 400),  // If status code >= 400, set error as true
+        "error" => ($status),  // If status code >= 400, set error as true
         "msg" => $message,
+        "url" => $url,
         "data" => $data
     ];
 

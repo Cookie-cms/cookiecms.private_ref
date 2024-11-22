@@ -16,7 +16,7 @@ try {
     $requestUri = filter_var($requestUri, FILTER_SANITIZE_URL);
 
     if (empty($routes[$requestUri])) {
-        responseWithError("Route not defined");
+        // responseWithError("Route not defined");
     } else {
         $modulePath = $_SERVER['DOCUMENT_ROOT'] . '/modules/' . $routes[$requestUri];
 
@@ -24,11 +24,11 @@ try {
         if (file_exists($modulePath)) {
             include $modulePath;
         } else {
-            responseWithError("Module file not found");
+            // responseWithError("Module file not found");
         }
     }
 } catch (Exception $e) {
-    responseWithError("An error occurred", ['error' => $e->getMessage()]);
+    // responseWithError("An error occurred", ['error' => $e->getMessage()]);
 }
 
 ?>

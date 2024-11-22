@@ -6,6 +6,7 @@ ini_set('display_errors', true);
 // Include necessary files
 require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/mysql.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
+// require $_SERVER['DOCUMENT_ROOT'] . "/define.php";
 
 $file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
 $yaml_data = read_yaml($file_path);
@@ -82,6 +83,7 @@ if (isset($data['mail']) && isset($data['password'])) {
         $stmt->bindParam(':password', $hashed_password);
         $stmt->execute();
 
+        // Generate a verification code
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $randomCode = '';
         $length = 6;
@@ -89,19 +91,24 @@ if (isset($data['mail']) && isset($data['password'])) {
             $randomCode .= $characters[random_int(0, strlen($characters) - 1)];
         }
         $time = 0;
+
+        // Insert verification code into the database
         $stmt = $conn->prepare("INSERT INTO verify_codes (userid, code, expire) VALUES (:userid, :code, :expire)");
         $stmt->bindParam(':userid', $id);
         $stmt->bindParam(':code', $randomCode);
         $stmt->bindParam(':expire', $time);        
-
         $stmt->execute();
-        return json_encode([
-            'error' => false,
-            'msg' => 'Registration successful. Please proceed to login.',
-            'url' => '/login',
-            'data' => []
+        // echo json_encode([
+        //     'error' => false,
+        //     'msg' => '',
+        //     'url' => '/login',
+        //     'data' => []
+        // ]);
+        // return;
 
-        ]);
+        // Send the JSON response with success message
+        return response(false, 200, "/login", "Registration successful. Please proceed to login.", null);
+        exit(); // Ensure no further code is executed
     } catch (PDOException $e) {
         // Log the error and return a user-friendly message
         error_log("PDOException: " . $e->getMessage(), 0);
