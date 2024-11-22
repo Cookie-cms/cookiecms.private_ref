@@ -1,4 +1,4 @@
-name: Deploy to Server
+name: Deploy
 
 on:
   push:
@@ -11,18 +11,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@latest
+      uses: actions/checkout@v2
 
-    - name: webfactory/ssh-agent
-      uses: webfactory/ssh-agent@v0.9.0
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-    - name: Deploy to Server
+    - name: Deploy to server
       run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} 'bash -s' <<EOF
-        cd /path/to/deploy/directory
-        git pull origin main
-        docker-compose down
-        docker-compose up -d --build
-        EOF
+        ssh -o StrictHostKeyChecking=no user@your-server-ip "cd /path/to/your/app && git pull origin main"
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
