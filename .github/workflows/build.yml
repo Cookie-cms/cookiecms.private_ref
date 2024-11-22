@@ -14,6 +14,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install PHP dependencies
+        run: composer install --no-dev --optimize-autoloader
+        working-directory: ./path-to-your-project # Adjust this if composer.json is in a subdirectory
+      
+
       # Step 2: Install dependencies (Composer)
       - name: Install PHP dependencies
         uses: shivammathur/setup-php@v2
