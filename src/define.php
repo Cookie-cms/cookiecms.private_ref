@@ -16,26 +16,27 @@ require_once __CI__ . "yamlReader.php";
 require $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/DiscordModule.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/tools.php";
 
 
 
-/**
- * Outputs a JSON-encoded error response.
- *
- * @param string $message - Error message to display.
- * @param string|null $details - Additional details (optional).
- */
-function responseWithError(string $message, array $details = []): void {
-    $errorResponse = [
-        'status' => 'error',
-        'msg' => $message,
-    ];
+// /**
+//  * Outputs a JSON-encoded error response.
+//  *
+//  * @param string $message - Error message to display.
+//  * @param string|null $details - Additional details (optional).
+//  */
+// function responseWithError(string $message, array $details = []): void {
+//     $errorResponse = [
+//         'status' => 'error',
+//         'msg' => $message,
+//     ];
     
-    // Если есть дополнительные данные, добавляем их в ответ
-    if (!empty($details)) {
-        $errorResponse['datad'] = $details;
-    }
+//     // Если есть дополнительные данные, добавляем их в ответ
+//     if (!empty($details)) {
+//         $errorResponse['datad'] = $details;
+//     }
 
-    // Возвращаем JSON-ответ
-    echo json_encode($errorResponse, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-}
+//     // Возвращаем JSON-ответ
+//     echo json_encode($errorResponse, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+// }

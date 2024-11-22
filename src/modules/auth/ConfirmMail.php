@@ -33,7 +33,7 @@ $stmt->bindParam(':code', $data['code']);
 $stmt->execute();
 $code = $stmt->fetch(PDO::FETCH_ASSOC);
 // Example response
-var_dump($code);
+// var_dump($code);
 // echo($user);
 if ($code) {
     $stmt = $conn->prepare("UPDATE users SET mail_verify = 1 WHERE id = :id");
