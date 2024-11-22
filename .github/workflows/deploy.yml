@@ -15,6 +15,6 @@ jobs:
 
     - name: Deploy to server
       run: |
-        ssh -o StrictHostKeyChecking=no root@45.136.71.90 "cd /var/www/cookiecms/ && git pull origin main"
+        ssh -v -i ~/github -o StrictHostKeyChecking=no root@45.136.71.90 "cd /var/www/cookiecms/ && git pull origin main"
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
