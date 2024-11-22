@@ -16,19 +16,21 @@ try {
     $requestUri = filter_var($requestUri, FILTER_SANITIZE_URL);
 
     if (empty($routes[$requestUri])) {
-        // responseWithError("Route not defined");
-    } else {
+            response(true, 404, null, "Route not defined", null);
+        } else {
         $modulePath = $_SERVER['DOCUMENT_ROOT'] . '/modules/' . $routes[$requestUri];
 
         // Check if the corresponding file exists and include it
         if (file_exists($modulePath)) {
             include $modulePath;
         } else {
-            // responseWithError("Module file not found");
+            response(true, 400, null, "Module file not found", null);
         }
     }
 } catch (Exception $e) {
     // responseWithError("An error occurred", ['error' => $e->getMessage()]);
+    $msg = "An error occurred: " . $e->getMessage();
+    response(true, 400, $msg, null);    
 }
 
 ?>
