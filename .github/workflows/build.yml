@@ -27,15 +27,15 @@ jobs:
         run: |
           case "${{ matrix.combination }}" in
             minimal) 
-              echo "EXTENSIONS=gd,mysql,uuid" >> "$GITHUB_OUTPUT"
+              echo "EXTENSIONS=gd,mysqlnd,uuid" >> "$GITHUB_OUTPUT"
               echo "DEPLOY_TARGET=${{ secrets.DEPLOY_SERVER_TARGET_MINIMAL }}" >> "$GITHUB_OUTPUT"
               ;;
             common)  
-              echo "EXTENSIONS=gd,mysql,uuid" >> "$GITHUB_OUTPUT"
+              echo "EXTENSIONS=gd,mysqlnd,uuid" >> "$GITHUB_OUTPUT"
               echo "DEPLOY_TARGET=${{ secrets.DEPLOY_SERVER_TARGET }}" >> "$GITHUB_OUTPUT"
               ;;
             bulk)    
-              echo "EXTENSIONS=gd,mysql,uuid" >> "$GITHUB_OUTPUT"
+              echo "EXTENSIONS=gd,mysqlnd,uuid" >> "$GITHUB_OUTPUT"
               echo "DEPLOY_TARGET=${{ secrets.DEPLOY_SERVER_TARGET_BULK }}" >> "$GITHUB_OUTPUT"
               ;;
           esac
