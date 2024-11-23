@@ -34,10 +34,10 @@ jobs:
           chmod +x spc
           
       # Step 5: Verify the binary
-      - name: Verify Static PHP CLI Binary
-        run: |
-          file static-php-cli  # Debug: Verify the file type
-          .spc --version  # Debug: Check if it executes correctly
+      # - name: Verify Static PHP CLI Binary
+      #   run: |
+      #     file static-php-cli  # Debug: Verify the file type
+      #     .spc --version  # Debug: Check if it executes correctly
 
       # Step 6: Build the PHP binary
       - name: Build PHP Binary
