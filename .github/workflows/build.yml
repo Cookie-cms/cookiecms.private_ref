@@ -1,10 +1,8 @@
-name: Build Static PHP Binary
+name: Build Self-Hosted PHP Binary (Unix)
 
 on:
-  push:
-    branches:
-      - main
-      
+  workflow_dispatch:
+
 jobs:
   build-release-artifacts:
     name: "Build ${{ matrix.php-version }}-${{ matrix.combination }} on ${{ matrix.runner }}"
@@ -13,13 +11,19 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - "8.4"  # Latest PHP version
+          - "8.1"
+          - "8.2"
+          - "8.3"
+          - "8.4"
         runner:
-          - "ubuntu-latest"  # Only Ubuntu
+          - "ubuntu-latest"
+          - "macos-13"
+          - "ubuntu-20.04"
+          - "macos-14"
         combination:
           - minimal
-          - common
           - bulk
+          - common
     steps:
       - name: "Process env string"
         id: process-env
@@ -27,15 +31,15 @@ jobs:
         run: |
           case "${{ matrix.combination }}" in
             minimal) 
-              echo "EXTENSIONS=gd,mysqlnd,uuid" >> "$GITHUB_OUTPUT"
+              echo "EXTENSIONS=pcntl,posix,mbstring,tokenizer,phar" >> "$GITHUB_OUTPUT"
               echo "DEPLOY_TARGET=${{ secrets.DEPLOY_SERVER_TARGET_MINIMAL }}" >> "$GITHUB_OUTPUT"
               ;;
             common)  
-              echo "EXTENSIONS=gd,mysqlnd,uuid" >> "$GITHUB_OUTPUT"
+              echo "EXTENSIONS=bcmath,bz2,calendar,ctype,curl,dom,exif,fileinfo,filter,ftp,gd,gmp,iconv,xml,mbstring,mbregex,mysqlnd,openssl,pcntl,pdo,pdo_mysql,pdo_sqlite,phar,posix,redis,session,simplexml,soap,sockets,sqlite3,tokenizer,xmlwriter,xmlreader,zlib,zip" >> "$GITHUB_OUTPUT"
               echo "DEPLOY_TARGET=${{ secrets.DEPLOY_SERVER_TARGET }}" >> "$GITHUB_OUTPUT"
               ;;
             bulk)    
-              echo "EXTENSIONS=gd,mysqlnd,uuid" >> "$GITHUB_OUTPUT"
+              echo "EXTENSIONS=apcu,bcmath,bz2,calendar,ctype,curl,dba,dom,event,exif,fileinfo,filter,ftp,gd,gmp,iconv,imagick,imap,intl,mbregex,mbstring,mysqli,mysqlnd,opcache,openssl,pcntl,pdo,pdo_mysql,pgsql,phar,posix,protobuf,readline,redis,session,shmop,simplexml,soap,sockets,sodium,sqlite3,swoole,swoole-hook-mysql,swoole-hook-pgsql,swoole-hook-sqlite,sysvmsg,sysvsem,sysvshm,tokenizer,xml,xmlreader,xmlwriter,xsl,zip,zlib" >> "$GITHUB_OUTPUT"
               echo "DEPLOY_TARGET=${{ secrets.DEPLOY_SERVER_TARGET_BULK }}" >> "$GITHUB_OUTPUT"
               ;;
           esac
@@ -45,6 +49,26 @@ jobs:
               echo "OS=linux" >> "$GITHUB_OUTPUT"
               echo "ARCH=x86_64" >> "$GITHUB_OUTPUT"
               echo "CMD=bin/spc-alpine-docker" >> "$GITHUB_OUTPUT"
+              ;;
+            ubuntu-20.04)
+              echo "OS=linux" >> "$GITHUB_OUTPUT"
+              echo "ARCH=aarch64" >> "$GITHUB_OUTPUT"
+              echo CMD="SPC_USE_ARCH=aarch64 bin/spc-alpine-docker" >> "$GITHUB_OUTPUT"
+              ;;
+            windows-2019)
+              echo "OS=windows" >> "$GITHUB_OUTPUT"
+              echo "ARCH=x86_64" >> "$GITHUB_OUTPUT"
+              echo "CMD=bin/spc" >> "$GITHUB_OUTPUT"
+              ;;
+            macos-13)
+              echo "OS=macos" >> "$GITHUB_OUTPUT"
+              echo "ARCH=x86_64" >> "$GITHUB_OUTPUT"
+              echo "CMD=bin/spc" >> "$GITHUB_OUTPUT"
+              ;;
+            macos-14)
+              echo "OS=macos" >> "$GITHUB_OUTPUT"
+              echo "ARCH=aarch64" >> "$GITHUB_OUTPUT"
+              echo "CMD=bin/spc" >> "$GITHUB_OUTPUT"
               ;;
           esac
       
@@ -56,9 +80,10 @@ jobs:
           ref: main
 
       - name: "Setup PHP"
+        if: matrix.runner != 'ubuntu-20.04'
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.4  # Latest PHP version
+          php-version: 8.2
           tools: pecl, composer
           extensions: curl, openssl, mbstring
           ini-values: memory_limit=-1
@@ -80,6 +105,7 @@ jobs:
           key: pack-lib-dependencies-${{ matrix.combination }}-${{ matrix.php-version }}-${{ matrix.runner }}
 
       - name: "Install Dependencies"
+        if: matrix.runner != 'ubuntu-20.04'
         run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --no-dev
 
       - run: ${{ steps.process-env.outputs.CMD }} doctor --auto-fix
@@ -99,11 +125,12 @@ jobs:
             fi
           fi
           
-          ${{ steps.process-env.outputs.CMD }} build --build-cli --build-fpm ${{ steps.process-env.outputs.EXTENSIONS }} --debug $UPX
+          ${{ steps.process-env.outputs.CMD }} build --build-cli --build-micro --build-fpm ${{ steps.process-env.outputs.EXTENSIONS }} --debug $UPX
 
           # Copy out from buildroot, because docker build has different permission
           mkdir -p tmp_dist/
           cp buildroot/bin/php tmp_dist/
+          cp buildroot/bin/micro.sfx tmp_dist/
           cp buildroot/bin/php-fpm tmp_dist/
 
           # UPX outside for linux-aarch64
@@ -113,6 +140,10 @@ jobs:
             curl -#fSL -o upx.txz https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-amd64_linux.tar.xz
             tar -xf upx.txz --strip-components 1
             ./upx --best ../tmp_dist/php
+            ./upx --best ../tmp_dist/micro.sfx
+            SFX_SIZE=$(readelf -l ../tmp_dist/micro.sfx | awk '/LOAD|GNU_STACK/ {getline; print $1, $2, $3, $4, $6, $7}' | sed -n '2p' | awk '{print $1}')
+            head -c $(printf "%d" $SFX_SIZE) ../tmp_dist/micro.sfx > ../tmp_dist/micro.sfx.new
+            mv ../tmp_dist/micro.sfx.new ../tmp_dist/micro.sfx
             ./upx --best ../tmp_dist/php-fpm
             cd ..
           fi
@@ -126,13 +157,24 @@ jobs:
           sudo chmod -R 777 dist
           
           tar -czf dist/php-$PHPVER-cli-${{ steps.process-env.outputs.OS }}-${{ steps.process-env.outputs.ARCH }}.tar.gz -C tmp_dist/ php
+          tar -czf dist/php-$PHPVER-micro-${{ steps.process-env.outputs.OS }}-${{ steps.process-env.outputs.ARCH }}.tar.gz -C tmp_dist/ micro.sfx
           tar -czf dist/php-$PHPVER-fpm-${{ steps.process-env.outputs.OS }}-${{ steps.process-env.outputs.ARCH }}.tar.gz -C tmp_dist/ php-fpm
           if [ "${{ matrix.php-version }}" == "8.4" ] && [ "${{ matrix.runner }}" == "ubuntu-latest" ]; then
             cp -r buildroot/license dist/
             cp buildroot/build-extensions.json dist/
             cp buildroot/build-libraries.json dist/
-            echo "# Note\n\nCurrent distribution uses extensions:\n\n${{ steps.process-env.outputs.EXTENSIONS }}\n\nUsing compile command:\n\n  bin/spc build --build-cli --build-fpm ${{ steps.process-env.outputs.EXTENSIONS }} --debug --with-upx-pack" > dist/README.txt
+            echo "# Note\n\nCurrent distribution uses extensions:\n\n${{ steps.process-env.outputs.EXTENSIONS }}\n\nUsing compile command:\n\n  bin/spc build --build-cli --build-micro --build-fpm ${{ steps.process-env.outputs.EXTENSIONS }} --debug --with-upx-pack" > dist/README.txt
           fi
+
+      # - name: "Deploy to self-hosted OSS"
+      #   uses: static-php/upload-s3-action@v1.0.0
+      #   with:
+      #     aws_key_id: ${{ secrets.AWS_KEY_ID }}
+      #     aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     aws_bucket: ${{ secrets.AWS_BUCKET }}
+      #     source_dir: "dist/"
+      #     destination_dir: static-php-cli/${{ matrix.combination }}/
+      #     endpoint: ${{ secrets.AWS_ENDPOINT }}
 
       - name: "Upload Artifact"
         uses: actions/upload-artifact@v4
@@ -141,3 +183,5 @@ jobs:
           path: |
             tmp_dist/php
             tmp_dist/php-fpm
+            tmp_dist/micro.sfx
+          if-no-files-found: error
