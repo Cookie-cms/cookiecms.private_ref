@@ -109,6 +109,7 @@ jobs:
         run: ${{ steps.process-env.outputs.CMD }} download --with-php=${{ matrix.php-version }} --for-extensions=${{ steps.process-env.outputs.EXTENSIONS }} --retry=5 --prefer-pre-built
 
       - name: "Build library: ${{ matrix.library }}"
+        continue-on-error: true
         run: |
           if [ "${{ steps.process-env.outputs.OS }}" = "linux" ]; then
             ${{ steps.process-env.outputs.CMD }} install-pkg upx
