@@ -28,6 +28,8 @@ jobs:
         run: |
           cd src
           composer install
+          ls
+          tree
 
       # Step 4: Clone and set up YAK Pro PHP Obfuscator
       - name: Install YAK Pro PHP Obfuscator
