@@ -1,180 +1,51 @@
-name: Build Self-Hosted PHP Binary (Unix)
+name: Build and Obfuscate
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  build-release-artifacts:
-    name: "Build ${{ matrix.php-version }}-${{ matrix.combination }} on ${{ matrix.runner }}"
-    runs-on: ${{ matrix.runner }}
-    strategy:
-      fail-fast: false
-      matrix:
-        php-version:
-          - "8.4"
-        runner:
-          - "ubuntu-latest"
-        combination:
-          - common
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: "Process env string"
-        id: process-env
-        shell: bash
+      # Step 1: Checkout repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up PHP environment
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v3
+        with:
+          php-version: 8.1
+
+      # Step 3: Install Composer dependencies from /src/
+      - name: Install Composer Dependencies
         run: |
-          case "${{ matrix.combination }}" in
-            minimal) 
-              echo "EXTENSIONS=pcntl,posix,mbstring,tokenizer,phar" >> "$GITHUB_OUTPUT"
-              echo "DEPLOY_TARGET=${{ secrets.DEPLOY_SERVER_TARGET_MINIMAL }}" >> "$GITHUB_OUTPUT"
-              ;;
-            common)  
-              echo "EXTENSIONS=bcmath,bz2,calendar,ctype,curl,dom,exif,fileinfo,filter,ftp,gd,gmp,iconv,xml,mbstring,mbregex,mysqlnd,openssl,pcntl,pdo,pdo_mysql,pdo_sqlite,phar,posix,redis,session,simplexml,soap,sockets,sqlite3,tokenizer,xmlwriter,xmlreader,zlib,zip" >> "$GITHUB_OUTPUT"
-              echo "DEPLOY_TARGET=${{ secrets.DEPLOY_SERVER_TARGET }}" >> "$GITHUB_OUTPUT"
-              ;;
-            bulk)    
-              echo "EXTENSIONS=apcu,bcmath,bz2,calendar,ctype,curl,dba,dom,event,exif,fileinfo,filter,ftp,gd,gmp,iconv,imagick,imap,intl,mbregex,mbstring,mysqli,mysqlnd,opcache,openssl,pcntl,pdo,pdo_mysql,pgsql,phar,posix,protobuf,readline,redis,session,shmop,simplexml,soap,sockets,sodium,sqlite3,swoole,swoole-hook-mysql,swoole-hook-pgsql,swoole-hook-sqlite,sysvmsg,sysvsem,sysvshm,tokenizer,xml,xmlreader,xmlwriter,xsl,zip,zlib" >> "$GITHUB_OUTPUT"
-              echo "DEPLOY_TARGET=${{ secrets.DEPLOY_SERVER_TARGET_BULK }}" >> "$GITHUB_OUTPUT"
-              ;;
-          esac
-          
-          case "${{ matrix.runner }}" in
-            ubuntu-latest)
-              echo "OS=linux" >> "$GITHUB_OUTPUT"
-              echo "ARCH=x86_64" >> "$GITHUB_OUTPUT"
-              echo "CMD=bin/spc-alpine-docker" >> "$GITHUB_OUTPUT"
-              ;;
-            ubuntu-20.04)
-              echo "OS=linux" >> "$GITHUB_OUTPUT"
-              echo "ARCH=aarch64" >> "$GITHUB_OUTPUT"
-              echo CMD="SPC_USE_ARCH=aarch64 bin/spc-alpine-docker" >> "$GITHUB_OUTPUT"
-              ;;
-            windows-2019)
-              echo "OS=windows" >> "$GITHUB_OUTPUT"
-              echo "ARCH=x86_64" >> "$GITHUB_OUTPUT"
-              echo "CMD=bin/spc" >> "$GITHUB_OUTPUT"
-              ;;
-            macos-13)
-              echo "OS=macos" >> "$GITHUB_OUTPUT"
-              echo "ARCH=x86_64" >> "$GITHUB_OUTPUT"
-              echo "CMD=bin/spc" >> "$GITHUB_OUTPUT"
-              ;;
-            macos-14)
-              echo "OS=macos" >> "$GITHUB_OUTPUT"
-              echo "ARCH=aarch64" >> "$GITHUB_OUTPUT"
-              echo "CMD=bin/spc" >> "$GITHUB_OUTPUT"
-              ;;
-          esac
-      
-      - name: "Checkout remote"
-        if: github.repository != 'crazywhalecc/static-php-cli'
-        uses: actions/checkout@v4
-        with:
-          repository: crazywhalecc/static-php-cli
-          ref: main
+          cd src
+          composer install
 
-      - name: "Setup PHP"
-        if: matrix.runner != 'ubuntu-20.04'
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 8.2
-          tools: pecl, composer
-          extensions: curl, openssl, mbstring
-          ini-values: memory_limit=-1
-
-      - name: "Cache composer packages"
-        id: composer-cache
-        uses: actions/cache@v4
-        with:
-          path: vendor
-          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-php
-
-      # Cache downloaded source
-      - id: cache-download
-        uses: actions/cache@v4
-        with:
-          path: downloads
-          key: pack-lib-dependencies-${{ matrix.combination }}-${{ matrix.php-version }}-${{ matrix.runner }}
-
-      - name: "Install Dependencies"
-        if: matrix.runner != 'ubuntu-20.04'
-        run: composer update -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --no-dev
-
-      - run: ${{ steps.process-env.outputs.CMD }} doctor --auto-fix
-
-      # If there's no dependencies cache, fetch sources
-      - name: "Download sources"
-        env:
-          GITHUB_TOKEN: ${{ secrets.S_GITHUB_TOKEN }}
-        run: ${{ steps.process-env.outputs.CMD }} download --with-php=${{ matrix.php-version }} --for-extensions=${{ steps.process-env.outputs.EXTENSIONS }} --retry=5 --prefer-pre-built
-
-      - name: "Build library: ${{ matrix.library }}"
-        continue-on-error: true
+      # Step 4: Clone and set up YAK Pro PHP Obfuscator
+      - name: Install YAK Pro PHP Obfuscator
         run: |
-          if [ "${{ steps.process-env.outputs.OS }}" = "linux" ]; then
-            ${{ steps.process-env.outputs.CMD }} install-pkg upx
-            if [ "${{ steps.process-env.outputs.ARCH }}" = "x86_64" ]; then
-              UPX=--with-upx-pack
-            fi
-          fi
-      
-          # Сборка только FPM (без микробилда)
-          ${{ steps.process-env.outputs.CMD }} build --build-cli --build-fpm ${{ steps.process-env.outputs.EXTENSIONS }} --debug $UPX
-      
-          # Копируем только FPM и PHP
-          mkdir -p tmp_dist/
-          cp buildroot/bin/php tmp_dist/
-          cp buildroot/bin/php-fpm tmp_dist/
-      
-          # UPX для архитектуры linux-aarch64
-          if [ "${{ steps.process-env.outputs.OS }}-${{ steps.process-env.outputs.ARCH }}" = "linux-aarch64" ]; then
-            mkdir -p upx-x86_64
-            cd upx-x86_64
-            curl -#fSL -o upx.txz https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-amd64_linux.tar.xz
-            tar -xf upx.txz --strip-components 1
-            ./upx --best ../tmp_dist/php
-            ./upx --best ../tmp_dist/php-fpm
-            cd ..
-          fi
-      
-          # Получаем версию PHP
-          PHPVER=$(cat source/php-src/main/php_version.h | grep "PHP_VERSION " | awk -F\" '{print $2}')
-      
-          # Создаем директорию для вывода
-          if [ ! -d "dist" ]; then
-            mkdir dist/
-          fi
-          sudo chmod -R 777 dist
-      
-          # Создаем архивы только для php и php-fpm
-          tar -czf dist/php-$PHPVER-cli-${{ steps.process-env.outputs.OS }}-${{ steps.process-env.outputs.ARCH }}.tar.gz -C tmp_dist/ php
-          tar -czf dist/php-$PHPVER-fpm-${{ steps.process-env.outputs.OS }}-${{ steps.process-env.outputs.ARCH }}.tar.gz -C tmp_dist/ php-fpm
-      
-          # Дополнительные файлы только для определенного случая
-          if [ "${{ matrix.php-version }}" == "8.4" ] && [ "${{ matrix.runner }}" == "ubuntu-latest" ]; then
-            cp -r buildroot/license dist/
-            cp buildroot/build-extensions.json dist/
-            cp buildroot/build-libraries.json dist/
-            echo "# Note\n\nCurrent distribution uses extensions:\n\n${{ steps.process-env.outputs.EXTENSIONS }}\n\nUsing compile command:\n\n  bin/spc build --build-cli --build-fpm ${{ steps.process-env.outputs.EXTENSIONS }} --debug --with-upx-pack" > dist/README.txt
-          fi
+          git clone https://github.com/pk-fr/yakpro-po.git
+          cd yakpro-po
+          composer install
 
-      
-      # - name: "Deploy to self-hosted OSS"
-      #   uses: static-php/upload-s3-action@v1.0.0
-      #   with:
-      #     aws_key_id: ${{ secrets.AWS_KEY_ID }}
-      #     aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     aws_bucket: ${{ secrets.AWS_BUCKET }}
-      #     source_dir: "dist/"
-      #     destination_dir: static-php-cli/${{ matrix.combination }}/
-      #     endpoint: ${{ secrets.AWS_ENDPOINT }}
+      # Step 5: Configure and run the obfuscator
+      - name: Obfuscate Source Code
+        run: |
+          cp yakpro-po/yakpro-po.cnf.default yakpro-po/yakpro-po.cnf
+          sed -i 's|source_directory:.*|source_directory: "./src"|' yakpro-po/yakpro-po.cnf
+          sed -i 's|target_directory:.*|target_directory: "./dist"|' yakpro-po/yakpro-po.cnf
+          php yakpro-po/yakpro-po.php
 
-      - name: "Upload Artifact"
-        uses: actions/upload-artifact@v4
-        with:
-          name: php-${{ matrix.php-version }}-${{ matrix.combination }}-${{ steps.process-env.outputs.OS }}-${{ steps.process-env.outputs.ARCH }}
-          path: |
-            tmp_dist/php
-            tmp_dist/php-fpm
-            tmp_dist/micro.sfx
-          if-no-files-found: error
+      # Step 6: Deploy obfuscated code
+      - name: Deploy Obfuscated Code
+        run: |
+          echo "Deploying obfuscated code..."
+          # Add your deployment commands here
