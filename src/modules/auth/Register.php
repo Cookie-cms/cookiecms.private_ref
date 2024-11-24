@@ -39,19 +39,13 @@ if (isset($data['mail']) && isset($data['password'])) {
 
     // Check if the email is valid
     if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-        echo json_encode([
-            'error' => true,
-            'msg' => 'Invalid email format'
-        ]);
+        return response(true, 400, null, "Invalid email format", null);
         exit();
     }
 
     // Check if the password meets the criteria (e.g., min 8 characters)
     if (strlen($password) < 8) {
-        echo json_encode([
-            'error' => true,
-            'msg' => 'Password must be at least 8 characters'
-        ]);
+        return response(true, 400, null, "Password must be at least 8 characters", null);
         exit();
     }
 
@@ -63,10 +57,7 @@ if (isset($data['mail']) && isset($data['password'])) {
         $existingUser = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($existingUser) {
-            echo json_encode([
-                'error' => true,
-                'msg' => 'Email is already registered'
-            ]);
+            return response(true, 409,null, "Email is already registered.", null);
             exit();
         }
 
