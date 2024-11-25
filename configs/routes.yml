@@ -8,3 +8,6 @@
 
 /api/home: home/Home.php
 /api/createuser: home/CreateUser.php
+
+
+/debug/logs: /debug/logs.php

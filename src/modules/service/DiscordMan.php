@@ -1,7 +1,7 @@
 <?php
 // Include necessary files
-require_once $_SERVER['DOCUMENT_ROOT'] . "/define.php"; // Define your variables like client_id, secret_id, etc.
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/mysql.php"; // Assuming this connects to your database
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php"; // Define your variables like client_id, secret_id, etc.
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/mysql.php"; // Assuming this connects to your database
 require_once $_SERVER['DOCUMENT_ROOT'] . "/modules/auth/LoginDiscord.php"; // Assuming this connects to your database
 // require_once $_SERVER['DOCUMENT_ROOT'] . "/auth/RegisterDiscord.php"; // Assuming this connects to your database
 
@@ -35,7 +35,7 @@ if (isset($_GET['code'])) {
         // If the user exists with the matching Discord ID and email
         return LoginDiscord($result['mail']);
     } else {
-        responseWithError("Not realised");
+        // responseWithError("Not realised");
     }
 }
 ?>

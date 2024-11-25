@@ -1,0 +1,244 @@
+[2024-11-25 17:00:47] ===== New Request =====
+[2024-11-25 17:00:47] Request: POST /api/auth/login
+[2024-11-25 17:00:47] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"fc4741ad-fa67-4eea-9505-bd1ff2d7065e","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:00:47] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:00:51] ===== New Request =====
+[2024-11-25 17:00:51] Request: POST /api/auth/login
+[2024-11-25 17:00:51] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"88126abf-524f-478d-9cfa-5e0bb4160b67","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:00:51] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:01:26] ===== New Request =====
+[2024-11-25 17:01:26] Request: POST /api/auth/login
+[2024-11-25 17:01:26] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"e6c74ebc-93cf-4903-a7fe-7d65ad0e9df2","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:01:26] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:04:08] ===== New Request =====
+[2024-11-25 17:04:08] Request: POST /api/auth/login
+[2024-11-25 17:04:08] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"63ef008e-2e8b-4f42-8353-9819023dca3d","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:04:08] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:04:08] An error occurred: File not found: /applicationconfigs/config.yml
+[2024-11-25 17:04:17] ===== New Request =====
+[2024-11-25 17:04:17] Request: POST /api/auth/login
+[2024-11-25 17:04:17] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"e4270b4f-b1ea-428c-960d-33ac925f8665","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:04:17] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:04:17] An error occurred: File not found: /applicationconfigs/config.yml
+[2024-11-25 17:08:30] ===== New Request =====
+[2024-11-25 17:08:30] Request: POST /api/auth/login
+[2024-11-25 17:08:30] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"fc5e4450-631c-493d-a59e-032ce136305c","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:08:30] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:08:30] An error occurred: File not found: /applicationconfigs/config.yml
+[2024-11-25 17:09:47] ===== New Request =====
+[2024-11-25 17:09:47] Request: POST /api/auth/login
+[2024-11-25 17:09:47] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"eb5885d6-a216-4686-aa8b-58c0d9b9704d","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:09:47] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:09:47] An error occurred: File not found: /applicationconfigs/config.yml
+[2024-11-25 17:10:25] ===== New Request =====
+[2024-11-25 17:10:25] Request: POST /api/auth/login
+[2024-11-25 17:10:25] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"8b6e7fda-a27a-4268-947a-d86c822b095e","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:10:25] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:10:25] An error occurred: File not found: /applicationconfigs/config.yml
+[2024-11-25 17:10:43] ===== New Request =====
+[2024-11-25 17:10:43] Request: POST /api/auth/login
+[2024-11-25 17:10:43] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"ba105c3f-2dd2-4713-9a08-0ea7774398d5","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:10:43] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:10:43] An error occurred: File not found: /applicationconfigs/config.yml
+[2024-11-25 17:10:57] ===== New Request =====
+[2024-11-25 17:10:57] Request: POST /api/auth/login
+[2024-11-25 17:10:57] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"7fbbe43f-a5e3-49e3-81fb-64cb284328fe","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:10:57] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:11:11] ===== New Request =====
+[2024-11-25 17:11:11] Request: POST /api/auth/login
+[2024-11-25 17:11:11] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"7b43711e-c3f0-4d8d-931f-228f7a6caf51","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:11:11] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:28:12] ===== New Request =====
+[2024-11-25 17:28:12] Request: POST /api/auth/login
+[2024-11-25 17:28:12] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"d6c5d09b-7ca0-494b-b3a8-6aa280de8e7b","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:28:12] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:28:40] ===== New Request =====
+[2024-11-25 17:28:40] Request: POST /api/auth/login
+[2024-11-25 17:28:40] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"64526782-f635-4cf2-9d2d-8a3d0e920b66","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:28:40] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:29:22] ===== New Request =====
+[2024-11-25 17:29:22] Request: POST /api/auth/login
+[2024-11-25 17:29:22] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"59443265-e88e-4bf6-a963-dbfa0c51c8ec","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:29:22] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:29:41] ===== New Request =====
+[2024-11-25 17:29:41] Request: POST /api/auth/login
+[2024-11-25 17:29:41] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"db5c5766-b628-4e9a-87f6-badb78a8a37f","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:29:41] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:30:55] ===== New Request =====
+[2024-11-25 17:30:55] Request: POST /api/auth/login
+[2024-11-25 17:30:55] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"251ff07c-27e6-457c-a478-4433e4b6a172","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:30:55] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:31:03] ===== New Request =====
+[2024-11-25 17:31:03] Request: POST /api/auth/login
+[2024-11-25 17:31:03] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"0d0bc5a5-5987-4645-a43a-74d9a76066e6","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:31:03] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:31:20] ===== New Request =====
+[2024-11-25 17:31:20] Request: POST /api/auth/login
+[2024-11-25 17:31:20] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"ea0551b8-e5e3-444b-bf76-7c16384fed8e","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:31:20] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:33:41] ===== New Request =====
+[2024-11-25 17:33:41] Request: POST /api/auth/login
+[2024-11-25 17:33:41] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"2a49a07b-af7e-4b95-917d-31a78556adc7","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:33:41] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:33:41] An error occurred: File not found: /applicationconfigs/config.yml
+[2024-11-25 17:34:01] ===== New Request =====
+[2024-11-25 17:34:01] Request: POST /api/auth/login
+[2024-11-25 17:34:01] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"8a008fef-dbb0-4951-93e1-957a0b22b96e","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:34:01] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:34:01] Routes loaded successfully.
+[2024-11-25 17:34:01] Sanitized Request URI: /api/auth/login
+[2024-11-25 17:34:01] Route not defined for: /api/auth/login
+[2024-11-25 17:39:44] ===== New Request =====
+[2024-11-25 17:39:44] Request: POST /api/auth/login
+[2024-11-25 17:39:44] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"8098f857-0440-42e9-a205-7fc4eb4b01b0","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:39:44] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:39:44] Routes loaded successfully.
+[2024-11-25 17:39:44] Sanitized Request URI: /api/auth/login
+[2024-11-25 17:39:44] Route not defined for: /api/auth/login
+[2024-11-25 17:40:47] ===== New Request =====
+[2024-11-25 17:40:47] Request: POST /api/auth/login
+[2024-11-25 17:40:47] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"dffe5e3f-b727-4e78-9a27-49494b0e5eaf","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:40:47] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:40:47] Routes loaded successfully.
+[2024-11-25 17:40:47] Sanitized Request URI: /api/auth/login
+[2024-11-25 17:40:47] Module path: /application/src/modules/auth/Login.php
+[2024-11-25 17:40:47] Module file found. Including: /application/src/modules/auth/Login.php
+[2024-11-25 17:41:05] ===== New Request =====
+[2024-11-25 17:41:05] Request: POST /api/auth/login
+[2024-11-25 17:41:05] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"161c8b45-3b4d-421b-86fd-4a5243e9f4b9","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:41:05] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:41:05] Routes loaded successfully.
+[2024-11-25 17:41:05] Sanitized Request URI: /api/auth/login
+[2024-11-25 17:41:05] Module path: /application/src/modules/auth/Login.php
+[2024-11-25 17:41:05] Module file found. Including: /application/src/modules/auth/Login.php
+[2024-11-25 17:41:35] ===== New Request =====
+[2024-11-25 17:41:35] Request: POST /api/auth/login
+[2024-11-25 17:41:35] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"67c8bfdf-7cce-4b3e-8c38-31820e778950","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:41:35] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:41:35] Routes loaded successfully.
+[2024-11-25 17:41:35] Sanitized Request URI: /api/auth/login
+[2024-11-25 17:41:35] Module path: /application/src/modules/auth/Login.php
+[2024-11-25 17:41:35] Module file found. Including: /application/src/modules/auth/Login.php
+[2024-11-25 17:41:35] Request finished.
+[2024-11-25 17:42:43] ===== New Request =====
+[2024-11-25 17:42:43] Request: POST /api/auth/login
+[2024-11-25 17:42:43] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"f2dc2a21-10b5-4ddf-80a8-4ee30ffaf5ce","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 17:42:43] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 17:42:43] Routes loaded successfully.
+[2024-11-25 17:42:43] Sanitized Request URI: /api/auth/login
+[2024-11-25 17:42:43] Module path: /application/src/modules/auth/Login.php
+[2024-11-25 17:42:43] Module file found. Including: /application/src/modules/auth/Login.php
+[2024-11-25 17:42:43] Request finished.
+[2024-11-25 18:22:16] ===== New Request =====
+[2024-11-25 18:22:16] Request: POST /api/auth/login
+[2024-11-25 18:22:16] Request Headers: {"Content-Length":"43","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"1cb7327c-068b-4a79-b1f0-cdb54eeaefe3","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 18:22:16] Request Body: {
+    "username": "",
+    "password": ""
+}
+
+[2024-11-25 18:22:16] Routes loaded successfully.
+[2024-11-25 18:22:16] Sanitized Request URI: /api/auth/login
+[2024-11-25 18:22:16] Module path: /application/src/modules/auth/Login.php
+[2024-11-25 18:22:16] Module file found. Including: /application/src/modules/auth/Login.php
+[2024-11-25 18:22:16] Request finished.
