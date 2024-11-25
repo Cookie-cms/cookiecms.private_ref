@@ -20,7 +20,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/yamlReader.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/tools.php";
 // var_dump($a);
 
-// define('mysql',$_SERVER['DOCUMENT_ROOT']. "/src/inc/mysql.php")
+define('__mysql__',$_SERVER['DOCUMENT_ROOT']. "/src/inc/mysql.php");
+// define('__tools__',$_SERVER['DOCUMENT_ROOT']. "/src/inc/tools.php");
+// define('__yamlReader__',$_SERVER['DOCUMENT_ROOT']. "/src/inc/yamlReader.php");
+
 
 
 // /**

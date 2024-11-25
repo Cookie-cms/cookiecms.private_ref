@@ -36,9 +36,11 @@ function log_request_details() {
 }
 
 // Skip logging for /debug/ requests
-if (strpos($_SERVER['REQUEST_URI'], '/debug/') !== false) {
-    // If request is for /debug/, skip the logging and exit early
-    exit();
+$isDebugRequest = strpos($_SERVER['REQUEST_URI'], '/debug/') !== false;
+
+if (!$isDebugRequest) {
+    log_message("===== New Request =====", 1);
+    log_request_details();
 }
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
@@ -46,39 +48,54 @@ $configPath = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml'; // Two levels u
 $routesPath = $_SERVER['DOCUMENT_ROOT'] . '/configs/routes.yml'; // Two levels up
 
 try {
-    log_message("===== New Request =====", 1);
-    log_request_details();
+    if (!$isDebugRequest) {
+        log_message("Routes loaded successfully.", 1);
+    }
 
     // Load the routes from the YAML config
     $routes = read_yaml($routesPath);
-    log_message("Routes loaded successfully.", 1);
 
     // Get and sanitize the current request URI
     $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $requestUri = filter_var($requestUri, FILTER_SANITIZE_URL);
-    log_message("Sanitized Request URI: $requestUri", 1);
+    
+    if (!$isDebugRequest) {
+        log_message("Sanitized Request URI: $requestUri", 1);
+    }
 
     if (empty($routes[$requestUri])) {
-        log_message("Route not defined for: $requestUri", 1);
+        if (!$isDebugRequest) {
+            log_message("Route not defined for: $requestUri", 1);
+        }
         response(true, 404, null, "Route not defined", null);
     } else {
         $modulePath = $_SERVER['DOCUMENT_ROOT'] . '/src/modules/' . $routes[$requestUri];
-        log_message("Module path: $modulePath", 1);
+        if (!$isDebugRequest) {
+            log_message("Module path: $modulePath", 1);
+        }
 
         // Check if the corresponding file exists and include it
         if (file_exists($modulePath)) {
-            log_message("Module file found. Including: $modulePath", 1);
+            if (!$isDebugRequest) {
+                log_message("Module file found. Including: $modulePath", 1);
+            }
             include $modulePath;
         } else {
-            log_message("Module file not found: $modulePath", 1);
+            if (!$isDebugRequest) {
+                log_message("Module file not found: $modulePath", 1);
+            }
             response(true, 400, null, "Module file not found", null);
         }
     }
 } catch (Exception $e) {
     $msg = "An error occurred: " . $e->getMessage();
-    log_message($msg, 1);
+    if (!$isDebugRequest) {
+        log_message($msg, 1);
+    }
     response(true, 400, $msg, null);    
 }
 
-log_message("Request finished.", 1);
+if (!$isDebugRequest) {
+    log_message("Request finished.", 1);
+}
 ?>

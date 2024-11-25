@@ -2,8 +2,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', true);
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/mysql.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
+
+require_once __mysql__;
+// require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
 $file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
 
 
