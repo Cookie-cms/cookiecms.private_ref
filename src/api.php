@@ -35,6 +35,11 @@ function log_request_details() {
     log_message("Request Body: " . $body, 2);
 }
 
+// Skip logging for /debug/ requests
+if (strpos($_SERVER['REQUEST_URI'], '/debug/') !== false) {
+    // If request is for /debug/, skip the logging and exit early
+    exit();
+}
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
 $configPath = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml'; // Two levels up
