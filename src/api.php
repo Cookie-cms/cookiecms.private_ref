@@ -1,36 +1,79 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, DELETE, PUT");
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+
 error_reporting(E_ALL);
 ini_set('display_errors', true);
 header('Content-Type: application/json; charset=utf-8');
 
-require $_SERVER['DOCUMENT_ROOT'] . "/define.php";
+// Define log levels: 0 (none), 1 (standard), 2 (full)
+define('LOG_LEVEL', 2); // Change to 0, 1, or 2 as needed
+$logFile = $_SERVER['DOCUMENT_ROOT'] . '/logs/app.log';
 
-$configPath = $_SERVER['DOCUMENT_ROOT'] . '/configs/routes.yml';
+// Log function based on level
+function log_message($message, $level = 1) {
+    global $logFile;
+
+    if (LOG_LEVEL >= $level) {
+        $date = date('Y-m-d H:i:s');
+        file_put_contents($logFile, "[$date] $message\n", FILE_APPEND);
+    }
+}
+
+// Log detailed request information (used for level 2)
+function log_request_details() {
+    if (LOG_LEVEL < 2) return;
+
+    $method = $_SERVER['REQUEST_METHOD']; // HTTP Method (e.g., GET, POST)
+    $uri = $_SERVER['REQUEST_URI'];      // Full requested URI
+    $headers = getallheaders();
+    $body = file_get_contents('php://input');
+
+    log_message("Request: $method $uri", 2);
+    log_message("Request Headers: " . json_encode($headers), 2);
+    log_message("Request Body: " . $body, 2);
+}
+
+
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
+$configPath = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml'; // Two levels up
+$routesPath = $_SERVER['DOCUMENT_ROOT'] . '/configs/routes.yml'; // Two levels up
 
 try {
+    log_message("===== New Request =====", 1);
+    log_request_details();
+
     // Load the routes from the YAML config
-    $routes = read_yaml($configPath);
+    $routes = read_yaml($routesPath);
+    log_message("Routes loaded successfully.", 1);
 
     // Get and sanitize the current request URI
     $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $requestUri = filter_var($requestUri, FILTER_SANITIZE_URL);
+    log_message("Sanitized Request URI: $requestUri", 1);
 
     if (empty($routes[$requestUri])) {
-            response(true, 404, null, "Route not defined", null);
-        } else {
-        $modulePath = $_SERVER['DOCUMENT_ROOT'] . '/modules/' . $routes[$requestUri];
+        log_message("Route not defined for: $requestUri", 1);
+        response(true, 404, null, "Route not defined", null);
+    } else {
+        $modulePath = $_SERVER['DOCUMENT_ROOT'] . '/src/modules/' . $routes[$requestUri];
+        log_message("Module path: $modulePath", 1);
 
         // Check if the corresponding file exists and include it
         if (file_exists($modulePath)) {
+            log_message("Module file found. Including: $modulePath", 1);
             include $modulePath;
         } else {
+            log_message("Module file not found: $modulePath", 1);
             response(true, 400, null, "Module file not found", null);
         }
     }
 } catch (Exception $e) {
-    // responseWithError("An error occurred", ['error' => $e->getMessage()]);
     $msg = "An error occurred: " . $e->getMessage();
+    log_message($msg, 1);
     response(true, 400, $msg, null);    
 }
 
+log_message("Request finished.", 1);
 ?>

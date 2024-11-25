@@ -1,7 +1,7 @@
 <?php
 
 // require_once $_SERVER['DOCUMENT_ROOT'] . "/define.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php";
+require $_SERVER['DOCUMENT_ROOT'] ."/src/vendor/autoload.php";
 use Symfony\Component\Yaml\Yaml;
 
 function read_yaml($file_path) {

@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/define.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
 use \Firebase\JWT\JWT;
 use \Firebase\JWT\Key;
 

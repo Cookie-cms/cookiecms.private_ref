@@ -6,13 +6,17 @@
  */
 
 # Starting the script without session (no session required)
-require_once $_SERVER['DOCUMENT_ROOT'] . "/define.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
+// Заменить $file_path на $configPath
+$configPath = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
+if (file_exists($configPath)) {
+    $yaml_data = read_yaml($configPath);
+} else {
+    throw new Exception("Configuration file not found: $configPath");
+}
 
-$file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
-$yaml_data = read_yaml($file_path);  // Assuming read_yaml is a valid function
+// Далее вы можете работать с $yaml_data...
 $discord = $yaml_data['discord'];
-
-// Access specific values
 $client_id = $discord['client_id'];
 $secret_id = $discord['secret_id'];
 $scopes = $discord['scopes'];

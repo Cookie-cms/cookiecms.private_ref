@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/yamlReader.php";
 
 $file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
 $yaml_data = read_yaml($file_path);
