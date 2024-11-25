@@ -242,3 +242,28 @@
 [2024-11-25 18:22:16] Module path: /application/src/modules/auth/Login.php
 [2024-11-25 18:22:16] Module file found. Including: /application/src/modules/auth/Login.php
 [2024-11-25 18:22:16] Request finished.
+[2024-11-25 18:23:53] ===== New Request =====
+[2024-11-25 18:23:53] Request: GET /api/debug/logs
+[2024-11-25 18:23:53] Request Headers: {"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"7ee13a3d-a8b2-4df7-be79-58810939f2fb","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Length":"","Content-Type":""}
+[2024-11-25 18:23:53] Request Body: 
+[2024-11-25 18:23:53] Routes loaded successfully.
+[2024-11-25 18:23:53] Sanitized Request URI: /api/debug/logs
+[2024-11-25 18:23:53] Route not defined for: /api/debug/logs
+[2024-11-25 18:24:27] ===== New Request =====
+[2024-11-25 18:24:27] Request: GET /api/debug/logs
+[2024-11-25 18:24:27] Request Headers: {"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"a3fbf978-ed61-486d-8c63-0edb23e2acc8","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Length":"","Content-Type":""}
+[2024-11-25 18:24:27] Request Body: 
+[2024-11-25 18:24:27] Routes loaded successfully.
+[2024-11-25 18:24:27] Sanitized Request URI: /api/debug/logs
+[2024-11-25 18:24:27] Module path: /application/src/modules//debug/logs.php
+[2024-11-25 18:24:27] Module file found. Including: /application/src/modules//debug/logs.php
+[2024-11-25 18:24:27] Request finished.
+[2024-11-25 18:28:07] ===== New Request =====
+[2024-11-25 18:28:07] Request: GET /api/debug/logs
+[2024-11-25 18:28:07] Request Headers: {"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"26187cbb-efe6-41ed-9e83-1d64da76c362","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Length":"","Content-Type":""}
+[2024-11-25 18:28:07] Request Body: 
+[2024-11-25 18:28:07] Routes loaded successfully.
+[2024-11-25 18:28:07] Sanitized Request URI: /api/debug/logs
+[2024-11-25 18:28:07] Module path: /application/src/modules//debug/logs.php
+[2024-11-25 18:28:07] Module file found. Including: /application/src/modules//debug/logs.php
+[2024-11-25 18:28:07] Request finished.

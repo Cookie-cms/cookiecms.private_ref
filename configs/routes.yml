@@ -10,4 +10,4 @@
 /api/createuser: home/CreateUser.php
 
 
-/debug/logs: /debug/logs.php
+/api/debug/logs: /debug/logs.php
