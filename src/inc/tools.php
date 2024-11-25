@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/define.php";
 use \Firebase\JWT\JWT;
 use \Firebase\JWT\Key;
 
@@ -63,8 +63,10 @@ function generateUUIDv4() {
     );
 }
 
-function response($message, $status = false, $statusCode = 200, $url = null, $data = null) {
+
+function response($status=false,$statusCode=200, $url=null,  $message, $data = null) {
     // Set the correct header
+    header('Content-Type: application/json');
 
     // Prepare the response array
     $response = [
