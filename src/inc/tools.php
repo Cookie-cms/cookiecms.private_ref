@@ -63,8 +63,7 @@ function generateUUIDv4() {
     );
 }
 
-
-function response($status = false, $statusCode = 200, $url = null, $message, $data = null) {
+function response($message, $status = false, $statusCode = 200, $url = null, $data = null) {
     // Set the correct header
 
     // Prepare the response array
