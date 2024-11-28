@@ -1,8 +1,8 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/yamlReader.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
 
-$file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
+$file_path = __config__;
 $yaml_data = read_yaml($file_path);
 
 // echo($file_path);

@@ -8,7 +8,7 @@
 # Starting the script without session (no session required)
 require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
 // Заменить $file_path на $configPath
-$configPath = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
+$configPath = __config__;
 if (file_exists($configPath)) {
     $yaml_data = read_yaml($configPath);
 } else {

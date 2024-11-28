@@ -47,10 +47,7 @@ function isJwtExpiredOrBlacklisted($jwt, $pdo, $securecode) {
 
 function generateUUIDv4() {
     $data = random_bytes(16);
-
-    // Set version to 0100 (UUID version 4)
     $data[6] = chr((ord($data[6]) & 0x0f) | 0x40);
-    // Set variant to 10xx
     $data[8] = chr((ord($data[8]) & 0x3f) | 0x80);
 
     return sprintf(
@@ -65,20 +62,15 @@ function generateUUIDv4() {
 
 
 function response($status = false, $statusCode = 200, $url = null, $message, $data = null) {
-    // Set the correct header
 
-    // Prepare the response array
     $response = [
-        "error" => ($status),  // If status code >= 400, set error as true
+        "error" => ($status),
         "msg" => $message,
         "url" => $url,
         "data" => $data
     ];
 
-    // Set the HTTP status code
     http_response_code($statusCode);
-
-    // Output the response as JSON
     echo json_encode($response);
     exit;
 }

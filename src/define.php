@@ -21,28 +21,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/tools.php";
 // var_dump($a);
 
 define('__mysql__',$_SERVER['DOCUMENT_ROOT']. "/src/inc/mysql.php");
+define('__config__',$_SERVER['DOCUMENT_ROOT']. "/configs/config.yml");
 // define('__tools__',$_SERVER['DOCUMENT_ROOT']. "/src/inc/tools.php");
 // define('__yamlReader__',$_SERVER['DOCUMENT_ROOT']. "/src/inc/yamlReader.php");
 
 
 
-// /**
-//  * Outputs a JSON-encoded error response.
-//  *
-//  * @param string $message - Error message to display.
-//  * @param string|null $details - Additional details (optional).
-//  */
-// function responseWithError(string $message, array $details = []): void {
-//     $errorResponse = [
-//         'status' => 'error',
-//         'msg' => $message,
-//     ];
-    
-//     // Если есть дополнительные данные, добавляем их в ответ
-//     if (!empty($details)) {
-//         $errorResponse['datad'] = $details;
-//     }
-
-//     // Возвращаем JSON-ответ
-//     echo json_encode($errorResponse, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-// }

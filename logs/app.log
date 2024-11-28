@@ -7,3 +7,96 @@
 [2024-11-25 19:29:40] Module path: /application/src/modules//debug/logs.php
 [2024-11-25 19:29:40] Module file found. Including: /application/src/modules//debug/logs.php
 [2024-11-25 19:29:40] Request finished.
+[2024-11-25 23:52:33] ===== New Request =====
+[2024-11-25 23:52:33] Request: POST /api/auth/register
+[2024-11-25 23:52:33] Request Headers: {"Content-Length":"76","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"e198141f-11ad-47f0-810d-9dc9f7a0a0be","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 23:52:33] Request Body: {
+    "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
+    "password": "s3"
+}
+[2024-11-25 23:52:33] Routes loaded successfully.
+[2024-11-25 23:52:33] Sanitized Request URI: /api/auth/register
+[2024-11-25 23:52:33] Module path: /application/src/modules/auth/Register.php
+[2024-11-25 23:52:33] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-25 23:52:33] An error occurred: File not found: /application/configs/configs.yml
+[2024-11-25 23:52:33] Request finished.
+[2024-11-25 23:52:42] ===== New Request =====
+[2024-11-25 23:52:42] Request: POST /api/auth/register
+[2024-11-25 23:52:42] Request Headers: {"Content-Length":"76","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"c9e956c4-028d-4348-a37e-fbd0e5016bd8","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 23:52:42] Request Body: {
+    "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
+    "password": "s3"
+}
+[2024-11-25 23:52:42] Routes loaded successfully.
+[2024-11-25 23:52:42] Sanitized Request URI: /api/auth/register
+[2024-11-25 23:52:42] Module path: /application/src/modules/auth/Register.php
+[2024-11-25 23:52:42] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-25 23:52:42] An error occurred: File not found: /application/configs/configs.yml
+[2024-11-25 23:53:20] ===== New Request =====
+[2024-11-25 23:53:20] Request: POST /api/auth/register
+[2024-11-25 23:53:20] Request Headers: {"Content-Length":"76","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"85a854f4-e081-4cfc-b481-b7beb01e5710","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 23:53:20] Request Body: {
+    "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
+    "password": "s3"
+}
+[2024-11-25 23:53:20] Routes loaded successfully.
+[2024-11-25 23:53:20] Sanitized Request URI: /api/auth/register
+[2024-11-25 23:53:20] Module path: /application/src/modules/auth/Register.php
+[2024-11-25 23:53:20] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-25 23:53:20] An error occurred: File not found: /application/src/configs/config.yml
+[2024-11-25 23:54:24] ===== New Request =====
+[2024-11-25 23:54:24] Request: POST /api/auth/register
+[2024-11-25 23:54:24] Request Headers: {"Content-Length":"76","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"dff1a955-6df5-4ce8-8a45-ba62cdc003c4","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 23:54:24] Request Body: {
+    "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
+    "password": "s3"
+}
+[2024-11-25 23:54:24] Routes loaded successfully.
+[2024-11-25 23:54:24] Sanitized Request URI: /api/auth/register
+[2024-11-25 23:54:24] Module path: /application/src/modules/auth/Register.php
+[2024-11-25 23:54:24] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-25 23:54:31] ===== New Request =====
+[2024-11-25 23:54:31] Request: POST /api/auth/register
+[2024-11-25 23:54:31] Request Headers: {"Content-Length":"87","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"8b707d92-7ace-47b9-b9b4-403e62fc0f9c","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-25 23:54:31] Request Body: {
+    "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
+    "password": "s311111111111"
+}
+[2024-11-25 23:54:31] Routes loaded successfully.
+[2024-11-25 23:54:31] Sanitized Request URI: /api/auth/register
+[2024-11-25 23:54:31] Module path: /application/src/modules/auth/Register.php
+[2024-11-25 23:54:31] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-26 00:02:10] ===== New Request =====
+[2024-11-26 00:02:10] Request: POST /api/auth/register
+[2024-11-26 00:02:10] Request Headers: {"Content-Length":"87","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"f8bd6b03-ca24-4ab1-b3ec-83ebfa532075","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-26 00:02:10] Request Body: {
+    "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
+    "password": "s311111111111"
+}
+[2024-11-26 00:02:10] Routes loaded successfully.
+[2024-11-26 00:02:10] Sanitized Request URI: /api/auth/register
+[2024-11-26 00:02:10] Module path: /application/src/modules/auth/Register.php
+[2024-11-26 00:02:10] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-26 00:02:10] An error occurred: File not found: 
+[2024-11-26 00:02:19] ===== New Request =====
+[2024-11-26 00:02:19] Request: POST /api/auth/register
+[2024-11-26 00:02:19] Request Headers: {"Content-Length":"87","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"ead95d7c-e183-4cb6-b16b-ffde06edfab9","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-26 00:02:19] Request Body: {
+    "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
+    "password": "s311111111111"
+}
+[2024-11-26 00:02:19] Routes loaded successfully.
+[2024-11-26 00:02:19] Sanitized Request URI: /api/auth/register
+[2024-11-26 00:02:19] Module path: /application/src/modules/auth/Register.php
+[2024-11-26 00:02:19] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-26 00:07:44] ===== New Request =====
+[2024-11-26 00:07:44] Request: POST /api/auth/register
+[2024-11-26 00:07:44] Request Headers: {"Content-Length":"87","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"68c1e7af-194f-4c6f-bf38-ddfa35216695","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-26 00:07:44] Request Body: {
+    "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
+    "password": "s311111111111"
+}
+[2024-11-26 00:07:44] Routes loaded successfully.
+[2024-11-26 00:07:44] Sanitized Request URI: /api/auth/register
+[2024-11-26 00:07:44] Module path: /application/src/modules/auth/Register.php
+[2024-11-26 00:07:44] Module file found. Including: /application/src/modules/auth/Register.php

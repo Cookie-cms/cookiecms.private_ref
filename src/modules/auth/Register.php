@@ -2,11 +2,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', true);
 
-require_once __mysql__;
-require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/yamlReader.php";
 
-$file_path = $_SERVER['DOCUMENT_ROOT'] . '/src/configs/config.yml';
-$yaml_data = read_yaml($file_path);
+// $file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
+// $yaml_data = read_yaml($file_path);
 
 
 define('JWT_SECRET_KEY', $yaml_data['securecode']);

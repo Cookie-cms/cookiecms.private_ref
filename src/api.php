@@ -44,7 +44,7 @@ if (!$isDebugRequest) {
 }
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
-$configPath = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml'; // Two levels up
+$configPath = __config__; // Two levels up
 $routesPath = $_SERVER['DOCUMENT_ROOT'] . '/configs/routes.yml'; // Two levels up
 
 try {
@@ -92,7 +92,8 @@ try {
     if (!$isDebugRequest) {
         log_message($msg, 1);
     }
-    response(true, 400, $msg, null);    
+    response(true, 400, null, $msg, null);
+    // response(true, 400, $msg, null, null);    
 }
 
 if (!$isDebugRequest) {
