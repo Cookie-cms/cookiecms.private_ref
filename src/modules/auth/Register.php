@@ -6,7 +6,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
 
 $file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
 $yaml_data = read_yaml($file_path);
-
+require_once __mysql__;
 
 define('JWT_SECRET_KEY', $yaml_data['securecode']);
 
