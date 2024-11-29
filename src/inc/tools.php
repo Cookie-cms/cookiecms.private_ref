@@ -61,10 +61,9 @@ function generateUUIDv4() {
 }
 
 
-function response($status = false, $statusCode = 200, $url = null, $message, $data = null) {
-
+function response($message, $status = false, $statusCode = 200, $url = null, $data = null) {
     $response = [
-        "error" => ($status),
+        "error" => $status,
         "msg" => $message,
         "url" => $url,
         "data" => $data
@@ -73,4 +72,12 @@ function response($status = false, $statusCode = 200, $url = null, $message, $da
     http_response_code($statusCode);
     echo json_encode($response);
     exit;
+}
+
+function log_to_file($message) {
+    $logFile = $_SERVER['DOCUMENT_ROOT'] . '/logs/app.log';
+
+    $date = date('Y-m-d H:i:s');
+    $logMessage = "[$date] $message\n";
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
 }

@@ -365,6 +365,21 @@ Steps
 
 ## **Discord Integration**
 
+### **GET /discord/url**
+
+```
+{
+    "error": false,
+    "msg": "",
+    "url": "",
+    "data": {
+        "link": ""
+    }
+}
+```
+
+
+
 ### **Discord Integration Settings**
 `POST /home/discord`
 
@@ -692,3 +707,42 @@ If the `expired_at` field is not provided, the role update will be permanent for
 }
 ```
 
+
+
+# discord oauth 2
+
+
+1. get discord link /discord/url
+2. discord will redirect code to frontend /code
+3. frontend will redirect code to backend /discord/code
+4. backend will get information about user and return data
+```
+{
+    "error": false,
+    "msg": "",
+    "url": null,
+    "data": {
+        "urlAvatar": "string",                  // User's unique identifier
+        "username": "string",
+        "verifyCode": "string"  // Expiry date if provided
+    }
+}
+```
+5. frontend will send this body
+```
+{
+    "verifyCode": string,       // User's email address
+    "password": string    // Account password (min 8 characters)
+}
+```
+6. backend will answer
+
+- **200 OK**:
+```
+{
+    "error": false,
+    "msg": "Registration successful",
+    "url": string,  // URL for the next step, if applicable
+    "data": {}
+}
+```

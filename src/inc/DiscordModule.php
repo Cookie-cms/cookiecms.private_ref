@@ -6,14 +6,16 @@
  */
 
 # Starting the script without session (no session required)
-require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
+// require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
 // Заменить $file_path на $configPath
+// require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/yamlReader.php";
+
 $configPath = __config__;
-if (file_exists($configPath)) {
-    $yaml_data = read_yaml($configPath);
-} else {
-    throw new Exception("Configuration file not found: $configPath");
-}
+// if (file_exists($configPath)) {
+$yaml_data = read_yaml($configPath);
+// } else {
+//     throw new Exception("Configuration file not found: $configPath");
+// }
 
 // Далее вы можете работать с $yaml_data...
 $discord = $yaml_data['discord'];
@@ -40,7 +42,7 @@ function url()
     global $client_id, $redirect_url, $scopes;
     $state = gen_state();
     // Ideally, store this state temporarily (e.g., in the database, or pass it via the URL)
-    return 'https://discordapp.com/oauth2/authorize?response_type=code&client_id=' . $client_id . '&redirect_uri=' . $redirect_url . '&scope=' . urlencode($scopes) . "&state=" . $state;
+    return 'https://discordapp.com/oauth2/authorize?response_type=code&client_id=' . $client_id . '&redirect_uri=' . $redirect_url . '&scope=' . $scopes . "&state=" . $state;
 }
 
 // A function to initialize and return access token if successful

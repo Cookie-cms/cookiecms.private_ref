@@ -3,7 +3,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', true);
 
 require_once __mysql__;
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
 $file_path = __config__;
 
 

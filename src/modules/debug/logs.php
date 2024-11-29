@@ -1,25 +1,57 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
-header("Access-Control-Allow-Origin: *");  // You can replace '*' with specific domain if needed
+header("Access-Control-Allow-Origin: *"); // Replace '*' with specific domain if needed
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-// If it's a pre-flight request, return immediately
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php"; // Ensure this path is correct
+
+// Define file path for configuration
+$file_path = $_SERVER['DOCUMENT_ROOT'] . "/configs/config.yml"; // Adjust path if needed
+
+
+// Check if it's a preflight request
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit;
 }
 
+try {
+    // Read the YAML configuration
+    $yaml_data = read_yaml($file_path);
 
-$logFile = $_SERVER['DOCUMENT_ROOT'] . '/logs/app.log';
-if (file_exists($logFile)) {
+    // Validate token
+    $authHeader = $_SERVER['HTTP_AUTHORIZATION'] ?? '';
+    $token = str_replace('Bearer ', '', $authHeader);
+
+    if (empty($yaml_data['debugToken']) || $token !== $yaml_data['debugToken']) {
+        http_response_code(403); // Forbidden
+        echo json_encode([
+            'error' => 403,
+            'message' => 'Access denied. Invalid or missing token.',
+        ]);
+        exit;
+    }
+
+    // Debug log handling
+    $logFile = $_SERVER['DOCUMENT_ROOT'] . '/logs/app.log';
+
+    if (file_exists($logFile)) {
+        echo json_encode([
+            'success' => true,
+            'logs' => file_get_contents($logFile)
+        ]);
+    } else {
+        echo json_encode([
+            'success' => false,
+            'message' => 'Log file not found'
+        ]);
+    }
+} catch (Exception $e) {
+    http_response_code(500); // Internal server error
     echo json_encode([
-        'success' => true,
-        'logs' => file_get_contents($logFile)
-    ]);
-} else {
-    echo json_encode([
-        'success' => false,
-        'message' => 'Log file not found'
+        'error' => 500,
+        'message' => $e->getMessage(),
     ]);
 }
+?>

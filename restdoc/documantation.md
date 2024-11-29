@@ -1,9 +1,25 @@
+# Instalation
+
+## Docker (better)
+
+``git pull url``
+
+``docker compose up -d`` 
+
+
+## Manually
+
+# Configuration 
+
+
+
+```yml
 NameSite: cookiecms
-securecode: c8ENvF5zD5ThuM9mTwofBqMLGSEutUrztAeca3LFLKr3v9RRXeUnO7j7nskWbL2y
-ServiceApiToken: 2aiajDNUhW95HlSHcRDJK0psCBBGazwGWbnZi99Vcirb82SIEeNvxqKmqAJlwxuQ
+securecode: random(64)
+ServiceApiToken: random(64)
 MaxSavedSkins: 1
 DEBUGLOG: 0 # 0 none, 1 requests, 2 full request with all
-debugToken: SecretToken
+debugToken: Your_secret_token
 database:
   host: "localhost"
   username: "root"
@@ -12,10 +28,10 @@ database:
   port: "34002"
 
 smtp:
-  host: "smtppro.zoho.eu"
+  host: ""
   SMTPAuth: true
-  Username: "noreply@coffeedev.dev"
-  Password: "r%nytuD2"
+  Username: ""
+  Password: ""
   SMTPSecure: ""
   Port: 587
 
@@ -29,3 +45,4 @@ discord:
   guild_id: 0
   role: 0
   webhooks: ""
+```

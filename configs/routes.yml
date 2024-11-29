@@ -11,3 +11,7 @@
 
 
 /api/debug/logs: /debug/logs.php
+
+
+/api/discord/url: discord/url.php
+/api/discord/code: null

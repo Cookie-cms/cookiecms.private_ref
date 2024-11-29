@@ -8,7 +8,7 @@ $file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
 $yaml_data = read_yaml($file_path);
 require_once __mysql__;
 
-define('JWT_SECRET_KEY', $yaml_data['securecode']);
+// define('JWT_SECRET_KEY', $yaml_data['securecode']);
 
 
 function validate($data) {
@@ -30,8 +30,9 @@ if (isset($data['mail']) && isset($data['password'])) {
         exit();
     }
 
+
     if (strlen($password) < 8) {
-        return response(true, 400, null, "Password must be at least 8 characters", null);
+        return response("Password must be at least 8 characters", true, 400, null, null);
         exit();
     }
 
@@ -42,7 +43,7 @@ if (isset($data['mail']) && isset($data['password'])) {
         $existingUser = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($existingUser) {
-            return response(true, 409,null, "Email is already registered.", null);
+            return response("Email is already registered.", true, 409, null, null);
             exit();
         }
 
@@ -69,13 +70,16 @@ if (isset($data['mail']) && isset($data['password'])) {
         $stmt->bindParam(':code', $randomCode);
         $stmt->bindParam(':expire', $time);        
         $stmt->execute();
-        return response(false, 200, "/login", "Registration successful. Please proceed to login.", null);
+        return response("Registration successful. Please proceed to login.", false, 200, "/home", null);
         exit(); // Ensure no further code is executed
     } catch (PDOException $e) {
         error_log("PDOException: " . $e->getMessage(), 0);
-        return response(true, 400, null, "An error occurred during registration. Please try again later.", null);
+        log_to_file("[ERROR] PDOException: " . $e->getMessage(), 0);
+
+        return response("An error occurred during registration. Please try again later.", true, 400, null, null);
     }
 } else {
-    return response(true, 400, null, "Incomplete form data provided.", null);
+    return response("Incomplete form data provided.", true, 400, null, null);
+
 }
 ?>

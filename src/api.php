@@ -46,6 +46,7 @@ if (!$isDebugRequest) {
 require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
 $configPath = __config__; // Two levels up
 $routesPath = $_SERVER['DOCUMENT_ROOT'] . '/configs/routes.yml'; // Two levels up
+require_once $_SERVER['DOCUMENT_ROOT'] . '/src/define.php'; // Two levels up
 
 try {
     if (!$isDebugRequest) {
