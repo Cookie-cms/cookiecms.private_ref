@@ -11,6 +11,7 @@
 
 
 /api/debug/logs: /debug/logs.php
+/api/debug/sql: /debug/db.php
 
 
 /api/discord/url: discord/url.php

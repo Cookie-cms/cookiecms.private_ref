@@ -1,12 +1,12 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', true);
-require_once $_SERVER['DOCUMENT_ROOT'] . "/define.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/mysql.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/tools.php";
-$file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
+require_once __mysql__;
+// require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
+// require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/tools.php";
+$file_path = __config__;
 
 $yaml_data = read_yaml($file_path);
 
@@ -44,7 +44,8 @@ if ($status) {
         $data = [
             "code" => 900
         ];
-        responseWithError("Pls create user", $data);
+        return response("Pls create use", true, 401,"/login",$data);
+        // responseWithError("Pls create user", $data);
         return;
     }
 
@@ -117,5 +118,6 @@ if ($status) {
         "code" => 401,
         "msg" => "Invalid JWT"
     ];
-    responseWithError("Invalid JWT", $data);
+    return response("Invalid JWT", true, 401,"/login",$data);
+    // responseWithError("Invalid JWT", $data);
 }

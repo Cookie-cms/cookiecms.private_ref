@@ -1,11 +1,11 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', true);
-require_once $_SERVER['DOCUMENT_ROOT'] . "/define.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/mysql.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/tools.php";
+require_once __mysql__;
+// require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/yamlReader.php";
+// require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/tools.php";
 $file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
 
 
@@ -29,6 +29,7 @@ $data = json_decode($inputData, true);
 $securecode = $yaml_data['securecode'];
 $jwt = str_replace('Bearer ', '', $_SERVER['HTTP_AUTHORIZATION'] ?? '');
 
+// print($jwt);
 $status = isJwtExpiredOrBlacklisted($jwt, $conn, $securecode);
 // var_dump($status);
 // $status = $status['data'];
@@ -43,7 +44,7 @@ if ($status) {
 
     if (!empty($user['username']) || !empty($user['uuid'])) {
         // If username or UUID already exists
-        responseWithError("You already have a Player account", $data);
+        response("You already have a Player account", false, 409, "/home" );
         return;
     }
 
@@ -53,7 +54,8 @@ if ($status) {
     $username = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($username) {
-        echo "Username already taken.";
+        return response("Username already taken.", true, 409);
+        // echo "";
     } else {
         // Generate UUID and update user
         $uuid = generateUUIDv4();
@@ -80,14 +82,15 @@ if ($status) {
         }
     }
 
-    // Construct response
-    $response = [
-        "error" => false,
-        "msg" => 200,
-        "url" => null,
-        "data" => []
-    ];
+    // // Construct response
+    // $response = [
+    //     "error" => false,
+    //     "msg" => 200,
+    //     "url" => null,
+    //     "data" => []
+    // ];
 
-    // Return response as JSON
-    echo json_encode($response);
+    // // Return response as JSON
+    // echo json_encode($response);
+    return response("created", true, 200, "/home");
 }

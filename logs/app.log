@@ -1,102 +1,656 @@
-[2024-11-25 19:29:40] ===== New Request =====
-[2024-11-25 19:29:40] Request: GET /api/debug/logs
-[2024-11-25 19:29:40] Request Headers: {"Priority":"u=0, i","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
-[2024-11-25 19:29:40] Request Body: 
-[2024-11-25 19:29:40] Routes loaded successfully.
-[2024-11-25 19:29:40] Sanitized Request URI: /api/debug/logs
-[2024-11-25 19:29:40] Module path: /application/src/modules//debug/logs.php
-[2024-11-25 19:29:40] Module file found. Including: /application/src/modules//debug/logs.php
-[2024-11-25 19:29:40] Request finished.
-[2024-11-25 23:52:33] ===== New Request =====
-[2024-11-25 23:52:33] Request: POST /api/auth/register
-[2024-11-25 23:52:33] Request Headers: {"Content-Length":"76","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"e198141f-11ad-47f0-810d-9dc9f7a0a0be","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
-[2024-11-25 23:52:33] Request Body: {
+[2024-11-28 20:08:55] ===== New Request =====
+[2024-11-28 20:08:55] Request: POST /api/auth/register
+[2024-11-28 20:08:55] Request Headers: {"Content-Length":"83","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"833dd6e6-8597-4865-a38c-ba28f13676c0","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-28 20:08:55] Request Body: {
     "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
-    "password": "s3"
+    "password": "111111111"
 }
-[2024-11-25 23:52:33] Routes loaded successfully.
-[2024-11-25 23:52:33] Sanitized Request URI: /api/auth/register
-[2024-11-25 23:52:33] Module path: /application/src/modules/auth/Register.php
-[2024-11-25 23:52:33] Module file found. Including: /application/src/modules/auth/Register.php
-[2024-11-25 23:52:33] An error occurred: File not found: /application/configs/configs.yml
-[2024-11-25 23:52:33] Request finished.
-[2024-11-25 23:52:42] ===== New Request =====
-[2024-11-25 23:52:42] Request: POST /api/auth/register
-[2024-11-25 23:52:42] Request Headers: {"Content-Length":"76","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"c9e956c4-028d-4348-a37e-fbd0e5016bd8","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
-[2024-11-25 23:52:42] Request Body: {
+[2024-11-28 20:08:55] Routes loaded successfully.
+[2024-11-28 20:08:55] Sanitized Request URI: /api/auth/register
+[2024-11-28 20:08:55] Module path: /application/src/modules/auth/Register.php
+[2024-11-28 20:08:55] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-28 20:08:55] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cookiecms.users' doesn't exist
+[2024-11-28 20:11:09] ===== New Request =====
+[2024-11-28 20:11:09] Request: POST /api/auth/register
+[2024-11-28 20:11:09] Request Headers: {"Content-Length":"83","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"000019f6-09d6-4d44-8015-d0b89ca3a238","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-28 20:11:09] Request Body: {
     "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
-    "password": "s3"
+    "password": "111111111"
 }
-[2024-11-25 23:52:42] Routes loaded successfully.
-[2024-11-25 23:52:42] Sanitized Request URI: /api/auth/register
-[2024-11-25 23:52:42] Module path: /application/src/modules/auth/Register.php
-[2024-11-25 23:52:42] Module file found. Including: /application/src/modules/auth/Register.php
-[2024-11-25 23:52:42] An error occurred: File not found: /application/configs/configs.yml
-[2024-11-25 23:53:20] ===== New Request =====
-[2024-11-25 23:53:20] Request: POST /api/auth/register
-[2024-11-25 23:53:20] Request Headers: {"Content-Length":"76","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"85a854f4-e081-4cfc-b481-b7beb01e5710","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
-[2024-11-25 23:53:20] Request Body: {
+[2024-11-28 20:11:09] Routes loaded successfully.
+[2024-11-28 20:11:09] Sanitized Request URI: /api/auth/register
+[2024-11-28 20:11:09] Module path: /application/src/modules/auth/Register.php
+[2024-11-28 20:11:09] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-28 20:11:09] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cookiecms.users' doesn't exist
+[2024-11-28 20:40:34] ===== New Request =====
+[2024-11-28 20:40:34] Request: POST /api/auth/register
+[2024-11-28 20:40:34] Request Headers: {"Content-Length":"83","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"3036900c-3711-407f-99ea-a90a0ea40b5a","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-28 20:40:34] Request Body: {
     "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
-    "password": "s3"
+    "password": "111111111"
 }
-[2024-11-25 23:53:20] Routes loaded successfully.
-[2024-11-25 23:53:20] Sanitized Request URI: /api/auth/register
-[2024-11-25 23:53:20] Module path: /application/src/modules/auth/Register.php
-[2024-11-25 23:53:20] Module file found. Including: /application/src/modules/auth/Register.php
-[2024-11-25 23:53:20] An error occurred: File not found: /application/src/configs/config.yml
-[2024-11-25 23:54:24] ===== New Request =====
-[2024-11-25 23:54:24] Request: POST /api/auth/register
-[2024-11-25 23:54:24] Request Headers: {"Content-Length":"76","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"dff1a955-6df5-4ce8-8a45-ba62cdc003c4","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
-[2024-11-25 23:54:24] Request Body: {
+[2024-11-28 20:40:34] Routes loaded successfully.
+[2024-11-28 20:40:34] Sanitized Request URI: /api/auth/register
+[2024-11-28 20:40:34] Module path: /application/src/modules/auth/Register.php
+[2024-11-28 20:40:34] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-28 20:40:34] [ERROR] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cookiecms.users' doesn't exist
+[2024-11-28 20:55:45] ===== New Request =====
+[2024-11-28 20:55:45] Request: POST /api/auth/register
+[2024-11-28 20:55:45] Request Headers: {"Content-Length":"83","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"8adcc34a-17e4-4862-8049-a12f7ab2caee","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-28 20:55:45] Request Body: {
     "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
-    "password": "s3"
+    "password": "111111111"
 }
-[2024-11-25 23:54:24] Routes loaded successfully.
-[2024-11-25 23:54:24] Sanitized Request URI: /api/auth/register
-[2024-11-25 23:54:24] Module path: /application/src/modules/auth/Register.php
-[2024-11-25 23:54:24] Module file found. Including: /application/src/modules/auth/Register.php
-[2024-11-25 23:54:31] ===== New Request =====
-[2024-11-25 23:54:31] Request: POST /api/auth/register
-[2024-11-25 23:54:31] Request Headers: {"Content-Length":"87","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"8b707d92-7ace-47b9-b9b4-403e62fc0f9c","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
-[2024-11-25 23:54:31] Request Body: {
+[2024-11-28 20:55:45] Routes loaded successfully.
+[2024-11-28 20:55:45] Sanitized Request URI: /api/auth/register
+[2024-11-28 20:55:45] Module path: /application/src/modules/auth/Register.php
+[2024-11-28 20:55:45] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-28 20:55:45] [ERROR] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cookiecms.users' doesn't exist
+[2024-11-28 20:56:00] ===== New Request =====
+[2024-11-28 20:56:00] Request: POST /api/auth/register
+[2024-11-28 20:56:00] Request Headers: {"Content-Length":"83","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"66830007-8a31-4df3-9aff-a6934f317127","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-28 20:56:00] Request Body: {
     "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
-    "password": "s311111111111"
+    "password": "111111111"
 }
-[2024-11-25 23:54:31] Routes loaded successfully.
-[2024-11-25 23:54:31] Sanitized Request URI: /api/auth/register
-[2024-11-25 23:54:31] Module path: /application/src/modules/auth/Register.php
-[2024-11-25 23:54:31] Module file found. Including: /application/src/modules/auth/Register.php
-[2024-11-26 00:02:10] ===== New Request =====
-[2024-11-26 00:02:10] Request: POST /api/auth/register
-[2024-11-26 00:02:10] Request Headers: {"Content-Length":"87","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"f8bd6b03-ca24-4ab1-b3ec-83ebfa532075","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
-[2024-11-26 00:02:10] Request Body: {
+[2024-11-28 20:56:00] Routes loaded successfully.
+[2024-11-28 20:56:00] Sanitized Request URI: /api/auth/register
+[2024-11-28 20:56:00] Module path: /application/src/modules/auth/Register.php
+[2024-11-28 20:56:00] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-28 20:56:00] [ERROR] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cookiecms.users' doesn't exist
+[2024-11-28 20:58:45] ===== New Request =====
+[2024-11-28 20:58:45] Request: POST /api/auth/register
+[2024-11-28 20:58:45] Request Headers: {"Content-Length":"83","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"79bdedff-3695-448b-ae7b-2c8dd95896ef","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-28 20:58:45] Request Body: {
     "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
-    "password": "s311111111111"
+    "password": "111111111"
 }
-[2024-11-26 00:02:10] Routes loaded successfully.
-[2024-11-26 00:02:10] Sanitized Request URI: /api/auth/register
-[2024-11-26 00:02:10] Module path: /application/src/modules/auth/Register.php
-[2024-11-26 00:02:10] Module file found. Including: /application/src/modules/auth/Register.php
-[2024-11-26 00:02:10] An error occurred: File not found: 
-[2024-11-26 00:02:19] ===== New Request =====
-[2024-11-26 00:02:19] Request: POST /api/auth/register
-[2024-11-26 00:02:19] Request Headers: {"Content-Length":"87","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"ead95d7c-e183-4cb6-b16b-ffde06edfab9","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
-[2024-11-26 00:02:19] Request Body: {
+[2024-11-28 20:58:45] Routes loaded successfully.
+[2024-11-28 20:58:45] Sanitized Request URI: /api/auth/register
+[2024-11-28 20:58:45] Module path: /application/src/modules/auth/Register.php
+[2024-11-28 20:58:45] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-28 21:28:57] ===== New Request =====
+[2024-11-28 21:28:57] Request: GET /api/discord/url
+[2024-11-28 21:28:57] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:28:57] Request Body: 
+[2024-11-28 21:28:57] Routes loaded successfully.
+[2024-11-28 21:28:57] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:28:57] Route not defined for: /api/discord/url
+[2024-11-28 21:29:19] ===== New Request =====
+[2024-11-28 21:29:19] Request: GET /api/discord/url
+[2024-11-28 21:29:19] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:29:19] Request Body: 
+[2024-11-28 21:29:19] Routes loaded successfully.
+[2024-11-28 21:29:19] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:29:19] Module path: /application/src/modules/discrod/url.php
+[2024-11-28 21:29:19] Module file not found: /application/src/modules/discrod/url.php
+[2024-11-28 21:29:45] ===== New Request =====
+[2024-11-28 21:29:45] Request: GET /api/discord/url
+[2024-11-28 21:29:45] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:29:45] Request Body: 
+[2024-11-28 21:29:45] Routes loaded successfully.
+[2024-11-28 21:29:45] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:29:45] Module path: /application/src/modules/discrod/url.php
+[2024-11-28 21:29:45] Module file not found: /application/src/modules/discrod/url.php
+[2024-11-28 21:29:46] ===== New Request =====
+[2024-11-28 21:29:46] Request: GET /api/discord/url
+[2024-11-28 21:29:46] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:29:46] Request Body: 
+[2024-11-28 21:29:46] Routes loaded successfully.
+[2024-11-28 21:29:46] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:29:46] Module path: /application/src/modules/discrod/url.php
+[2024-11-28 21:29:46] Module file not found: /application/src/modules/discrod/url.php
+[2024-11-28 21:29:46] ===== New Request =====
+[2024-11-28 21:29:46] Request: GET /api/discord/url
+[2024-11-28 21:29:46] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:29:46] Request Body: 
+[2024-11-28 21:29:46] Routes loaded successfully.
+[2024-11-28 21:29:46] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:29:46] Module path: /application/src/modules/discrod/url.php
+[2024-11-28 21:29:46] Module file not found: /application/src/modules/discrod/url.php
+[2024-11-28 21:29:46] ===== New Request =====
+[2024-11-28 21:29:46] Request: GET /api/discord/url
+[2024-11-28 21:29:46] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:29:46] Request Body: 
+[2024-11-28 21:29:46] Routes loaded successfully.
+[2024-11-28 21:29:46] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:29:46] Module path: /application/src/modules/discrod/url.php
+[2024-11-28 21:29:46] Module file not found: /application/src/modules/discrod/url.php
+[2024-11-28 21:29:53] ===== New Request =====
+[2024-11-28 21:29:53] Request: GET /api/discord/url
+[2024-11-28 21:29:53] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:29:53] Request Body: 
+[2024-11-28 21:29:53] Routes loaded successfully.
+[2024-11-28 21:29:53] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:29:53] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:29:53] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:31:11] ===== New Request =====
+[2024-11-28 21:31:11] Request: GET /api/discord/url
+[2024-11-28 21:31:11] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:31:11] Request Body: 
+[2024-11-28 21:31:11] Routes loaded successfully.
+[2024-11-28 21:31:11] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:31:11] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:31:11] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:31:54] ===== New Request =====
+[2024-11-28 21:31:54] Request: GET /api/discord/url
+[2024-11-28 21:31:54] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:31:54] Request Body: 
+[2024-11-28 21:31:54] Routes loaded successfully.
+[2024-11-28 21:31:54] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:31:54] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:31:54] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:33:09] ===== New Request =====
+[2024-11-28 21:33:09] Request: GET /api/discord/url
+[2024-11-28 21:33:09] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:33:09] Request Body: 
+[2024-11-28 21:33:09] Routes loaded successfully.
+[2024-11-28 21:33:09] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:33:09] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:33:09] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:33:12] ===== New Request =====
+[2024-11-28 21:33:12] Request: GET /api/discord/url
+[2024-11-28 21:33:12] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:33:12] Request Body: 
+[2024-11-28 21:33:13] ===== New Request =====
+[2024-11-28 21:33:13] Request: GET /api/discord/url
+[2024-11-28 21:33:13] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:33:13] Request Body: 
+[2024-11-28 21:33:36] ===== New Request =====
+[2024-11-28 21:33:36] Request: GET /api/discord/url
+[2024-11-28 21:33:36] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:33:36] Request Body: 
+[2024-11-28 21:33:37] ===== New Request =====
+[2024-11-28 21:33:37] Request: GET /api/discord/url
+[2024-11-28 21:33:37] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:33:37] Request Body: 
+[2024-11-28 21:33:52] ===== New Request =====
+[2024-11-28 21:33:52] Request: GET /api/discord/url
+[2024-11-28 21:33:52] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:33:52] Request Body: 
+[2024-11-28 21:37:05] ===== New Request =====
+[2024-11-28 21:37:05] Request: GET /api/discord/url
+[2024-11-28 21:37:05] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:37:05] Request Body: 
+[2024-11-28 21:38:00] ===== New Request =====
+[2024-11-28 21:38:00] Request: GET /api/discord/url
+[2024-11-28 21:38:00] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:38:00] Request Body: 
+[2024-11-28 21:38:04] ===== New Request =====
+[2024-11-28 21:38:04] Request: GET /api/discord/url
+[2024-11-28 21:38:04] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:38:04] Request Body: 
+[2024-11-28 21:38:13] ===== New Request =====
+[2024-11-28 21:38:13] Request: GET /api/discord/url
+[2024-11-28 21:38:13] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:38:13] Request Body: 
+[2024-11-28 21:38:22] ===== New Request =====
+[2024-11-28 21:38:22] Request: GET /api/discord/url
+[2024-11-28 21:38:22] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:38:22] Request Body: 
+[2024-11-28 21:38:22] Routes loaded successfully.
+[2024-11-28 21:38:22] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:38:22] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:38:22] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:38:29] ===== New Request =====
+[2024-11-28 21:38:29] Request: GET /api/discord/url
+[2024-11-28 21:38:29] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:38:29] Request Body: 
+[2024-11-28 21:39:08] ===== New Request =====
+[2024-11-28 21:39:08] Request: GET /api/discord/url
+[2024-11-28 21:39:08] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:39:08] Request Body: 
+[2024-11-28 21:39:08] Routes loaded successfully.
+[2024-11-28 21:39:08] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:39:08] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:39:08] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:40:08] ===== New Request =====
+[2024-11-28 21:40:08] Request: GET /api/discord/url
+[2024-11-28 21:40:08] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:40:08] Request Body: 
+[2024-11-28 21:40:08] Routes loaded successfully.
+[2024-11-28 21:40:08] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:40:08] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:40:08] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:40:35] ===== New Request =====
+[2024-11-28 21:40:35] Request: GET /api/discord/url
+[2024-11-28 21:40:35] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:40:35] Request Body: 
+[2024-11-28 21:40:35] Routes loaded successfully.
+[2024-11-28 21:40:35] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:40:35] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:40:35] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:40:36] ===== New Request =====
+[2024-11-28 21:40:36] Request: GET /api/discord/url
+[2024-11-28 21:40:36] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:40:36] Request Body: 
+[2024-11-28 21:40:36] Routes loaded successfully.
+[2024-11-28 21:40:36] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:40:36] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:40:36] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:41:07] ===== New Request =====
+[2024-11-28 21:41:07] Request: GET /api/discord/url
+[2024-11-28 21:41:07] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:41:07] Request Body: 
+[2024-11-28 21:41:07] Routes loaded successfully.
+[2024-11-28 21:41:07] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:41:07] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:41:07] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:41:55] ===== New Request =====
+[2024-11-28 21:41:55] Request: GET /api/discord/url
+[2024-11-28 21:41:55] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:41:55] Request Body: 
+[2024-11-28 21:41:55] Routes loaded successfully.
+[2024-11-28 21:41:55] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:41:55] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:41:55] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:42:35] ===== New Request =====
+[2024-11-28 21:42:35] Request: GET /api/discord/url
+[2024-11-28 21:42:35] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:42:35] Request Body: 
+[2024-11-28 21:42:35] Routes loaded successfully.
+[2024-11-28 21:42:35] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:42:35] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:42:35] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:42:59] ===== New Request =====
+[2024-11-28 21:42:59] Request: GET /api/discord/url
+[2024-11-28 21:42:59] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:42:59] Request Body: 
+[2024-11-28 21:42:59] Routes loaded successfully.
+[2024-11-28 21:42:59] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:42:59] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:42:59] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:43:47] ===== New Request =====
+[2024-11-28 21:43:47] Request: GET /api/discord/url
+[2024-11-28 21:43:47] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:43:47] Request Body: 
+[2024-11-28 21:43:47] Routes loaded successfully.
+[2024-11-28 21:43:47] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:43:47] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:43:47] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:44:01] ===== New Request =====
+[2024-11-28 21:44:01] Request: GET /api/discord/url
+[2024-11-28 21:44:01] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:44:01] Request Body: 
+[2024-11-28 21:44:01] Routes loaded successfully.
+[2024-11-28 21:44:01] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:44:01] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:44:01] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:44:24] ===== New Request =====
+[2024-11-28 21:44:24] Request: GET /api/discord/url
+[2024-11-28 21:44:24] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:44:24] Request Body: 
+[2024-11-28 21:44:24] Routes loaded successfully.
+[2024-11-28 21:44:24] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:44:24] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:44:24] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:45:40] ===== New Request =====
+[2024-11-28 21:45:40] Request: GET /api/discord/url
+[2024-11-28 21:45:40] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:45:40] Request Body: 
+[2024-11-28 21:45:40] Routes loaded successfully.
+[2024-11-28 21:45:40] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:45:40] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:45:40] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 21:46:42] ===== New Request =====
+[2024-11-28 21:46:42] Request: GET /api/discord/url
+[2024-11-28 21:46:42] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 21:46:42] Request Body: 
+[2024-11-28 21:46:42] Routes loaded successfully.
+[2024-11-28 21:46:42] Sanitized Request URI: /api/discord/url
+[2024-11-28 21:46:42] Module path: /application/src/modules/discord/url.php
+[2024-11-28 21:46:42] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 22:19:40] ===== New Request =====
+[2024-11-28 22:19:40] Request: GET /api/discord/url
+[2024-11-28 22:19:40] Request Headers: {"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"b4c0e5f8-92ba-4bd9-b2d9-00f17ec059a7","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Length":"","Content-Type":""}
+[2024-11-28 22:19:40] Request Body: 
+[2024-11-28 22:19:40] Routes loaded successfully.
+[2024-11-28 22:19:40] Sanitized Request URI: /api/discord/url
+[2024-11-28 22:19:40] Module path: /application/src/modules/discord/url.php
+[2024-11-28 22:19:40] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-28 23:14:00] ===== New Request =====
+[2024-11-28 23:14:00] Request: GET /api/auth/discord?code=c2HbgoSwWGE48IdtRJgNZP3ZFhYLvl&state=0ecb49d1f993adc2ec724ab5
+[2024-11-28 23:14:00] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 23:14:00] Request Body: 
+[2024-11-28 23:14:00] Routes loaded successfully.
+[2024-11-28 23:14:00] Sanitized Request URI: /api/auth/discord
+[2024-11-28 23:14:00] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:14:00] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:16:48] ===== New Request =====
+[2024-11-28 23:16:48] Request: GET /api/auth/discord?code=c2HbgoSwWGE48IdtRJgNZP3ZFhYLvl&state=0ecb49d1f993adc2ec724ab5
+[2024-11-28 23:16:48] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 23:16:48] Request Body: 
+[2024-11-28 23:16:48] Routes loaded successfully.
+[2024-11-28 23:16:48] Sanitized Request URI: /api/auth/discord
+[2024-11-28 23:16:48] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:16:48] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:16:52] ===== New Request =====
+[2024-11-28 23:16:52] Request: GET /api/auth/discord?code=RCb0KJzGzvM6DT4T0ncTiCd4ir3Dr4&state=0ecb49d1f993adc2ec724ab5
+[2024-11-28 23:16:52] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 23:16:52] Request Body: 
+[2024-11-28 23:16:52] Routes loaded successfully.
+[2024-11-28 23:16:52] Sanitized Request URI: /api/auth/discord
+[2024-11-28 23:16:52] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:16:52] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:17:16] ===== New Request =====
+[2024-11-28 23:17:16] Request: GET /api/auth/discord?code=RCb0KJzGzvM6DT4T0ncTiCd4ir3Dr4&state=0ecb49d1f993adc2ec724ab5
+[2024-11-28 23:17:16] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 23:17:16] Request Body: 
+[2024-11-28 23:17:16] Routes loaded successfully.
+[2024-11-28 23:17:16] Sanitized Request URI: /api/auth/discord
+[2024-11-28 23:17:16] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:17:16] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:17:54] ===== New Request =====
+[2024-11-28 23:17:54] Request: GET /api/auth/discord?code=RCb0KJzGzvM6DT4T0ncTiCd4ir3Dr4&state=0ecb49d1f993adc2ec724ab5
+[2024-11-28 23:17:54] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 23:17:54] Request Body: 
+[2024-11-28 23:17:54] Routes loaded successfully.
+[2024-11-28 23:17:54] Sanitized Request URI: /api/auth/discord
+[2024-11-28 23:17:54] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:17:54] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:19:31] ===== New Request =====
+[2024-11-28 23:19:31] Request: GET /api/auth/discord?code=RCb0KJzGzvM6DT4T0ncTiCd4ir3Dr4&state=0ecb49d1f993adc2ec724ab5
+[2024-11-28 23:19:31] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 23:19:31] Request Body: 
+[2024-11-28 23:19:31] Routes loaded successfully.
+[2024-11-28 23:19:31] Sanitized Request URI: /api/auth/discord
+[2024-11-28 23:19:31] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:19:31] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:19:36] ===== New Request =====
+[2024-11-28 23:19:36] Request: GET /api/auth/discord?code=RCb0KJzGzvM6DT4T0ncTiCd4ir3Dr4&state=0ecb49d1f993adc2ec724ab5
+[2024-11-28 23:19:36] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 23:19:36] Request Body: 
+[2024-11-28 23:19:36] Routes loaded successfully.
+[2024-11-28 23:19:36] Sanitized Request URI: /api/auth/discord
+[2024-11-28 23:19:36] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:19:36] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:20:05] ===== New Request =====
+[2024-11-28 23:20:05] Request: GET /api/auth/discord?code=Pm9dZuujR2gma5cAzJmre5q7MGwiY3&state=0ecb49d1f993adc2ec724ab5
+[2024-11-28 23:20:05] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 23:20:05] Request Body: 
+[2024-11-28 23:20:05] Routes loaded successfully.
+[2024-11-28 23:20:05] Sanitized Request URI: /api/auth/discord
+[2024-11-28 23:20:05] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:20:05] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:21:50] ===== New Request =====
+[2024-11-28 23:21:50] Request: GET /api/auth/discord?code=Pm9dZuujR2gma5cAzJmre5q7MGwiY3&state=0ecb49d1f993adc2ec724ab5
+[2024-11-28 23:21:50] Request Headers: {"Priority":"u=0, i","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 23:21:50] Request Body: 
+[2024-11-28 23:21:50] Routes loaded successfully.
+[2024-11-28 23:21:50] Sanitized Request URI: /api/auth/discord
+[2024-11-28 23:21:50] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:21:50] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:21:51] ===== New Request =====
+[2024-11-28 23:21:51] Request: GET /api/auth/discord?code=Pm9dZuujR2gma5cAzJmre5q7MGwiY3&state=0ecb49d1f993adc2ec724ab5
+[2024-11-28 23:21:51] Request Headers: {"Priority":"u=0, i","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 23:21:51] Request Body: 
+[2024-11-28 23:21:51] Routes loaded successfully.
+[2024-11-28 23:21:51] Sanitized Request URI: /api/auth/discord
+[2024-11-28 23:21:51] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:21:51] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:22:08] ===== New Request =====
+[2024-11-28 23:22:08] Request: GET /api/auth/discord?code=Pm9dZuujR2gma5cAzJmre5q7MGwiY3&state=0ecb49d1f993adc2ec724ab5
+[2024-11-28 23:22:08] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-28 23:22:08] Request Body: 
+[2024-11-28 23:22:08] Routes loaded successfully.
+[2024-11-28 23:22:08] Sanitized Request URI: /api/auth/discord
+[2024-11-28 23:22:08] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-28 23:22:08] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-29 00:08:48] ===== New Request =====
+[2024-11-29 00:08:48] Request: GET /api/discord/url
+[2024-11-29 00:08:48] Request Headers: {"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"d4068c76-c204-4d9b-a5c3-383f062ea683","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Length":"","Content-Type":""}
+[2024-11-29 00:08:48] Request Body: 
+[2024-11-29 00:08:48] Routes loaded successfully.
+[2024-11-29 00:08:48] Sanitized Request URI: /api/discord/url
+[2024-11-29 00:08:48] Module path: /application/src/modules/discord/url.php
+[2024-11-29 00:08:48] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-29 00:25:33] ===== New Request =====
+[2024-11-29 00:25:33] Request: GET /api/discord/url
+[2024-11-29 00:25:33] Request Headers: {"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"bdbda279-610b-4818-8378-5e96a801aef6","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Length":"","Content-Type":""}
+[2024-11-29 00:25:33] Request Body: 
+[2024-11-29 00:25:33] Routes loaded successfully.
+[2024-11-29 00:25:33] Sanitized Request URI: /api/discord/url
+[2024-11-29 00:25:33] Module path: /application/src/modules/discord/url.php
+[2024-11-29 00:25:33] Module file found. Including: /application/src/modules/discord/url.php
+[2024-11-29 00:25:39] ===== New Request =====
+[2024-11-29 00:25:39] Request: GET /api/auth/discord?code=WHjKSGTI231a82zzpAvDG33KGOrQEI&state=4e8b3b7dcee8e3ac51cb9206
+[2024-11-29 00:25:39] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-29 00:25:39] Request Body: 
+[2024-11-29 00:25:39] Routes loaded successfully.
+[2024-11-29 00:25:39] Sanitized Request URI: /api/auth/discord
+[2024-11-29 00:25:39] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-29 00:25:39] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-29 00:26:31] ===== New Request =====
+[2024-11-29 00:26:31] Request: GET /api/auth/discord?code=WHjKSGTI231a82zzpAvDG33KGOrQEI&state=4e8b3b7dcee8e3ac51cb9206
+[2024-11-29 00:26:31] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"cross-site","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-11-29 00:26:31] Request Body: 
+[2024-11-29 00:26:31] Routes loaded successfully.
+[2024-11-29 00:26:31] Sanitized Request URI: /api/auth/discord
+[2024-11-29 00:26:31] Module path: /application/src/modules/service/DiscordMan.php
+[2024-11-29 00:26:31] Module file found. Including: /application/src/modules/service/DiscordMan.php
+[2024-11-29 00:26:32] An error occurred: SQLSTATE[HY000]: General error: 1364 Field 'password' doesn't have a default value
+[2024-11-29 20:14:43] ===== New Request =====
+[2024-11-29 20:14:43] Request: GET /api/home
+[2024-11-29 20:14:43] Request Headers: {"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"e043b1c8-1568-44f7-80bd-c645d0f176a1","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIyODgzOTkwOTAwOTIzNDg5MDMiLCJpYXQiOjE3MzIxMDU2NTQsImV4cCI6MTczMjEwOTI1NH0.aonx2USfCe0IlTtLdmJeCUtVj_MJyqU-FoQKdPEX28o","Content-Length":"","Content-Type":""}
+[2024-11-29 20:14:43] Request Body: 
+[2024-11-29 20:14:44] Routes loaded successfully.
+[2024-11-29 20:14:44] Sanitized Request URI: /api/home
+[2024-11-29 20:14:44] Module path: /application/src/modules/home/Home.php
+[2024-11-29 20:14:44] Module file found. Including: /application/src/modules/home/Home.php
+[2024-11-29 20:51:18] ===== New Request =====
+[2024-11-29 20:51:18] Request: GET /api/home
+[2024-11-29 20:51:18] Request Headers: {"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"bc7db5ce-d7fb-4ff0-8bfc-f186e6803822","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIyODgzOTkwOTAwOTIzNDg5MDMiLCJpYXQiOjE3MzIxMDU2NTQsImV4cCI6MTczMjEwOTI1NH0.aonx2USfCe0IlTtLdmJeCUtVj_MJyqU-FoQKdPEX28o","Content-Length":"","Content-Type":""}
+[2024-11-29 20:51:18] Request Body: 
+[2024-11-29 20:51:18] Routes loaded successfully.
+[2024-11-29 20:51:18] Sanitized Request URI: /api/home
+[2024-11-29 20:51:18] Module path: /application/src/modules/home/Home.php
+[2024-11-29 20:51:18] Module file found. Including: /application/src/modules/home/Home.php
+[2024-11-29 20:51:52] ===== New Request =====
+[2024-11-29 20:51:52] Request: GET /api/home
+[2024-11-29 20:51:52] Request Headers: {"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"1c65362d-f62f-4485-8481-c51c8595a416","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIyODgzOTkwOTAwOTIzNDg5MDMiLCJpYXQiOjE3MzIxMDU2NTQsImV4cCI6MTczMjEwOTI1NH0.aonx2USfCe0IlTtLdmJeCUtVj_MJyqU-FoQKdPEX28o","Content-Length":"","Content-Type":""}
+[2024-11-29 20:51:52] Request Body: 
+[2024-11-29 20:51:52] Routes loaded successfully.
+[2024-11-29 20:51:52] Sanitized Request URI: /api/home
+[2024-11-29 20:51:52] Module path: /application/src/modules/home/Home.php
+[2024-11-29 20:51:52] Module file found. Including: /application/src/modules/home/Home.php
+[2024-11-29 20:51:59] ===== New Request =====
+[2024-11-29 20:51:59] Request: GET /api/home
+[2024-11-29 20:51:59] Request Headers: {"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"540ac0e5-6a7b-4db3-ab89-3005810da590","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIyODgzOTkwOTAwOTIzNDg5MDMiLCJpYXQiOjE3MzIxMDU2NTQsImV4cCI6MTczMjEwOTI1NH0.aonx2USfCe0IlTtLdmJeCUtVj_MJyqU-FoQKdPEX28o","Content-Length":"","Content-Type":""}
+[2024-11-29 20:51:59] Request Body: 
+[2024-11-29 20:51:59] Routes loaded successfully.
+[2024-11-29 20:51:59] Sanitized Request URI: /api/home
+[2024-11-29 20:51:59] Module path: /application/src/modules/home/Home.php
+[2024-11-29 20:51:59] Module file found. Including: /application/src/modules/home/Home.php
+[2024-11-29 21:03:13] ===== New Request =====
+[2024-11-29 21:03:13] Request: POST /api/auth/register
+[2024-11-29 21:03:13] Request Headers: {"Content-Length":"83","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"f21e7a16-39e3-4f97-a7e0-865cdd38afbb","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-29 21:03:13] Request Body: {
     "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
-    "password": "s311111111111"
+    "password": "111111111"
 }
-[2024-11-26 00:02:19] Routes loaded successfully.
-[2024-11-26 00:02:19] Sanitized Request URI: /api/auth/register
-[2024-11-26 00:02:19] Module path: /application/src/modules/auth/Register.php
-[2024-11-26 00:02:19] Module file found. Including: /application/src/modules/auth/Register.php
-[2024-11-26 00:07:44] ===== New Request =====
-[2024-11-26 00:07:44] Request: POST /api/auth/register
-[2024-11-26 00:07:44] Request Headers: {"Content-Length":"87","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"68c1e7af-194f-4c6f-bf38-ddfa35216695","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
-[2024-11-26 00:07:44] Request Body: {
-    "mail": "st333ri21n231g33232@3s3tr3i33ng.coem",
-    "password": "s311111111111"
+[2024-11-29 21:03:13] Routes loaded successfully.
+[2024-11-29 21:03:13] Sanitized Request URI: /api/auth/register
+[2024-11-29 21:03:13] Module path: /application/src/modules/auth/Register.php
+[2024-11-29 21:03:13] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-29 21:06:07] ===== New Request =====
+[2024-11-29 21:06:07] Request: POST /api/auth/register
+[2024-11-29 21:06:07] Request Headers: {"Content-Length":"84","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"3ccd1bda-69ac-4461-a66f-c20d79edce42","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-29 21:06:07] Request Body: {
+    "mail": "st333ri21n231g33232@3s3tr3i33ng.coem1",
+    "password": "111111111"
 }
-[2024-11-26 00:07:44] Routes loaded successfully.
-[2024-11-26 00:07:44] Sanitized Request URI: /api/auth/register
-[2024-11-26 00:07:44] Module path: /application/src/modules/auth/Register.php
-[2024-11-26 00:07:44] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-29 21:06:07] Routes loaded successfully.
+[2024-11-29 21:06:07] Sanitized Request URI: /api/auth/register
+[2024-11-29 21:06:07] Module path: /application/src/modules/auth/Register.php
+[2024-11-29 21:06:07] Module file found. Including: /application/src/modules/auth/Register.php
+[2024-11-29 21:06:36] ===== New Request =====
+[2024-11-29 21:06:36] Request: POST /api/auth/confirm
+[2024-11-29 21:06:36] Request Headers: {"Content-Length":"24","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"f5fd9e5e-4782-4109-8ffe-41b51248aaa0","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"text\/plain","Authorization":"Bearer jwt_token"}
+[2024-11-29 21:06:36] Request Body: {
+    "code": "90OtOa"
+}
+[2024-11-29 21:06:36] Routes loaded successfully.
+[2024-11-29 21:06:36] Sanitized Request URI: /api/auth/confirm
+[2024-11-29 21:06:36] Module path: /application/src/modules/auth/ConfirmMail.php
+[2024-11-29 21:06:36] Module file found. Including: /application/src/modules/auth/ConfirmMail.php
+[2024-11-29 21:06:36] Request finished.
+[2024-11-29 21:07:02] ===== New Request =====
+[2024-11-29 21:07:02] Request: POST /api/auth/login
+[2024-11-29 21:07:02] Request Headers: {"Content-Length":"89","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"8275fb25-8c70-4717-92b0-dec8c889a087","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json"}
+[2024-11-29 21:07:02] Request Body: {
+    "username": "st333ri21n231g33232@3s3tr3i33ng.coem1",
+    "password": "111111111"
+}
+
+[2024-11-29 21:07:02] Routes loaded successfully.
+[2024-11-29 21:07:02] Sanitized Request URI: /api/auth/login
+[2024-11-29 21:07:02] Module path: /application/src/modules/auth/Login.php
+[2024-11-29 21:07:02] Module file found. Including: /application/src/modules/auth/Login.php
+[2024-11-29 21:07:02] Request finished.
+[2024-11-29 21:07:25] ===== New Request =====
+[2024-11-29 21:07:25] Request: GET /api/home
+[2024-11-29 21:07:25] Request Headers: {"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"f154b396-6632-44a7-af95-0ba73916e2a3","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE","Content-Length":"","Content-Type":""}
+[2024-11-29 21:07:25] Request Body: 
+[2024-11-29 21:07:25] Routes loaded successfully.
+[2024-11-29 21:07:25] Sanitized Request URI: /api/home
+[2024-11-29 21:07:25] Module path: /application/src/modules/home/Home.php
+[2024-11-29 21:07:25] Module file found. Including: /application/src/modules/home/Home.php
+[2024-11-29 21:07:48] ===== New Request =====
+[2024-11-29 21:07:48] Request: POST /api/createuser
+[2024-11-29 21:07:48] Request Headers: {"Content-Length":"23","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"762cb68f-e5ac-44f8-9287-595305f1eb17","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:07:48] Request Body: {
+    "username": "1"
+}
+[2024-11-29 21:07:48] Routes loaded successfully.
+[2024-11-29 21:07:48] Sanitized Request URI: /api/createuser
+[2024-11-29 21:07:48] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:07:48] Module file found. Including: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:12:21] ===== New Request =====
+[2024-11-29 21:12:21] Request: POST /api/createuser
+[2024-11-29 21:12:21] Request Headers: {"Content-Length":"23","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"e1039b03-22b1-487f-ac3f-605b67656182","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:12:21] Request Body: {
+    "username": "1"
+}
+[2024-11-29 21:12:21] Routes loaded successfully.
+[2024-11-29 21:12:21] Sanitized Request URI: /api/createuser
+[2024-11-29 21:12:21] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:12:21] Module file found. Including: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:12:21] Request finished.
+[2024-11-29 21:13:22] ===== New Request =====
+[2024-11-29 21:13:22] Request: POST /api/createuser
+[2024-11-29 21:13:22] Request Headers: {"Content-Length":"23","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"983df4d9-56fd-4945-b3aa-778d1ade52ce","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:13:22] Request Body: {
+    "username": "1"
+}
+[2024-11-29 21:13:22] Routes loaded successfully.
+[2024-11-29 21:13:22] Sanitized Request URI: /api/createuser
+[2024-11-29 21:13:22] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:13:22] Module file found. Including: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:13:22] Request finished.
+[2024-11-29 21:14:15] ===== New Request =====
+[2024-11-29 21:14:15] Request: POST /api/createuser
+[2024-11-29 21:14:15] Request Headers: {"Content-Length":"23","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"1042f37a-d5e6-46e1-b403-f3be8fb9650d","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:14:15] Request Body: {
+    "username": "1"
+}
+[2024-11-29 21:14:15] Routes loaded successfully.
+[2024-11-29 21:14:15] Sanitized Request URI: /api/createuser
+[2024-11-29 21:14:15] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:14:15] Module file found. Including: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:14:15] Request finished.
+[2024-11-29 21:15:42] ===== New Request =====
+[2024-11-29 21:15:42] Request: POST /api/createuser
+[2024-11-29 21:15:42] Request Headers: {"Content-Length":"23","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"c8753fa3-f109-4f7e-a629-8a57d4de8795","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:15:42] Request Body: {
+    "username": "1"
+}
+[2024-11-29 21:15:42] Routes loaded successfully.
+[2024-11-29 21:15:42] Sanitized Request URI: /api/createuser
+[2024-11-29 21:15:42] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:15:42] Module file found. Including: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:15:42] Request finished.
+[2024-11-29 21:15:47] ===== New Request =====
+[2024-11-29 21:15:47] Request: POST /api/createuser
+[2024-11-29 21:15:47] Request Headers: {"Content-Length":"29","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"afa4b190-f9df-4728-81cb-72e454d42d7a","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:15:47] Request Body: {
+    "username": "1111111"
+}
+[2024-11-29 21:15:47] Routes loaded successfully.
+[2024-11-29 21:15:47] Sanitized Request URI: /api/createuser
+[2024-11-29 21:15:47] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:15:47] Module file found. Including: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:15:47] Request finished.
+[2024-11-29 21:16:12] ===== New Request =====
+[2024-11-29 21:16:12] Request: POST /api/createuser
+[2024-11-29 21:16:12] Request Headers: {"Content-Length":"29","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"6acb8a24-1929-4821-b96f-06ab6387edf6","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:16:12] Request Body: {
+    "username": "1111111"
+}
+[2024-11-29 21:16:12] Routes loaded successfully.
+[2024-11-29 21:16:12] Sanitized Request URI: /api/createuser
+[2024-11-29 21:16:12] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:16:12] Module file found. Including: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:16:12] Request finished.
+[2024-11-29 21:16:40] ===== New Request =====
+[2024-11-29 21:16:40] Request: POST /api/createuser
+[2024-11-29 21:16:40] Request Headers: {"Content-Length":"29","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"ca317cb8-36d7-49ae-adf0-315e262f0eab","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:16:40] Request Body: {
+    "username": "1111111"
+}
+[2024-11-29 21:16:40] Routes loaded successfully.
+[2024-11-29 21:16:40] Sanitized Request URI: /api/createuser
+[2024-11-29 21:16:40] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:16:40] Module file found. Including: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:16:40] Request finished.
+[2024-11-29 21:17:00] ===== New Request =====
+[2024-11-29 21:17:00] Request: POST /api/createuser
+[2024-11-29 21:17:00] Request Headers: {"Content-Length":"29","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"0cfa4a2a-d8ea-41fe-a445-47688fbaee1f","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:17:00] Request Body: {
+    "username": "1111111"
+}
+[2024-11-29 21:17:00] Routes loaded successfully.
+[2024-11-29 21:17:00] Sanitized Request URI: /api/createuser
+[2024-11-29 21:17:00] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:17:00] Module file found. Including: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:17:00] Request finished.
+[2024-11-29 21:17:29] ===== New Request =====
+[2024-11-29 21:17:29] Request: POST /api/createuser
+[2024-11-29 21:17:29] Request Headers: {"Content-Length":"29","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"49e58944-a595-455c-98f1-a937add62f35","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:17:29] Request Body: {
+    "username": "1111111"
+}
+[2024-11-29 21:17:29] Routes loaded successfully.
+[2024-11-29 21:17:29] Sanitized Request URI: /api/createuser
+[2024-11-29 21:17:29] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:17:29] Module file found. Including: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:17:29] Request finished.
+[2024-11-29 21:17:43] ===== New Request =====
+[2024-11-29 21:17:43] Request: POST /api/createuser
+[2024-11-29 21:17:43] Request Headers: {"Content-Length":"29","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"303b5f29-fb35-41d1-a0dc-a23c50b91522","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:17:43] Request Body: {
+    "username": "1111111"
+}
+[2024-11-29 21:17:43] Routes loaded successfully.
+[2024-11-29 21:17:43] Sanitized Request URI: /api/createuser
+[2024-11-29 21:17:43] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:17:43] Module file found. Including: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:21:35] ===== New Request =====
+[2024-11-29 21:21:35] Request: POST /api/createuser
+[2024-11-29 21:21:35] Request Headers: {"Content-Length":"29","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"ef3628d5-469f-4ce0-b5bc-ef82a7970ef2","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:21:35] Request Body: {
+    "username": "1111111"
+}
+[2024-11-29 21:21:35] Routes loaded successfully.
+[2024-11-29 21:21:35] Sanitized Request URI: /api/createuser
+[2024-11-29 21:21:35] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:21:35] Module file found. Including: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:24:54] ===== New Request =====
+[2024-11-29 21:24:54] Request: POST /api/createuser
+[2024-11-29 21:24:54] Request Headers: {"Content-Length":"29","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"localhost:34000","Postman-Token":"e738f34e-c534-4a27-8ab7-376407b051cb","Accept":"*\/*","User-Agent":"PostmanRuntime\/7.39.0","Content-Type":"application\/json","Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb29raWVjbXMiLCJzdWIiOiIxODIxNTI3NDk1OTQwNjA0MzYiLCJpYXQiOjE3MzI5MTQ0MjIsImV4cCI6MTczMjkxODAyMn0.xRPDnAXG4zyWaM2A3llwkDZOsKlmUVScCwcv_moyHSE"}
+[2024-11-29 21:24:54] Request Body: {
+    "username": "1111111"
+}
+[2024-11-29 21:24:54] Routes loaded successfully.
+[2024-11-29 21:24:54] Sanitized Request URI: /api/createuser
+[2024-11-29 21:24:54] Module path: /application/src/modules/home/CreateUser.php
+[2024-11-29 21:24:54] Module file found. Including: /application/src/modules/home/CreateUser.php
