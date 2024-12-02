@@ -20,7 +20,7 @@ function log_message($message, $level = 1) {
         file_put_contents($logFile, "[$date] $message\n", FILE_APPEND);
     }
 }
-
+// Log detailed request information (used for level 2)
 // Log detailed request information (used for level 2)
 function log_request_details() {
     if (LOG_LEVEL < 2) return;
@@ -30,10 +30,35 @@ function log_request_details() {
     $headers = getallheaders();
     $body = file_get_contents('php://input');
 
+    // Censor emails in the headers
+    if (isset($headers['Authorization'])) {
+        $headers['Authorization'] = preg_replace('/(Bearer\s)(\S+@\S+)/', '$1****@****.com', $headers['Authorization']);
+    }
+
+    // Censor email in the body if it's JSON
+    if ($body && is_json($body)) {
+        $decodedBody = json_decode($body, true);
+        if (isset($decodedBody['mail'])) {
+            $decodedBody['mail'] = preg_replace('/(.+)@(.+)/', '****@****.com', $decodedBody['mail']);
+        }
+        if (isset($decodedBody['password'])) {
+            $decodedBody['password'] = '********';  // Mask the password
+        }
+        $body = json_encode($decodedBody);
+    }
+
     log_message("Request: $method $uri", 2);
     log_message("Request Headers: " . json_encode($headers), 2);
     log_message("Request Body: " . $body, 2);
 }
+
+// Helper function to check if the body is JSON
+function is_json($string) {
+    json_decode($string);
+    return (json_last_error() == JSON_ERROR_NONE);
+}
+
+
 
 // Skip logging for /debug/ requests
 $isDebugRequest = strpos($_SERVER['REQUEST_URI'], '/debug/') !== false;
