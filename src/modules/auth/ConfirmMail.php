@@ -5,17 +5,14 @@ ini_set('display_errors', true);
 require_once __mysql__;
 $file_path = __config__;
 
-
 $yaml_data = read_yaml($file_path);
 
 define('JWT_SECRET_KEY', $yaml_data['securecode']);
 
-
-// Get the raw POST data
 $inputData = file_get_contents('php://input');
 
-// Decode the JSON data
 $data = json_decode($inputData, true);
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Handle GET request
     http_response_code(405); // Method Not Allowed
@@ -24,37 +21,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         'message' => 'Unsupported request method.'
     ]);
     return;
-};
-// Log the incoming request body for debugging
-// error_log(print_r($data, true)); // Logs the raw POST data
-$stmt = $conn->prepare("SELECT * FROM verify_codes WHERE code = :code");
+}
+
+$stmt = $conn->prepare("
+    SELECT vc.userid, vc.action, vc.expire
+    FROM verify_codes vc 
+    JOIN users u ON vc.userid = u.id 
+    WHERE vc.code = :code
+");
 $stmt->bindParam(':code', $data['code']);
 $stmt->execute();
 $code = $stmt->fetch(PDO::FETCH_ASSOC);
-// Example response
-// var_dump($code);
-// echo($user);
+
 if ($code) {
-    $stmt = $conn->prepare("UPDATE users SET mail_verify = 1 WHERE id = :id");
-    $stmt->bindParam(':id', $code['userid']);
-    $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $time = time();
+    if ($time > $code['expire']) {
+        response('Token has expired', true, 400, null, null);
+        return;
+    }
 
-    $stmt = $conn->prepare("DELETE FROM verify_codes WHERE code = :code;");
-    $stmt->bindParam(':code', $data['code']);
-    $stmt->execute();
+    if ($code['action'] == 1) {
+        $stmt = $conn->prepare("UPDATE users SET mail_verify = 1 WHERE id = :id");
+        $stmt->bindParam(':id', $code['userid']);
+        $stmt->execute();
 
-    echo json_encode([
-        'error' => false,
-        'msg' => 'Email confirmed successfully',
-        'url' => '/login',
-        'data'=> (object)[]
-    ]);
+        $stmt = $conn->prepare("DELETE FROM verify_codes WHERE code = :code");
+        $stmt->bindParam(':code', $data['code']);
+        $stmt->execute();
+
+        response('Email confirmed successfully', false, 200, '/login', null);
+    } else {
+        response('Invalid or expired token', true, 400, null, null);
+    }
 } else {
-    echo json_encode([
-        'error' => true,
-        'msg' => 'Invalid or expired token',
-        'url'=> null,
-        'data'=> (object)[]
-    ]);
+    response('Invalid or expired token', true, 400, null, null);
 }
+
+?>

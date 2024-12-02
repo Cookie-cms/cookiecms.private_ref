@@ -35,10 +35,7 @@ $headers = getallheaders();
 if (isset($headers['Authorization'])) {
     $jwt = str_replace("Bearer ", "", $headers['Authorization']); // Extract token from 'Bearer <token>'
 } else {
-    echo json_encode([
-        'error' => true,
-        'msg' => 'Authorization header not found'
-    ]);
+    return response("Authorization header not found", true, 400, null, null);
     exit();
 }
 
@@ -49,28 +46,18 @@ try {
     
     // Check if the token is already blacklisted
     if (is_token_blacklisted($conn, $jwt)) {
-        echo json_encode([
-            'error' => true,
-            'msg' => 'Token has already been blacklisted'
-        ]);
+        return response("Token has already been blacklisted", true, 400, "/login", null);
         exit();
     }
 
     // Add token to the blacklist (invalidate it)
     blacklist_token($conn, $jwt);
 
-    // Return success response
-    echo json_encode([
-        'error' => false,
-        'msg' => 'Logout successful, token added to blacklist'
-    ]);
+
+    return response("Logout successful, token added to blacklist", false, 200, $homeUrl, $jwt);
 } catch (Exception $e) {
-    // Handle token errors (e.g., invalid token, expired token)
-    echo json_encode([
-        'error' => true,
-        'msg' => 'Invalid or expired token: ' . $e->getMessage()
-    ]);
     
-    // Log the detailed error message for internal debugging (optional)
-    error_log("JWT Error: " . $e->getMessage(), 0);
+    log_to_file("[ERROR] JWT Error: " . $e->getMessage(), 0);
+    return response("Invalid or expired token", true, 400, "/login", null);
+
 }

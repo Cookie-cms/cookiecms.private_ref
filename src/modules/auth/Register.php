@@ -47,12 +47,17 @@ if (isset($data['mail']) && isset($data['password'])) {
             exit();
         }
 
-        $id = mt_rand(000000000000000000, 999999999999999999);
+        
+        $userID = mt_rand(000000000000000000, 999999999999999999);
 
+        // $userID = $id;
+        // echo($userID);
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
+
+
         $stmt = $conn->prepare("INSERT INTO users (id, mail, password) VALUES (:id, :mail, :password)");
-        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':id', $userID);
         $stmt->bindParam(':mail', $mail);
         $stmt->bindParam(':password', $hashed_password);
         $stmt->execute();
@@ -63,17 +68,18 @@ if (isset($data['mail']) && isset($data['password'])) {
         for ($i = 0; $i < $length; $i++) {
             $randomCode .= $characters[random_int(0, strlen($characters) - 1)];
         }
-        $time = 0;
-
-        $stmt = $conn->prepare("INSERT INTO verify_codes (userid, code, expire) VALUES (:userid, :code, :expire)");
-        $stmt->bindParam(':userid', $id);
+        $timexp = time() + 3600;
+        // $timexp = 0;
+        $action = 1;
+        $stmt = $conn->prepare("INSERT INTO verify_codes (userid, code, expire, action) VALUES (:userid, :code, :expire, :action)");
+        $stmt->bindParam(':userid', $userID);
         $stmt->bindParam(':code', $randomCode);
-        $stmt->bindParam(':expire', $time);        
+        $stmt->bindParam(':expire', $timexp);        
+        $stmt->bindParam(':action', $action);        
         $stmt->execute();
         return response("Registration successful. Please proceed to login.", false, 200, "/home", null);
         exit(); // Ensure no further code is executed
     } catch (PDOException $e) {
-        error_log("PDOException: " . $e->getMessage(), 0);
         log_to_file("[ERROR] PDOException: " . $e->getMessage(), 0);
 
         return response("An error occurred during registration. Please try again later.", true, 400, null, null);

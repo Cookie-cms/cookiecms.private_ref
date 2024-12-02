@@ -16,14 +16,9 @@ use \Firebase\JWT\JWT;
 // Secret key for encoding the JWT (make sure this is kept secure)
 // define('JWT_SECRET_KEY', $yaml_data['securecode']);
 
-// Get the raw POST data
 $inputData = file_get_contents('php://input');
 
-// Decode the JSON data
 $data = json_decode($inputData, true);
-
-// Log the incoming request body for debugging
-// error_log(print_r($data, true)); // Logs the raw POST data
 
 function RegisterDiscord($user) {
     global $conn, $yaml_data;
@@ -49,17 +44,20 @@ function RegisterDiscord($user) {
     for ($i = 0; $i < $length; $i++) {
         $randomCode .= $characters[random_int(0, strlen($characters) - 1)];
     }
-    $time = 0;
-
-    $stmt = $conn->prepare("INSERT INTO verify_codes (userid, code, expire) VALUES (:userid, :code, :expire)");
+    $timexp = time() + 3600;
+    $action = 1;
+    $stmt = $conn->prepare("INSERT INTO verify_codes (userid, code, expire, action) VALUES (:userid, :code, :expire, :action)");
     $stmt->bindParam(':userid', $id);
     $stmt->bindParam(':code', $randomCode);
-    $stmt->bindParam(':expire', $time);        
+    $stmt->bindParam(':expire', $timexp);        
+    $stmt->bindParam(':action', $action);        
     $stmt->execute();
-
-    $urlAvatar = "https://cdn.discordapp.com/avatars/" . $userid . "/" . "size=128";
+    // var_dump($user);
+    // $urlAvatar = "https://cdn.discordapp.com/avatars/" . $userid . "/" . $user['user_avatar']. "?size=128";
 
     
-    return response("Registration successful. Please proceed to login.", false, 200, "/home", null);
+    return response("Registration successful. Please proceed to registration.", false, 200, "/home", null);
 
 }
+
+
