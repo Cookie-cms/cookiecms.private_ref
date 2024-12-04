@@ -3,11 +3,11 @@ error_reporting(E_ALL);
 ini_set('display_errors', true);
 
 // Include necessary files and libraries
+// Include necessary files and libraries
 require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/mysql.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
 $file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
 $yaml_data = read_yaml($file_path);
-
 
 $securecode = $yaml_data['securecode'];
 $jwt = str_replace('Bearer ', '', $_SERVER['HTTP_AUTHORIZATION'] ?? '');
@@ -15,44 +15,58 @@ $jwt = str_replace('Bearer ', '', $_SERVER['HTTP_AUTHORIZATION'] ?? '');
 $status = isJwtExpiredOrBlacklisted($jwt, $conn, $securecode);
 
 $inputData = file_get_contents('php://input');
-
 $data = json_decode($inputData, true);
 
-
-
-// Извлечение данных из тела запроса
-// $inputData = json_decode(file_get_contents("php://input"), true);
-if (!$inputData) {
+// Validate if valid JSON was received
+if (!$data) {
     response(400, "Bad Request: Invalid JSON");
     exit;
 }
 
-// Логика обработки запросов
+$action = $data['action'] ?? null;
+
+// Handle the different actions
 try {
-    if (isset($inputData['username'], $inputData['password'])) {
-        // Обновление имени пользователя
-        updateUsername($conn, $user['id'], $inputData['username'], $inputData['password']);
-    } elseif (isset($inputData['password'], $inputData['new_password'])) {
-        // Изменение пароля
-        changePassword($conn, $user['id'], $inputData['password'], $inputData['new_password']);
-    } elseif (isset($inputData['cape'])) {
-        // Смена плаща
-        changeCape($conn, $user['id'], $inputData['cape']);
-    } elseif (isset($_FILES['skin'])) {
-        // Загрузка скина
-        uploadSkin($conn, $user['id'], $_FILES['skin']);
-    } else {
-        response(400, "Bad Request: Missing required fields");
-        exit;
+    switch ($action) {
+        case 'update_username':
+            if (isset($data['username'], $data['password'])) {
+                updateUsername($conn, $user['id'], $data['username'], $data['password']);
+            } else {
+                response(400, "Bad Request: Missing required fields for updating username");
+            }
+            break;
+        case 'change_password':
+            if (isset($data['password'], $data['new_password'])) {
+                changePassword($conn, $user['id'], $data['password'], $data['new_password']);
+            } else {
+                response(400, "Bad Request: Missing required fields for changing password");
+            }
+            break;
+        case 'change_cape':
+            if (isset($data['cape'])) {
+                changeCape($conn, $user['id'], $data['cape']);
+            } else {
+                response(400, "Bad Request: Missing required fields for changing cape");
+            }
+            break;
+        default:
+            // Handle skin upload separately
+            if (isset($_FILES['skin'])) {
+                uploadSkin($conn, $user['id'], $_FILES['skin']);
+            } else {
+                response(400, "Bad Request: Missing action parameter");
+            }
+            break;
     }
 } catch (Exception $e) {
     response(500, "Internal Server Error: " . $e->getMessage());
     exit;
 }
 
-// Функция для обновления имени пользователя
+// Functions for updating username, password, cape, etc., remain unchanged
+
+// Update username function
 function updateUsername($conn, $userId, $newUsername, $currentPassword) {
-    // Validate current password
     if (!validatePassword($conn, $userId, $currentPassword)) {
         response(401, "Invalid password");
         exit;
@@ -75,8 +89,7 @@ function updateUsername($conn, $userId, $newUsername, $currentPassword) {
     response(200, "Username updated successfully");
 }
 
-
-// Функция для изменения пароля
+// Change password function
 function changePassword($conn, $userId, $currentPassword, $newPassword) {
     if (!validatePassword($conn, $userId, $currentPassword)) {
         response(401, "Invalid password");
@@ -87,14 +100,14 @@ function changePassword($conn, $userId, $currentPassword, $newPassword) {
     response(200, "Password updated successfully");
 }
 
-// Функция для смены плаща
+// Change cape function
 function changeCape($conn, $userId, $capeId) {
     $stmt = $conn->prepare("UPDATE users SET cape_id = :cape WHERE id = :id");
     $stmt->execute([':cape' => $capeId, ':id' => $userId]);
     response(200, "Cape updated successfully");
 }
 
-
+// Skin upload function remains the same
 function uploadSkin($conn, $userId, $skinFile) {
     global $yaml_data;
 
@@ -160,8 +173,6 @@ function uploadSkin($conn, $userId, $skinFile) {
     }
 }
 
-
-// Функция для загрузки скина
 function removeSkin($conn, $userId, $skinId) {
     global $yaml_data;
 
@@ -206,23 +217,9 @@ function removeSkin($conn, $userId, $skinId) {
 }
 
 
-// Вспомогательная функция проверки пароля
 function validatePassword($conn, $userId, $password) {
     $stmt = $conn->prepare("SELECT password FROM users WHERE id = :id");
     $stmt->execute([':id' => $userId]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     return password_verify($password, $user['password']);
 }
-
-// Вспомогательная функция для ответа
-function response($statusCode, $message, $data = []) {
-    http_response_code($statusCode);
-    echo json_encode([
-        'error' => $statusCode >= 400,
-        'msg' => $message,
-        'url' => null,
-        'data' => $data
-    ]);
-    exit;
-}
-

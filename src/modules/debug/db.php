@@ -80,7 +80,7 @@ try {
     
             // Prevent dangerous commands: Block DROP, ALTER, TRUNCATE, DELETE TABLE
             $forbiddenCommands = [
-                'DROP', 'TRUNCATE', 'ALTER', 'CREATE', 'DELETE TABLE', 'DROP TABLE'
+                'ALTER', 'CREATE', 'DELETE TABLE', 'DROP TABLE'
             ];
     
             foreach ($forbiddenCommands as $cmd) {

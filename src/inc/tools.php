@@ -74,7 +74,7 @@ function response($message, $status = false, $statusCode = 200, $url = null, $da
     exit;
 }
 
-function log_to_file($message, $clients = null) {
+function log_to_file($message) {
     $logFile = $_SERVER['DOCUMENT_ROOT'] . '/logs/app.log';
 
     $date = date('Y-m-d H:i:s');
@@ -84,13 +84,13 @@ function log_to_file($message, $clients = null) {
     file_put_contents($logFile, $logMessage, FILE_APPEND);
 
     // Если есть клиенты WebSocket, отправляем им сообщение
-    if ($clients) {
-        foreach ($clients as $client) {
-            $client->send(json_encode([
-                'type' => 'log',
-                'message' => $logMessage,
-            ]));
-        }
-    }
+    // if ($clients) {
+    //     foreach ($clients as $client) {
+    //         $client->send(json_encode([
+    //             'type' => 'log',
+    //             'message' => $logMessage,
+    //         ]));
+    //     }
+    // }
 }
 
