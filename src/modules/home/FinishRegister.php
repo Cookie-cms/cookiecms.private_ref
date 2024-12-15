@@ -14,13 +14,15 @@ $inputData = file_get_contents('php://input');
 $data = json_decode($inputData, true);
 
 // Log the incoming request body for debugging
-// error_log(print_r($data, true));
+log_message("Incoming request body: " . print_r($data, true));
 
 if (empty($data['username'])) {
+    log_message("Username is required.");
     return response("Username is required.", false, 400);
 }
 
 if (!empty($data['password']) && strlen($data['password']) < 6) {
+    log_message("Password must be at least 6 characters.");
     return response("Password must be at least 6 characters.", false, 400);
 }
 
@@ -37,7 +39,10 @@ if ($status) {
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    log_message("User data: " . print_r($user, true));
+
     if (!empty($user['username']) || !empty($user['uuid']) || !empty($user['password'])) {
+        log_message("User already has a Player account.");
         return response("You already have a Player account", false, 409, "/home");
     }
 
@@ -47,6 +52,7 @@ if ($status) {
     $username = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($username) {
+        log_message("Username already taken.");
         return response("Username already taken.", true, 409);
     } else {
         $uuid = generateUUIDv4();
@@ -58,6 +64,7 @@ if ($status) {
         $stmt->execute();
 
         $affectedRows = $stmt->rowCount();
+        log_message("User update affected rows: $affectedRows.");
         if ($affectedRows > 0) {
             echo "User updated successfully. Rows affected: $affectedRows.";
         } else {
@@ -76,6 +83,7 @@ if ($status) {
         $stmt->execute();
 
         $affectedRows = $stmt->rowCount();
+        log_message("Password update affected rows: $affectedRows.");
         if ($affectedRows > 0) {
             echo "Password updated successfully. Rows affected: $affectedRows.";
         } else {
@@ -86,4 +94,5 @@ if ($status) {
     return response("Created", true, 200, "/home");
 }
 
+log_message("Invalid token or session expired.");
 return response("Invalid token or session expired", false, 401);
