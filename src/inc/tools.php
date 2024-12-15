@@ -9,6 +9,7 @@ use \Firebase\JWT\Key;
 function isJwtExpiredOrBlacklisted($jwt, $pdo, $securecode) {
     // Проверка наличия JWT
     if (empty($jwt)) {
+        log_message('JWT token is missing.');
         // responseWithError('JWT токен отсутствует.');
     }
 
@@ -19,6 +20,7 @@ function isJwtExpiredOrBlacklisted($jwt, $pdo, $securecode) {
 
     // Если токен найден в черном списке
     if ($blacklistEntry) {
+        log_message('JWT token is blacklisted.');
         if (time() > $blacklistEntry['expiration']) {
             return true; // Токен истек и находится в черном списке
         }
@@ -34,12 +36,14 @@ function isJwtExpiredOrBlacklisted($jwt, $pdo, $securecode) {
             return true; // Токен истек
         }
 
+        log_message('JWT token is valid. $decoded: ' . json_encode($decoded));
         // Если токен валиден, вернуть данные
         return [
             'status' => 'success',
             'data' => $decoded
         ];
     } catch (Exception $e) {
+        log_message('Invalid token: ' . $e->getMessage());  
         // responseWithError('Недействительный токен.', ['error' => $e->getMessage()]);
         return;
     }

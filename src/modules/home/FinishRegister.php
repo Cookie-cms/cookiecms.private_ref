@@ -95,4 +95,4 @@ if ($status) {
 }
 
 log_message("Invalid token or session expired.");
-return response("Invalid token or session expired", false, 401);
+// return response("Invalid token or session expired", false, 401);
