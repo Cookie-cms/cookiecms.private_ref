@@ -10,6 +10,7 @@ function isJwtExpiredOrBlacklisted($jwt, $pdo, $securecode) {
     // Проверка наличия JWT
     if (empty($jwt)) {
         log_message('JWT token is missing.');
+        return response("Invalid token", false, 400);  
         // responseWithError('JWT токен отсутствует.');
     }
 
@@ -35,15 +36,14 @@ function isJwtExpiredOrBlacklisted($jwt, $pdo, $securecode) {
         if ($exp < time()) {
             return true; // Токен истек
         }
-
-        log_message('JWT token is valid. $decoded: ' . json_encode($decoded));
         // Если токен валиден, вернуть данные
         return [
             'status' => 'success',
             'data' => $decoded
         ];
     } catch (Exception $e) {
-        log_message('Invalid token: ' . $e->getMessage());  
+        log_message('Invalid token: ' . $e->getMessage());
+        return response("Invalid token", false, 400);  
         // responseWithError('Недействительный токен.', ['error' => $e->getMessage()]);
         return;
     }
