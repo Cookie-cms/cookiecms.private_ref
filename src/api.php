@@ -93,7 +93,8 @@ try {
         if (!$isDebugRequest) {
             log_message("Route not defined for: $requestUri", 1);
         }
-        response(true, 404, null, "Route not defined", null);
+        response("Route not defined", true, 404);
+
     } else {
         $modulePath = $_SERVER['DOCUMENT_ROOT'] . '/src/modules/' . $routes[$requestUri];
         if (!$isDebugRequest) {
