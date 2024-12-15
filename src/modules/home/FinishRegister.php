@@ -12,7 +12,6 @@ $file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
 $yaml_data = read_yaml($file_path);
 
 // Include JWT library
-use \Firebase\JWT\JWT;
 
 define('JWT_SECRET_KEY', $yaml_data['securecode']);
 
@@ -81,7 +80,7 @@ if ($status) {
         }
     }
 
-    if (($data['password'])) {
+    if ($pas) {
         // Hash the password
         $password = password_hash($data['password'], PASSWORD_DEFAULT);
 
@@ -110,6 +109,4 @@ if ($status) {
     // // Return response as JSON
     // echo json_encode($response);
     return response("created", true, 200, "/home");
-} else {
-    return response("Bad request.", true, 400);
 }
