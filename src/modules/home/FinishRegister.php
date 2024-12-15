@@ -110,4 +110,6 @@ if ($status) {
     // // Return response as JSON
     // echo json_encode($response);
     return response("created", true, 200, "/home");
+} else {
+    return response("Bad request.", true, 400);
 }
