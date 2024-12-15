@@ -9,7 +9,7 @@
 /api/auth/newverifyc: auth/RequestNewvc.php
 
 /api/home: home/Home.php
-/api/createuser: home/CreateUser.php
+/api/finishregister: home/finishregister.php
 
 
 /api/debug/logs: /debug/logs.php

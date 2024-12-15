@@ -194,15 +194,7 @@ Password requried (min 8 characters)
 **Request Headers**:
 - **Authorization**: Bearer `jwt_token`
 
-**Request Body**:
-```
-{
-    "jwt": string   // The JWT token to be invalidated
-}
-```
-
 **Response**:
-
 - **200 OK**:
 ```
 {

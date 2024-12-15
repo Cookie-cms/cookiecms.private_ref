@@ -39,12 +39,21 @@ if ($status) {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
     // Ensure that user data is available
-    if (empty($user['username']) || empty($user['uuid'])) {
+    if (empty($user['username']) || empty($user['uuid']) || empty($user['password'])) {
         // Handle the case where the user doesn't exist
-        $data = [
-            "code" => 900
-        ];
-        return response("Pls create use", true, 401,"/login",$data);
+        
+        if (empty($user['username']) || empty($user['uuid'])){
+            $response = ["data" => [
+                "username_create" => empty($user['username'])
+            ]];
+        }
+        if (empty($user['password'])){
+            $response = ["data" => [
+                "password_create" => empty($user['password'])
+            ]];
+        }
+
+        return response("Your account is not finished", true, 401,"/login",$response);
         // responseWithError("Pls create user", $data);
         return;
     }
