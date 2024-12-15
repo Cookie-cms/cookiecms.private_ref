@@ -42,6 +42,11 @@ if ($status) {
     if (empty($user['username']) || empty($user['uuid']) || empty($user['password'])) {
         // Handle the case where the user doesn't exist
         
+        $response = ["data" => [
+            "username_create" => false,
+            "password_create" => false
+        ]];
+
         if (empty($user['username']) || empty($user['uuid'])){
             $response = ["data" => [
                 "username_create" => empty($user['username'])

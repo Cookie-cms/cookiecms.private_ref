@@ -34,16 +34,19 @@ $status = isJwtExpiredOrBlacklisted($jwt, $conn, $securecode);
 if ($status) {
     $userId = $status['data']->sub;
 
-    $stmt = $conn->prepare("SELECT username, uuid, mail_verify FROM users WHERE id = :id");
+    $stmt = $conn->prepare("SELECT username, uuid, mail_verify, password FROM users WHERE id = :id");
     $stmt->bindParam(':id', $userId);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if (!empty($user['username']) || !empty($user['uuid'])) {
+    if (!empty($user['username']) || !empty($user['uuid']) || !empty($user['password'])) {
         // If username or UUID already exists
         response("You already have a Player account", false, 409, "/home" );
         return;
     }
+
+
+
 
     $stmt = $conn->prepare("SELECT username FROM users WHERE username = :username");
     $stmt->bindParam(':username', $data['username']);
@@ -71,13 +74,30 @@ if ($status) {
 
         $stmt->execute();
         $affectedRows = $stmt->rowCount();
-
         if ($affectedRows > 0) {
             echo "User updated successfully. Rows affected: $affectedRows.";
         } else {
             echo "Update executed, but no rows were affected. Rows affected: $affectedRows.";
         }
     }
+
+    if (($data['password'])) {
+        // Hash the password
+        $password = password_hash($data['password'], PASSWORD_DEFAULT);
+
+        // Update the user's password
+        $stmt = $conn->prepare("UPDATE users SET password = :password WHERE id = :id");
+        $stmt->bindParam(':id', $userId);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
+        $affectedRows = $stmt->rowCount();
+        if ($affectedRows > 0) {
+            echo "Password updated successfully. Rows affected: $affectedRows.";
+        } else {
+            echo "Password update executed, but no rows were affected. Rows affected: $affectedRows.";
+        }
+    }   
+
 
     // // Construct response
     // $response = [
