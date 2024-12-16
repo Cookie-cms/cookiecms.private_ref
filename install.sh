@@ -78,9 +78,32 @@ echo "Starting the operation..."
 display_dynamic_progress_bar 100 $progress
 
 # Usage examples:
-barup 99   # Increase progress by 40
-sleep 2
 barup 1   # Increase progress by 40
+sleep 2
+barup 3   # Increase progress by 40
+sleep 2
+barup 10   # Increase progress by 40
+sleep 2
+barup 20   # Increase progress by 40
+sleep 2
+barup 30   # Increase progress by 40
+# sleep 2
+# barup 40   # Increase progress by 40
+# sleep 2
+# barup 60   # Increase progress by 40
+# sleep 2
+# barup 80   # Increase progress by 40
+# sleep 2
+crashbar
+
+
+# barup 90   # Increase progress by 40
+# sleep 2
+# crashbar
+# barup 100   # Increase progress by 40
+# sleep 2
+
+
 # sleep 3
 # barup 10   # Increase progress by 10
 # sleep 2

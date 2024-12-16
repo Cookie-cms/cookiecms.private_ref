@@ -1,5 +1,7 @@
 # **API Documentation**
 
+Actual on 16.12.2024
+
 ### **Standard Response Format**
 
 All responses from the API will follow the standard format:
@@ -144,7 +146,10 @@ Steps
 ---
 
 ### **Finish Registration**
-`POST /api/auth/registerfinish`
+`POST /api/home/registerfinish`
+
+**Request Headers**:
+- **Authorization**: Bearer `jwt_token`
 
 Password requried (min 8 characters)
 **Request Body**:
@@ -589,7 +594,7 @@ data": {}
 
 
 
-#### **Send Mail to All Users**
+### **Send Mail to All Users**
 `POST /api/admin/mail`
 
 **Request Headers**:
@@ -736,7 +741,7 @@ If the `expired_at` field is not provided, the role update will be permanent for
 
 ---
 
-
+### **Get all skins**
 
 ## User permissions lvl
 
@@ -894,4 +899,45 @@ AuditSecret:
   url: https://
   spamming: id # here will be send created account
   audit: id # main information change password change mail etc
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+# BugScout
+
+## **Logger for console**
+
+`WS /ws/debug?type=logger`
+
+nothing send only read information
+
+## **SQL executer**
+`WS /ws/debug?type=sql`
+
+execute and get information which returned
+
+```json
+{
+    "sql": ""
+}
+```
+
+#### **Database func**
+
+`WS /ws/debug?type=database`
+
+```json
+{
+    "data": "tables or {name_of_table}" 
+}
 ```

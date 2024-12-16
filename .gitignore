@@ -3,3 +3,5 @@ composer.phar
 src/vendor/
 src/configs/config.yml
 /logs/app.log
+pushgit.sh
+pushgit.json

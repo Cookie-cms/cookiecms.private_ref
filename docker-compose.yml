@@ -34,16 +34,26 @@ services:
       - mysqld_socket:/run/mysqld
       - './.docker/php-fpm/php-ini-overrides.ini:/usr/local/etc/php/conf.d/99-overrides.ini'
 
-  frontend:
-    image: 'node:latest'
-    container_name: frontend
-    working_dir: /application
-    volumes:
-      - './frontend:/application'
-    ports:
-      - '5173:5173'
-    command: npm run dev -- --host
+  # frontend:
+  #   image: 'node:latest'
+  #   container_name: frontend
+  #   working_dir: /application
+  #   volumes:
+  #     - './frontend:/application'
+  #   ports:
+  #     - '5173:5173'
+  #   command: npm run dev -- --host
 
+
+  # bugscout:
+  #   image: 'php:8.0-cli'
+  #   container_name: bugscout
+  #   working_dir: /application
+  #   volumes:
+  #     - './:/application'
+  #   command: php /application/path/to/your/websocket_server.php
+  #   ports:
+  #     - '8080:8080'
 
 volumes:
   mysqld_socket:
