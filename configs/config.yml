@@ -19,18 +19,21 @@ database:
   db: "cookiecms"
   port: "34002"
 
+  # XD i changed this old authorization to new
 smtp:
-  host: "smtppro.zoho.eu"
+  host: ""
   SMTPAuth: true
-  Username: "noreply@coffeedev.dev"
-  Password: "r%nytuD2"
+  Username: ""
+  Password: ""
   SMTPSecure: ""
   Port: 587
-
+  
+  
+# here also
 discord:
   enabled: true
-  client_id: "1181148727826722816"
-  secret_id: "5YaScJyKq0pDQxO_B5YlhUwcBnlkr37P"
+  client_id: ""
+  secret_id: ""
   scopes: "identify+email"
   redirect_url: "http://localhost:34000/api/auth/discord"
   bot: ""
