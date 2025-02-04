@@ -1,6 +1,8 @@
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
+
+
 use \Firebase\JWT\JWT;
 use \Firebase\JWT\Key;
 
@@ -78,12 +80,16 @@ function response($message, $status = false, $statusCode = 200, $url = null, $da
     exit;
 }
 
-function log_to_file($message) {
-    $logFile = $_SERVER['DOCUMENT_ROOT'] . '/logs/app.log';
+function log_message($message) {
 
     $date = date('Y-m-d H:i:s');
     $logMessage = "[$date] $message\n";
 
+    // global $webSocketServer;
+
+    $logFile = $_SERVER['DOCUMENT_ROOT'] . '/logs/app.log';
+    
+    // $webSocketServer->debug($logMessage);
     // Сохраняем сообщение в файл
     file_put_contents($logFile, $logMessage, FILE_APPEND);
 

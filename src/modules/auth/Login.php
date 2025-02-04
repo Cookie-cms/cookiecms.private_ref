@@ -81,7 +81,7 @@ if (isset($data['username']) && isset($data['password'])) {
             return ;
         }
     } catch(PDOException $e) {
-        log_to_file("[ERROR] PDOException: " . $e->getMessage(), 0);
+        log_message("[ERROR] PDOException: " . $e->getMessage(), 0);
         response('Database Error', true, 400, null, null);
         return;
 

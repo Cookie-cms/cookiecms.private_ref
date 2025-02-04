@@ -209,3 +209,306 @@
 [2024-12-02 18:18:56] Sanitized Request URI: /api/auth/login
 [2024-12-02 18:18:56] Module path: /application/src/modules/auth/Login.php
 [2024-12-02 18:18:56] Module file found. Including: /application/src/modules/auth/Login.php
+[2024-12-17 11:16:27] ===== New Request =====
+[2024-12-17 11:16:27] Request: GET /api/
+[2024-12-17 11:16:27] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2024-12-17 11:16:27] Request Body: 
+[2024-12-17 11:16:27] Routes loaded successfully.
+[2024-12-17 11:16:27] Sanitized Request URI: /api/
+[2024-12-17 11:16:27] Route not defined for: /api/
+[2025-01-24 11:01:15] ===== New Request =====
+[2025-01-24 11:01:15] Request: POST /api/auth/login
+[2025-01-24 11:01:15] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:01:15] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:01:15] Routes loaded successfully.
+[2025-01-24 11:01:15] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:01:15] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:01:15] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:01:15] [ERROR] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cookiecms.users' doesn't exist
+[2025-01-24 11:06:45] ===== New Request =====
+[2025-01-24 11:06:45] Request: POST /api/auth/login
+[2025-01-24 11:06:45] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:06:45] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:06:45] Routes loaded successfully.
+[2025-01-24 11:06:45] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:06:45] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:06:45] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:06:52] ===== New Request =====
+[2025-01-24 11:06:52] Request: POST /api/auth/login
+[2025-01-24 11:06:52] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:06:52] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:06:52] Routes loaded successfully.
+[2025-01-24 11:06:52] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:06:52] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:06:52] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:09:00] ===== New Request =====
+[2025-01-24 11:09:00] Request: GET /api/auth/login
+[2025-01-24 11:09:00] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2025-01-24 11:09:00] Request Body: 
+[2025-01-24 11:09:00] Routes loaded successfully.
+[2025-01-24 11:09:00] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:09:00] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:09:00] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:09:25] ===== New Request =====
+[2025-01-24 11:09:25] Request: POST /api/auth/login
+[2025-01-24 11:09:25] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"37","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:09:25] Request Body: {"username":"1@1.com","password":"********"}
+[2025-01-24 11:09:25] Routes loaded successfully.
+[2025-01-24 11:09:25] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:09:25] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:09:25] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:18:27] ===== New Request =====
+[2025-01-24 11:18:27] Request: POST /api/auth/login
+[2025-01-24 11:18:27] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:18:27] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:18:27] Routes loaded successfully.
+[2025-01-24 11:18:27] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:18:27] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:18:27] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:19:32] ===== New Request =====
+[2025-01-24 11:19:32] Request: POST /api/auth/login
+[2025-01-24 11:19:32] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:19:32] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:19:32] Routes loaded successfully.
+[2025-01-24 11:19:32] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:19:32] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:19:32] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:20:07] ===== New Request =====
+[2025-01-24 11:20:07] Request: POST /api/auth/login
+[2025-01-24 11:20:07] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:20:07] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:20:07] Routes loaded successfully.
+[2025-01-24 11:20:07] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:20:07] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:20:07] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:23:34] ===== New Request =====
+[2025-01-24 11:23:34] Request: POST /api/auth/login
+[2025-01-24 11:23:34] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"34","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:23:34] Request Body: {"username":"1@11","password":"********"}
+[2025-01-24 11:23:34] Routes loaded successfully.
+[2025-01-24 11:23:34] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:23:34] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:23:34] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:25:18] ===== New Request =====
+[2025-01-24 11:25:18] Request: POST /api/auth/login
+[2025-01-24 11:25:18] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:25:18] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:25:18] Routes loaded successfully.
+[2025-01-24 11:25:18] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:25:18] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:25:18] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:29:34] ===== New Request =====
+[2025-01-24 11:29:34] Request: POST /api/auth/login
+[2025-01-24 11:29:34] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:29:34] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:29:34] Routes loaded successfully.
+[2025-01-24 11:29:34] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:29:34] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:29:34] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:29:59] ===== New Request =====
+[2025-01-24 11:29:59] Request: POST /api/auth/login
+[2025-01-24 11:29:59] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:29:59] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:29:59] Routes loaded successfully.
+[2025-01-24 11:29:59] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:29:59] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:29:59] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:29:59] ===== New Request =====
+[2025-01-24 11:29:59] Request: POST /api/auth/login
+[2025-01-24 11:29:59] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:30:00] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:30:00] Routes loaded successfully.
+[2025-01-24 11:30:00] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:30:00] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:30:00] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:30:00] ===== New Request =====
+[2025-01-24 11:30:00] Request: POST /api/auth/login
+[2025-01-24 11:30:00] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:30:00] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:30:00] Routes loaded successfully.
+[2025-01-24 11:30:00] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:30:00] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:30:00] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:30:00] ===== New Request =====
+[2025-01-24 11:30:00] Request: POST /api/auth/login
+[2025-01-24 11:30:00] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:30:00] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:30:00] Routes loaded successfully.
+[2025-01-24 11:30:00] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:30:00] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:30:00] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:30:21] ===== New Request =====
+[2025-01-24 11:30:21] Request: POST /api/auth/login
+[2025-01-24 11:30:21] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:30:21] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:30:21] Routes loaded successfully.
+[2025-01-24 11:30:21] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:30:21] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:30:21] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:36:28] ===== New Request =====
+[2025-01-24 11:36:28] Request: POST /api/auth/login
+[2025-01-24 11:36:28] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:36:28] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:36:28] Routes loaded successfully.
+[2025-01-24 11:36:28] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:36:28] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:36:28] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:36:45] ===== New Request =====
+[2025-01-24 11:36:45] Request: POST /api/auth/login
+[2025-01-24 11:36:45] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:36:45] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:36:45] Routes loaded successfully.
+[2025-01-24 11:36:45] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:36:45] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:36:45] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:39:16] ===== New Request =====
+[2025-01-24 11:39:16] Request: POST /api/auth/login
+[2025-01-24 11:39:16] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"33","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:39:16] Request Body: {"username":"1@1","password":"********"}
+[2025-01-24 11:39:16] Routes loaded successfully.
+[2025-01-24 11:39:16] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:39:16] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:39:16] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:41:06] ===== New Request =====
+[2025-01-24 11:41:06] Request: GET /api/auth/login
+[2025-01-24 11:41:06] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2025-01-24 11:41:06] Request Body: 
+[2025-01-24 11:41:06] Routes loaded successfully.
+[2025-01-24 11:41:06] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:41:06] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:41:06] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:42:54] ===== New Request =====
+[2025-01-24 11:42:54] Request: GET /api/auth/login
+[2025-01-24 11:42:54] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2025-01-24 11:42:54] Request Body: 
+[2025-01-24 11:42:54] Routes loaded successfully.
+[2025-01-24 11:42:54] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:42:54] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:42:54] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:44:08] ===== New Request =====
+[2025-01-24 11:44:08] Request: POST /api/auth/register
+[2025-01-24 11:44:08] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"30","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:44:08] Request Body: {"email":"1@1","password":"********"}
+[2025-01-24 11:44:08] Routes loaded successfully.
+[2025-01-24 11:44:08] Sanitized Request URI: /api/auth/register
+[2025-01-24 11:44:08] Module path: /application/src/modules/auth/Register.php
+[2025-01-24 11:44:08] Module file found. Including: /application/src/modules/auth/Register.php
+[2025-01-24 11:45:00] ===== New Request =====
+[2025-01-24 11:45:00] Request: POST /api/auth/register
+[2025-01-24 11:45:00] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"29","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:45:00] Request Body: {"mail":"****@****.com","password":"********"}
+[2025-01-24 11:45:00] Routes loaded successfully.
+[2025-01-24 11:45:00] Sanitized Request URI: /api/auth/register
+[2025-01-24 11:45:00] Module path: /application/src/modules/auth/Register.php
+[2025-01-24 11:45:00] Module file found. Including: /application/src/modules/auth/Register.php
+[2025-01-24 11:45:29] ===== New Request =====
+[2025-01-24 11:45:29] Request: POST /api/auth/register
+[2025-01-24 11:45:29] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"36","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:45:29] Request Body: {"mail":"****@****.com","password":"********"}
+[2025-01-24 11:45:29] Routes loaded successfully.
+[2025-01-24 11:45:29] Sanitized Request URI: /api/auth/register
+[2025-01-24 11:45:29] Module path: /application/src/modules/auth/Register.php
+[2025-01-24 11:45:29] Module file found. Including: /application/src/modules/auth/Register.php
+[2025-01-24 11:46:36] ===== New Request =====
+[2025-01-24 11:46:36] Request: POST /api/auth/register
+[2025-01-24 11:46:36] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"70","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:46:36] Request Body: {"mail":"****@****.com","password":"********"}
+[2025-01-24 11:46:36] Routes loaded successfully.
+[2025-01-24 11:46:36] Sanitized Request URI: /api/auth/register
+[2025-01-24 11:46:36] Module path: /application/src/modules/auth/Register.php
+[2025-01-24 11:46:36] Module file found. Including: /application/src/modules/auth/Register.php
+[2025-01-24 11:50:43] ===== New Request =====
+[2025-01-24 11:50:43] Request: POST /api/auth/verify
+[2025-01-24 11:50:43] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"17","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:50:43] Request Body: {"code":"eMWvXs"}
+[2025-01-24 11:50:43] Routes loaded successfully.
+[2025-01-24 11:50:43] Sanitized Request URI: /api/auth/verify
+[2025-01-24 11:50:43] Route not defined for: /api/auth/verify
+[2025-01-24 11:51:23] ===== New Request =====
+[2025-01-24 11:51:23] Request: POST /api/auth/confirm
+[2025-01-24 11:51:23] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"17","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:51:23] Request Body: {"code":"eMWvXs"}
+[2025-01-24 11:51:23] Routes loaded successfully.
+[2025-01-24 11:51:23] Sanitized Request URI: /api/auth/confirm
+[2025-01-24 11:51:23] Module path: /application/src/modules/auth/ConfirmMail.php
+[2025-01-24 11:51:23] Module file found. Including: /application/src/modules/auth/ConfirmMail.php
+[2025-01-24 11:51:26] ===== New Request =====
+[2025-01-24 11:51:26] Request: POST /api/auth/confirm
+[2025-01-24 11:51:26] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"17","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:51:26] Request Body: {"code":"eMWvXs"}
+[2025-01-24 11:51:26] Routes loaded successfully.
+[2025-01-24 11:51:26] Sanitized Request URI: /api/auth/confirm
+[2025-01-24 11:51:26] Module path: /application/src/modules/auth/ConfirmMail.php
+[2025-01-24 11:51:26] Module file found. Including: /application/src/modules/auth/ConfirmMail.php
+[2025-01-24 11:53:36] ===== New Request =====
+[2025-01-24 11:53:36] Request: GET /api/auth/login
+[2025-01-24 11:53:36] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2025-01-24 11:53:36] Request Body: 
+[2025-01-24 11:53:36] Routes loaded successfully.
+[2025-01-24 11:53:36] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:53:36] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:53:36] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:53:36] ===== New Request =====
+[2025-01-24 11:53:36] Request: GET /api/auth/login
+[2025-01-24 11:53:36] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2025-01-24 11:53:36] Request Body: 
+[2025-01-24 11:53:36] Routes loaded successfully.
+[2025-01-24 11:53:36] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:53:36] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:53:36] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:53:40] ===== New Request =====
+[2025-01-24 11:53:40] Request: GET /api/auth/login
+[2025-01-24 11:53:40] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2025-01-24 11:53:40] Request Body: 
+[2025-01-24 11:53:40] Routes loaded successfully.
+[2025-01-24 11:53:40] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:53:40] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:53:40] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:53:40] ===== New Request =====
+[2025-01-24 11:53:40] Request: GET /api/auth/login
+[2025-01-24 11:53:40] Request Headers: {"Priority":"u=0, i","Sec-Fetch-User":"?1","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-Dest":"document","Upgrade-Insecure-Requests":"1","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000","Content-Length":"","Content-Type":""}
+[2025-01-24 11:53:40] Request Body: 
+[2025-01-24 11:53:40] Routes loaded successfully.
+[2025-01-24 11:53:40] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:53:40] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:53:40] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 11:54:25] ===== New Request =====
+[2025-01-24 11:54:25] Request: POST /api/auth/login
+[2025-01-24 11:54:25] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"74","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 11:54:25] Request Body: {"username":"1@gmail.com","password":"********"}
+[2025-01-24 11:54:25] Routes loaded successfully.
+[2025-01-24 11:54:25] Sanitized Request URI: /api/auth/login
+[2025-01-24 11:54:25] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 11:54:25] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 12:00:00] ===== New Request =====
+[2025-01-24 12:00:00] Request: POST /api/auth/login
+[2025-01-24 12:00:00] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"74","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 12:00:00] Request Body: {"username":"1@gmail.com","password":"********"}
+[2025-01-24 12:00:00] Routes loaded successfully.
+[2025-01-24 12:00:00] Sanitized Request URI: /api/auth/login
+[2025-01-24 12:00:00] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 12:00:00] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 12:02:53] ===== New Request =====
+[2025-01-24 12:02:53] Request: POST /api/auth/login
+[2025-01-24 12:02:53] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"74","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 12:02:53] Request Body: {"username":"1@gmail.com","password":"********"}
+[2025-01-24 12:02:53] Routes loaded successfully.
+[2025-01-24 12:02:53] Sanitized Request URI: /api/auth/login
+[2025-01-24 12:02:53] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 12:02:53] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 12:03:56] ===== New Request =====
+[2025-01-24 12:03:56] Request: POST /api/auth/login
+[2025-01-24 12:03:56] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"74","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 12:03:56] Request Body: {"username":"1@gmail.com","password":"********"}
+[2025-01-24 12:03:56] Routes loaded successfully.
+[2025-01-24 12:03:56] Sanitized Request URI: /api/auth/login
+[2025-01-24 12:03:56] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 12:03:56] Module file found. Including: /application/src/modules/auth/Login.php
+[2025-01-24 12:05:32] ===== New Request =====
+[2025-01-24 12:05:32] Request: POST /api/auth/login
+[2025-01-24 12:05:32] Request Headers: {"Priority":"u=0","Sec-Fetch-Site":"same-site","Sec-Fetch-Mode":"cors","Sec-Fetch-Dest":"empty","Referer":"http:\/\/localhost:5173\/","Connection":"keep-alive","Sec-Gpc":"1","Dnt":"1","Origin":"http:\/\/localhost:5173","Content-Length":"74","Content-Type":"application\/json","Accept-Encoding":"gzip, deflate, br, zstd","Accept-Language":"en-US,en;q=0.5","Accept":"application\/json, text\/plain, *\/*","User-Agent":"Mozilla\/5.0 (X11; Linux x86_64; rv:132.0) Gecko\/20100101 Firefox\/132.0","Host":"localhost:34000"}
+[2025-01-24 12:05:32] Request Body: {"username":"1@gmail.com","password":"********"}
+[2025-01-24 12:05:32] Routes loaded successfully.
+[2025-01-24 12:05:32] Sanitized Request URI: /api/auth/login
+[2025-01-24 12:05:32] Module path: /application/src/modules/auth/Login.php
+[2025-01-24 12:05:32] Module file found. Including: /application/src/modules/auth/Login.php

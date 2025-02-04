@@ -902,17 +902,6 @@ AuditSecret:
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
 # BugScout
 
 ## **Logger for console**
@@ -922,7 +911,7 @@ AuditSecret:
 nothing send only read information
 
 ## **SQL executer**
-`WS /ws/debug?type=sql`
+`WS /debug?type=sql`
 
 execute and get information which returned
 
@@ -932,12 +921,22 @@ execute and get information which returned
 }
 ```
 
-#### **Database func**
+### **Database func**
 
-`WS /ws/debug?type=database`
+`WS /debug?type=database`
 
 ```json
 {
     "data": "tables or {name_of_table}" 
+}
+```
+
+### **Send log func**
+
+`POST /debug/log`
+
+```json
+{
+    "msg": "" 
 }
 ```

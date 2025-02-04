@@ -9,18 +9,20 @@ header('Content-Type: application/json; charset=utf-8');
 
 // Define log levels: 0 (none), 1 (standard), 2 (full)
 define('LOG_LEVEL', 2); // Change to 0, 1, or 2 as needed
-$logFile = $_SERVER['DOCUMENT_ROOT'] . '/logs/app.log';
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
+
+// $logFile = $_SERVER['DOCUMENT_ROOT'] . '/logs/app.log';
 
 // Log function based on level
-function log_message($message, $level = 1) {
-    global $logFile;
+// function log_message($message, $level = 1) {
+//     global $logFile;
 
-    if (LOG_LEVEL >= $level) {
-        $date = date('Y-m-d H:i:s');
-        file_put_contents($logFile, "[$date] $message\n", FILE_APPEND);
-    }
-}
-// Log detailed request information (used for level 2)
+//     if (LOG_LEVEL >= $level) {
+//         $date = date('Y-m-d H:i:s');
+//         file_put_contents($logFile, "[$date] $message\n", FILE_APPEND);
+//     }
+// }
+// // Log detailed request information (used for level 2)
 // Log detailed request information (used for level 2)
 function log_request_details() {
     if (LOG_LEVEL < 2) return;
