@@ -1,5 +1,7 @@
 # **API Documentation**
 
+Actual on 16.12.2024
+
 ### **Standard Response Format**
 
 All responses from the API will follow the standard format:
@@ -16,6 +18,9 @@ All responses from the API will follow the standard format:
 ---
 
 ## **Authentication (Auth)**
+
+## /api/auth/*
+
 
 ### **Login**
 `POST /api/auth/login`
@@ -64,27 +69,27 @@ Steps
 `POST /api/auth/register`
 
 **Request Body**:
-```
+```json
 {
-    "mail": string,       // User's email address
-    "password": string    // Account password (min 8 characters)
+    "mail": "",       // User's email address
+    "password": ""    // Account password (min 8 characters)
 }
 ```
 
 **Responses**:
 
 - **200 OK**:
-```
+```json
 {
     "error": false,
     "msg": "Registration successful",
-    "url": string,  // URL for the next step, if applicable
+    "url": "string",  // URL for the next step, if applicable
     "data": {}
 }
 ```
 
 - **400 Bad Request**:
-```
+```json
 {
     "error": true,
     "msg": "Invalid email or password",
@@ -94,7 +99,7 @@ Steps
 ```
 
 - **409 Conflict**:
-```
+```json
 {
     "error": true,
     "msg": "Email already exists",
@@ -109,9 +114,9 @@ Steps
 `POST /api/auth/confirm`
 
 **Request Body**:
-```
+```json
 {
-    "code": string    // Account password (min 8 characters)
+    "code": "string"
 }
 ```
 
@@ -119,17 +124,17 @@ Steps
 **Responses**:
 
 - **200 OK**:
-```
+```json
 {
     "error": false,
     "msg": "Email confirmed successfully",
-    "url": string,  // URL to redirect after confirmation
+    "url": "string",  // URL to redirect after confirmation
     "data": {}
 }
 ```
 
 - **400 Bad Request**:
-```
+```json
 {
     "error": true,
     "msg": "Invalid or expired token",
@@ -141,19 +146,24 @@ Steps
 ---
 
 ### **Finish Registration**
-`POST /api/auth/registration/finish`
+`POST /api/home/registerfinish`
 
+**Request Headers**:
+- **Authorization**: Bearer `jwt_token`
+
+Password requried (min 8 characters)
 **Request Body**:
-```
+```json
 {
-    "username": string  // Desired username
+    "username": "",
+    "password": ""
 }
 ```
 
 **Responses**:
 
 - **200 OK**:
-```
+```json
 {
     "error": false,
     "msg": "Username created successfully",
@@ -163,10 +173,19 @@ Steps
 ```
 
 - **409 Conflict**:
-```
+```json
 {
     "error": true,
     "msg": "Username already taken",
+    "url": null,
+    "data": {}
+}
+```
+- **400 Bad request**
+```json
+{
+    "error": true,
+    "msg": "Password require 8 symb",
     "url": null,
     "data": {}
 }
@@ -180,15 +199,7 @@ Steps
 **Request Headers**:
 - **Authorization**: Bearer `jwt_token`
 
-**Request Body**:
-```
-{
-    "jwt": string   // The JWT token to be invalidated
-}
-```
-
 **Response**:
-
 - **200 OK**:
 ```
 {
@@ -219,7 +230,8 @@ Steps
 **Request Headers**:
 - **Authorization**: Bearer `jwt_token`
 
-**Response**:
+
+- **200 OK**:
 ```
 {
     "error": false,
@@ -264,6 +276,19 @@ Steps
 ```
 ---
 
+- **403 Forbidden**:
+```
+{
+    "error": true,
+    "msg": "Account is not finished",
+    "url": null,
+    "data": {
+        "password_create": true,
+        "username_create": true
+    }
+}
+```
+
 ### **Edit User Details**
 `POST /api/home/edit`
 
@@ -272,35 +297,105 @@ Steps
 
 **Request Body Options**:
 
+- **For change settings**:
+
+options can be 
+``username`` requried password
+``password`` requried old_password
+``cape``
+upload skin via form html
+
+<details>
+<summary>Examples</summary>
+<br>
+
 - **Update Username and Password**:
 ```
 {
-    "username": "new_username",     // New username
-    "password": "current_password"  // Current password for verification
+    "action": "update_username",
+    "username": "new_username",
+    "password": "current_password"
 }
 ```
 
 - **Change Password**:
 ```
 {
-    "password": "current_password", // Current password for verification
-    "new_password": "new_password"  // New password
+    "action": "change_password",
+    "password": "current_password",
+    "new_password": "new_password"
 }
 ```
 
 - **Change Cape**:
 ```
 {
-    "cape": 1  // Cape ID to select
+    "action": "change_cape",
+    "cape": 1
 }
 ```
 
-- **Upload Skin**:
+<!-- - **Upload Skin**:
 ```
 {
     "skin": "file"  // The file for the new skin (image file)
 }
+``` -->
+</details>
+
+
+<details>
+<summary>Mail example</summary>
+<br>
+1. **Update mail**
+
+- **100 Continue**
+```json
+{
+    "action": "update_mail",
+}
 ```
+
+- **100 Continue**
+```json
+{
+    "action": "update_mail_1",
+    "code": "",
+    "new_mail": "",
+    "password": ""
+}
+```
+
+- **100 Continue**
+```json
+{
+    "action": "update_mail_2",
+    "code": "",
+}
+```
+
+
+response
+```json
+{
+    "error": false,
+    "msg": "{Action} successfully",
+    "url": null,
+    "data": {}
+}
+```
+
+
+- **400 Bad request**
+```json
+{
+    "error": true,
+    "msg": "{ Action error }",
+    "url": null,
+    "data": {}
+}
+```
+</details>
 
 **Response**:
 
@@ -308,7 +403,7 @@ Steps
 ```
 {
     "error": false,
-    "msg": "Skin uploaded successfully",
+    "msg": "{Action} successfully",
     "url": null,
     "data": {}
 }
@@ -318,7 +413,7 @@ Steps
 ```
 {
     "error": true,
-    "msg": "Invalid password",
+    "msg": "{ Action error }",
     "url": null,
     "data": {}
 }
@@ -364,6 +459,21 @@ Steps
 ---
 
 ## **Discord Integration**
+
+### **GET /discord/url**
+
+```
+{
+    "error": false,
+    "msg": "",
+    "url": "",
+    "data": {
+        "link": ""
+    }
+}
+```
+
+
 
 ### **Discord Integration Settings**
 `POST /home/discord`
@@ -484,7 +594,7 @@ data": {}
 
 
 
-#### **Send Mail to All Users**
+### **Send Mail to All Users**
 `POST /api/admin/mail`
 
 **Request Headers**:
@@ -631,7 +741,7 @@ If the `expired_at` field is not provided, the role update will be permanent for
 
 ---
 
-
+### **Get all skins**
 
 ## User permissions lvl
 
@@ -646,11 +756,15 @@ If the `expired_at` field is not provided, the role update will be permanent for
 | Use Discord     | +     | +     | +     |
 |                 |       |       |       |
 | **Admin**       |       |       |       |
-| Users list      | -     | -     | +     |@
+| Users list      | -     | -     | +     |
 | User            | -     | -     | +     |
 | Mail Spam       | -     | -     | +     |
 
+types of permissions
 
+- settings.{name}
+
+- page.{name}
 
 ## **Service Endpoints**
 
@@ -692,3 +806,137 @@ If the `expired_at` field is not provided, the role update will be permanent for
 }
 ```
 
+
+
+# discord oauth 2
+
+
+1. get discord link /discord/url
+2. discord will redirect code to frontend /code
+3. frontend will redirect code to backend /discord/code
+4. backend will get information about user and return data
+```
+{
+    "error": false,
+    "msg": "",
+    "url": null,
+    "data": {
+        "urlAvatar": "string",                  // User's unique identifier
+        "username": "string",
+        "verifyCode": "string"  // Expiry date if provided
+    }
+}
+```
+5. frontend will send this body
+```
+{
+    "verifyCode": string,
+    "password": string    // Account password (min 8 characters)
+}
+```
+6. backend will answer
+
+- **200 OK**:
+```
+{
+    "error": false,
+    "msg": "Registration successful",
+    "url": string,  // URL for the next step, if applicable
+    "data": {}
+}
+```
+
+
+
+# verify_codes
+
+value for action
+
+1 - verify mail
+2 - create password
+<!-- 3 - change password -->
+
+
+line of changing mail
+
+
+verify old mail > verify your password > verify new password
+
+line of changing discord
+
+
+**Connecting Discord to Your Account:**  
+- **New Connection**: Log into the Discord account you wish to connect.  
+- **Requirements**:  
+  - The Discord account must have the **same email** as your current account.  
+
+**Changing Discord Connection:**  
+- Disconnect the old account if necessary.  
+- Follow the steps above to connect a new Discord account.
+
+**Changing/Removing Discord Connection:**  
+1. **Remove Current Connection**:  
+   - Enter the **code sent to your email**.  
+   - Confirm by entering your **current password**.
+
+2. **Change Connection**:  
+   - Verify the **code from your old email**.  
+   - Enter your **password**.  
+   - Log in to the new Discord account and confirm the change.
+
+
+**Creating Account via Discord:**  
+1. Click "Sign Up with Discord" and log into your Discord account.  
+2. Authorize the application.  
+3. Verify your email address.  
+4. Set and confirm a new password to complete the account creation.
+
+
+# webhooks
+
+```yml
+AuditSecret: 
+  url: https://
+  spamming: id # here will be send created account
+  audit: id # main information change password change mail etc
+```
+
+
+# BugScout
+
+## **Logger for console**
+
+`WS /ws/debug?type=logger`
+
+nothing send only read information
+
+## **SQL executer**
+`WS /debug?type=sql`
+
+execute and get information which returned
+
+```json
+{
+    "sql": ""
+}
+```
+
+### **Database func**
+
+`WS /debug?type=database`
+
+```json
+{
+    "data": "tables or {name_of_table}" 
+}
+```
+
+### **Send log func**
+
+`POST /debug/log`
+
+```json
+{
+    "msg": "" 
+}
+```

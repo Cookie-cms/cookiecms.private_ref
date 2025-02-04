@@ -1,18 +1,32 @@
 <?php
-/* Discord Oauth v.4.1
- * This file contains the core functions of the oauth2 script.
- * @author : MarkisDev
- * @copyright : https://markis.dev
- */
-
+# This file is part of CookieCms.
+#
+# CookieCms is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# CookieCms is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with CookieCms. If not, see <http://www.gnu.org/licenses/>.
 # Starting the script without session (no session required)
-require_once $_SERVER['DOCUMENT_ROOT'] . "/define.php";
+// require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
+// Заменить $file_path на $configPath
+// require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/yamlReader.php";
 
-$file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
-$yaml_data = read_yaml($file_path);  // Assuming read_yaml is a valid function
+$configPath = __config__;
+// if (file_exists($configPath)) {
+$yaml_data = read_yaml($configPath);
+// } else {
+//     throw new Exception("Configuration file not found: $configPath");
+// }
+
+// Далее вы можете работать с $yaml_data...
 $discord = $yaml_data['discord'];
-
-// Access specific values
 $client_id = $discord['client_id'];
 $secret_id = $discord['secret_id'];
 $scopes = $discord['scopes'];
@@ -36,7 +50,7 @@ function url()
     global $client_id, $redirect_url, $scopes;
     $state = gen_state();
     // Ideally, store this state temporarily (e.g., in the database, or pass it via the URL)
-    return 'https://discordapp.com/oauth2/authorize?response_type=code&client_id=' . $client_id . '&redirect_uri=' . $redirect_url . '&scope=' . urlencode($scopes) . "&state=" . $state;
+    return 'https://discordapp.com/oauth2/authorize?response_type=code&client_id=' . $client_id . '&redirect_uri=' . $redirect_url . '&scope=' . $scopes . "&state=" . $state;
 }
 
 // A function to initialize and return access token if successful

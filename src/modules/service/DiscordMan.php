@@ -1,9 +1,24 @@
 <?php
+# This file is part of CookieCms.
+#
+# CookieCms is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# CookieCms is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with CookieCms. If not, see <http://www.gnu.org/licenses/>.
 // Include necessary files
-require_once $_SERVER['DOCUMENT_ROOT'] . "/define.php"; // Define your variables like client_id, secret_id, etc.
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/mysql.php"; // Assuming this connects to your database
-require_once $_SERVER['DOCUMENT_ROOT'] . "/modules/auth/LoginDiscord.php"; // Assuming this connects to your database
-// require_once $_SERVER['DOCUMENT_ROOT'] . "/auth/RegisterDiscord.php"; // Assuming this connects to your database
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php"; // Define your variables like client_id, secret_id, etc.
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/mysql.php"; // Assuming this connects to your database
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/modules/auth/LoginDiscord.php"; // Assuming this connects to your database
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/inc/DiscordModule.php"; // Assuming this connects to your database
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/modules/auth/RegisterDiscord.php"; // Assuming this connects to your database
 
 // Check if user is coming from Discord's redirect after OAuth2 authentication
 if (isset($_GET['code'])) {
@@ -35,7 +50,7 @@ if (isset($_GET['code'])) {
         // If the user exists with the matching Discord ID and email
         return LoginDiscord($result['mail']);
     } else {
-        responseWithError("Not realised");
+        return RegisterDiscord($user);
     }
 }
 ?>

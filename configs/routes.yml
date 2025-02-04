@@ -5,6 +5,16 @@
 /api/auth/discord: service/DiscordMan.php
 /api/auth/logindiscord: auth/LoginDiscord.php
 /api/auth/registerdiscord: auth/RegisterDiscord.php
+/api/auth/forgetpass: auth/ForgetPass.php
+/api/auth/newverifyc: auth/RequestNewvc.php
 
 /api/home: home/Home.php
-/api/createuser: home/CreateUser.php
+/api/home/finishregister: home/FinishRegister.php
+
+
+/api/debug/logs: /debug/logs.php
+/api/debug/sql: /debug/db.php
+
+
+/api/discord/url: discord/url.php
+/api/discord/code: null

@@ -1,6 +1,21 @@
 <?php
+# This file is part of CookieCms.
+#
+# CookieCms is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# CookieCms is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with CookieCms. If not, see <http://www.gnu.org/licenses/>.
+require_once $_SERVER['DOCUMENT_ROOT'] . "/src/define.php";
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/define.php";
+
 use \Firebase\JWT\JWT;
 use \Firebase\JWT\Key;
 
@@ -9,6 +24,8 @@ use \Firebase\JWT\Key;
 function isJwtExpiredOrBlacklisted($jwt, $pdo, $securecode) {
     // Проверка наличия JWT
     if (empty($jwt)) {
+        log_message('JWT token is missing.');
+        return response("Invalid token", false, 400);  
         // responseWithError('JWT токен отсутствует.');
     }
 
@@ -19,6 +36,7 @@ function isJwtExpiredOrBlacklisted($jwt, $pdo, $securecode) {
 
     // Если токен найден в черном списке
     if ($blacklistEntry) {
+        log_message('JWT token is blacklisted.');
         if (time() > $blacklistEntry['expiration']) {
             return true; // Токен истек и находится в черном списке
         }
@@ -33,13 +51,14 @@ function isJwtExpiredOrBlacklisted($jwt, $pdo, $securecode) {
         if ($exp < time()) {
             return true; // Токен истек
         }
-
         // Если токен валиден, вернуть данные
         return [
             'status' => 'success',
             'data' => $decoded
         ];
     } catch (Exception $e) {
+        log_message('Invalid token: ' . $e->getMessage());
+        return response("Invalid token", false, 400);  
         // responseWithError('Недействительный токен.', ['error' => $e->getMessage()]);
         return;
     }
@@ -47,10 +66,7 @@ function isJwtExpiredOrBlacklisted($jwt, $pdo, $securecode) {
 
 function generateUUIDv4() {
     $data = random_bytes(16);
-
-    // Set version to 0100 (UUID version 4)
     $data[6] = chr((ord($data[6]) & 0x0f) | 0x40);
-    // Set variant to 10xx
     $data[8] = chr((ord($data[8]) & 0x3f) | 0x80);
 
     return sprintf(
@@ -64,21 +80,40 @@ function generateUUIDv4() {
 }
 
 
-function response($status = false, $statusCode = 200, $url = null, $message, $data = null) {
-    // Set the correct header
-
-    // Prepare the response array
+function response($message, $status = false, $statusCode = 200, $url = null, $data = null) {
     $response = [
-        "error" => ($status),  // If status code >= 400, set error as true
+        "error" => $status,
         "msg" => $message,
         "url" => $url,
         "data" => $data
     ];
 
-    // Set the HTTP status code
     http_response_code($statusCode);
-
-    // Output the response as JSON
     echo json_encode($response);
     exit;
 }
+
+function log_message($message) {
+
+    $date = date('Y-m-d H:i:s');
+    $logMessage = "[$date] $message\n";
+
+    // global $webSocketServer;
+
+    $logFile = $_SERVER['DOCUMENT_ROOT'] . '/logs/app.log';
+    
+    // $webSocketServer->debug($logMessage);
+    // Сохраняем сообщение в файл
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
+
+    // Если есть клиенты WebSocket, отправляем им сообщение
+    // if ($clients) {
+    //     foreach ($clients as $client) {
+    //         $client->send(json_encode([
+    //             'type' => 'log',
+    //             'message' => $logMessage,
+    //         ]));
+    //     }
+    // }
+}
+

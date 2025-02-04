@@ -1,9 +1,24 @@
 <?php
+# This file is part of CookieCms.
+#
+# CookieCms is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# CookieCms is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with CookieCms. If not, see <http://www.gnu.org/licenses/>.
 error_reporting(E_ALL);
 ini_set('display_errors', true);
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/mysql.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
+
+require_once __mysql__;
+// require_once $_SERVER['DOCUMENT_ROOT'] . "/inc/yamlReader.php";
 $file_path = $_SERVER['DOCUMENT_ROOT'] . '/configs/config.yml';
 
 
@@ -33,13 +48,8 @@ function LoginDiscord($mail) {
     if ($user['mail_verify'] == 0) {
         // Code to send a verification email
         // sendVerificationEmail($user['email']);
-        echo json_encode([
-            'error' => true,
-            'msg' => 'Pls verify your Mail.',
-            'url' => null,
-            'data' => []
-        ]);
-        return;
+
+        return response("Please verify your mail", true, 400, null, null);
     }
        // Generate the JWT token
        $NameSite = $yaml_data['NameSite'];
@@ -54,11 +64,8 @@ function LoginDiscord($mail) {
        try {
            $jwt = JWT::encode($payload, JWT_SECRET_KEY, 'HS256'); // Add 'HS256' as the algorithm
        } catch (Exception $e) {
-           echo json_encode([
-               'error' => true,
-               'msg' => 'JWT error: ' . $e->getMessage()
-           ]);
-           error_log("JWT Error: " . $e->getMessage(), 0);
+           error_log("PDOException: " . $e->getMessage(), 0);
+           return response("JWT Error", true, 400, null, null);
            exit();
        }
 
@@ -66,13 +73,11 @@ function LoginDiscord($mail) {
        $homeUrl = "/home"; // This is the URL that the user will be redirected to
 
        // Send response with structured format
-       echo json_encode([
-           'error' => false,
-           'msg' => 'Login successful',
-           'url' => $homeUrl,
-           'data' => [
-               'jwt' => $jwt  // The JWT token for authenticated requests
-           ]
-       ]);
+       $jwt = [
+        'jwt' => $jwt  // The JWT token for authenticated requests
+        ];
+       
+        return response("Login successful", false, 200, $homeUrl, $jwt);
+
 
 }
